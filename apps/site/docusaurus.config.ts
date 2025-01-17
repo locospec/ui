@@ -44,8 +44,8 @@ const config: Config = {
   ],
 
   clientModules: [
-    "../../node_modules/@locospec/blueprint-react/dist/styles.css",
-    "../../node_modules/@locospec/elements-react/dist/styles.css",
+    // "../../node_modules/@locospec/blueprint-react/dist/styles.css",
+    // "../../node_modules/@locospec/elements-react/dist/styles.css",
   ],
 
   presets: [
@@ -113,6 +113,12 @@ const config: Config = {
           sidebarId: "blueprintSidebar",
           position: "left",
           label: "Blueprint",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "rcpSidebar",
+          position: "left",
+          label: "RCP",
         },
         { to: "/blog", label: "Blog", position: "left" },
         {
