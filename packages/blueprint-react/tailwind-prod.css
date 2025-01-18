@@ -1,0 +1,54 @@
+@layer bp_theme, bp_base, bp_components, bp_utilities;
+
+@source "../lib/**/*.{ts,tsx}";
+
+.loco {
+  /* Theme layer */
+  @import "tailwindcss/theme" layer(bp_theme);
+  @import "tailwindcss/preflight" layer(bp_base);
+  /* @import "@radix-ui/themes/tokens.css" layer(bp_theme); */
+
+  /* @import "@radix-ui/themes/components.css"; */
+  /* @import "@radix-ui/themes/utilities.css"; */
+  @import "tailwindcss/utilities" layer(bp_utilities);
+
+  @theme {
+    --color-background: hsl(0 0% 100%);
+    --color-foreground: hsl(222.2 47.4% 11.2%);
+    --color-muted: hsl(210 40% 96.1%);
+    --color-muted-foreground: hsl(215.4 16.3% 46.9%);
+    --color-popover: hsl(0 0% 100%);
+    --color-popover-foreground: hsl(222.2 47.4% 11.2%);
+    --color-border: hsl(214.3 31.8% 91.4%);
+    --color-input: hsl(214.3 31.8% 91.4%);
+    --color-card: hsl(0 0% 100%);
+    --color-card-foreground: hsl(222.2 47.4% 11.2%);
+    --color-primary: hsl(222.2 47.4% 11.2%);
+    --color-primary-foreground: hsl(210 40% 98%);
+    --color-secondary: hsl(210 40% 96.1%);
+    --color-secondary-foreground: hsl(222.2 47.4% 11.2%);
+    --color-accent: hsl(210 40% 96.1%);
+    --color-accent-foreground: hsl(222.2 47.4% 11.2%);
+    --color-destructive: hsl(0 100% 50%);
+    --color-destructive-foreground: hsl(210 40% 98%);
+    --color-ring: hsl(215 20.2% 65.1%);
+
+    --color-avocado-100: oklch(0.99 0 0);
+    --color-avocado-200: oklch(0.98 0.04 113.22);
+    --color-avocado-300: oklch(0.94 0.11 115.03);
+    --color-avocado-400: oklch(0.92 0.19 114.08);
+    --color-avocado-500: oklch(0.84 0.18 117.33);
+    --color-avocado-600: oklch(0.53 0.12 118.34);
+  }
+
+  [data-accent-color] {
+    --color-primary: var(--accent-9);
+    --color-primary-foreground: var(--accent-contrast);
+  }
+
+  [data-radius] {
+    --radius-md: max(var(--radius-2), var(--radius-full));
+  }
+}
+
+@variant dark (&:where(.dark, .dark *));
