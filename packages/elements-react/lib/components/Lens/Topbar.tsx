@@ -7,7 +7,6 @@ import type { Table as TanStackTableType } from "@tanstack/react-table";
 export interface TopbarProps {
   table: TanStackTableType<any>;
   tableContainerRef: React.RefObject<HTMLDivElement>;
-  sidebarContent: React.ReactNode;
   showActionBar: boolean;
   setShowActionBar: (showActionBar: boolean) => void;
 }
@@ -15,7 +14,6 @@ export interface TopbarProps {
 const Topbar = ({
   table,
   tableContainerRef,
-  sidebarContent,
   showActionBar,
   setShowActionBar,
 }: TopbarProps) => {
@@ -25,12 +23,12 @@ const Topbar = ({
   return (
     <>
       {showTopBar && (
-        <div className="le-border-b le-flex le-flex-col">
+        <div className="le-w-full le-border-b le-border-[var(--gray-7)] le-flex le-flex-col le-flex-1 le-shrink-0 le-grow-0 le-min-h-12 le-bg-[var(--gray-a2)]">
           <LensViewBar
             tableContainerRef={tableContainerRef}
-            sidebarContent={sidebarContent}
             showActionBar={showActionBar}
             setShowActionBar={setShowActionBar}
+            table={table}
           />
           {showActionBar && <LensBulkActionsbar headers={headers} />}
         </div>

@@ -4,32 +4,32 @@ import LensSidebar from "./LensSidebar";
 
 export interface LensViewBarInterface {
   tableContainerRef: React.RefObject<HTMLDivElement>;
-  sidebarContent: React.ReactNode;
   showActionBar: boolean;
   setShowActionBar: (showActionBar: boolean) => void;
+  table?: any;
 }
 
 const LensViewBar = ({
   tableContainerRef,
-  sidebarContent,
   showActionBar,
   setShowActionBar,
+  table,
 }: LensViewBarInterface) => {
   return (
     <div className="le-h-12 le-bg-[var(--gray-a2)] le-flex le-items-center le-w-full le-justify-end le-px-4 le-gap-x-4">
       <button
-        className="le-px-3 le-py-1 le-bg-blue-500 le-gap-x-2 hover:le-bg-blue-600 le-h-8 le-flex le-items-center le-jusitfy-center le-text-white le-font-bold le-rounded-md"
+        className="le-px-3 le-py-1 le-bg-[var(--gray-a4)] le-gap-x-1 le-h-8 le-flex le-items-center le-jusitfy-center le-text-[var(--gray-9)] le-rounded-md"
         onClick={() => setShowActionBar(!showActionBar)}
       >
         <SlidersHorizontal size={18} />
         {showActionBar ? <>Hide</> : <>Filters</>}
       </button>
       <LensSidebar
+        table={table}
         tableContainerRef={tableContainerRef}
-        sidebarTitle="Are you absolutely sure?"
-      >
-        {sidebarContent}
-      </LensSidebar>
+        triggerLabel="Customise"
+        sidebarTitle="Customize View"
+      />
     </div>
   );
 };

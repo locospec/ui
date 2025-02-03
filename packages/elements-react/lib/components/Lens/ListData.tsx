@@ -31,7 +31,6 @@ export interface ListDataProps {
   onSelect: (selected: any[]) => void;
   selectedItems: any;
   dataEndpoint?: string;
-  sidebarContent?: React.ReactNode;
 }
 
 export const ListData = ({
@@ -42,9 +41,9 @@ export const ListData = ({
   onSelect,
   selectedItems,
   dataEndpoint,
-  sidebarContent,
 }: ListDataProps) => {
   const tableContainerRef = React.useRef<HTMLDivElement>(null);
+  const tableSiblingRef = React.useRef<HTMLDivElement>(null);
   const [rowSelection, setRowSelection] = React.useState<any>(selectedItems);
   const [globalFilter] = React.useState<any>([]);
   const [showActionBar, setShowActionBar] = React.useState(false);
@@ -111,7 +110,7 @@ export const ListData = ({
       <div
         ref={tableContainerRef}
         className={cn(
-          "twp le-lens-wrapper le-flex le-h-full le-w-full le-items-center le-justify-center le-rounded-lg le-bg-white",
+          "le-flex le-h-full le-w-full le-items-center le-justify-center le-bg-white",
           variantClass
         )}
       >
@@ -121,57 +120,61 @@ export const ListData = ({
   }
 
   return (
-    <div
-      className={cn(
-        "le-lens-wrapper twp le-flex le-h-full le-flex-col le-gap-0 le-rounded-lg le-overflow-hidden",
-        "rt-TableRoot",
-        variantClass,
-        size_class
-      )}
-    >
-      {showTableMetrics && (
-        <TableMetrics
-          containerWidth={containerWidth}
-          isResizing={isResizing}
-          rowSelection={rowSelection}
-          columnSizing={table.getState().columnSizing}
-          totalCount={flatData.length}
-        />
-      )}
+    <>
       <Topbar
         table={table}
-        tableContainerRef={tableContainerRef}
-        sidebarContent={sidebarContent}
+        tableContainerRef={tableSiblingRef}
         showActionBar={showActionBar}
         setShowActionBar={setShowActionBar}
       />
       <div
-        className="le-relative le-flex-1 le-overflow-auto"
-        onScroll={(e) => fetchMoreOnBottomReached(e.target as HTMLDivElement)}
-        ref={tableContainerRef}
+        className={cn(
+          "le-flex-1 le-relative twp le-flex le-h-full le-flex-col le-gap-0 le-overflow-hidden",
+          "rt-TableRoot",
+          variantClass,
+          size_class
+        )}
+        ref={tableSiblingRef}
       >
-        <div
-          className={cn("le-w-full le-h-full rt-TableRootTable")}
-          style={{
-            ...columnSizeVars,
-            width: "100%",
-            height: `${rowVirtualizer.getTotalSize()}px`,
-            minWidth: `${table.getTotalSize()}px`,
-          }}
-        >
-          <TableHeaderSection
-            table={table}
-            columnSizeVars={columnSizeVars}
-            tableContainerRef={tableContainerRef}
+        {showTableMetrics && (
+          <TableMetrics
+            containerWidth={containerWidth}
+            isResizing={isResizing}
+            rowSelection={rowSelection}
+            columnSizing={table.getState().columnSizing}
+            totalCount={flatData.length}
           />
-
-          {isResizing ? (
-            <MemoizedTableBody table={table} rowVirtualizer={rowVirtualizer} />
-          ) : (
-            <TableBody table={table} rowVirtualizer={rowVirtualizer} />
-          )}
+        )}
+        <div
+          className="le-relative le-flex-1 le-overflow-auto le-w-full le-h-full"
+          onScroll={(e) => fetchMoreOnBottomReached(e.target as HTMLDivElement)}
+          ref={tableContainerRef}
+        >
+          <div
+            className={cn("le-w-full le-h-full rt-TableRootTable")}
+            style={{
+              ...columnSizeVars,
+              width: "100%",
+              height: `${rowVirtualizer.getTotalSize()}px`,
+              minWidth: `${table.getTotalSize()}px`,
+            }}
+          >
+            <TableHeaderSection
+              table={table}
+              columnSizeVars={columnSizeVars}
+              tableContainerRef={tableContainerRef}
+            />
+            {isResizing ? (
+              <MemoizedTableBody
+                table={table}
+                rowVirtualizer={rowVirtualizer}
+              />
+            ) : (
+              <TableBody table={table} rowVirtualizer={rowVirtualizer} />
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
