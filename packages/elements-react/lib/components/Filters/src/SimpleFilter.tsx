@@ -40,7 +40,7 @@ const SimpleFilter: React.FC<FilterBuilderProps> = ({
             .filter((a: any) => a.type === "enum")
             .map((obj: any) => {
               if (obj.type === "enum") {
-                return { attribute: obj.value, op: "is_any_of", value: "" };
+                return { attribute: obj.value, op: "in", value: "" };
               }
             }),
         }
@@ -80,13 +80,13 @@ const SimpleFilter: React.FC<FilterBuilderProps> = ({
           target.conditions[lastIndex] = {
             ...item,
             // [field]: value,
-            [field]: value.split(",").filter(Boolean),
+            [field]: value,
           };
         } else {
           target.conditions[lastIndex] = {
             ...item,
             // [field]: value,
-            [field]: value.split(",").filter(Boolean),
+            [field]: value,
           };
         }
 

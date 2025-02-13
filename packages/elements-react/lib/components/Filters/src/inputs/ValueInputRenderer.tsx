@@ -6,7 +6,7 @@ import TextInput from "./TextInput";
 import { DatePicker } from "@/base/components/ui/datepicker";
 import EnumInput from "./EnumInput";
 import NumberInput from "./NumberInput";
-import NumberRangeInput from "./NumberRangeInput";
+// import NumberRangeInput from "./NumberRangeInput";
 import "./input.css";
 
 export interface ValueRendererInterface {
@@ -50,15 +50,15 @@ const ValueInputRenderer = ({
   }
 
   if (selectedAttribute.type === "number") {
-    if (condition.op === "between" || condition.op === "not_between") {
-      return (
-        <NumberRangeInput
-          condition={condition}
-          selectedAttribute={selectedAttribute}
-          handleValueChange={handleValueChange}
-        />
-      );
-    }
+    // if (condition.op === "between" || condition.op === "not_between") {
+    //   return (
+    //     <NumberRangeInput
+    //       condition={condition}
+    //       selectedAttribute={selectedAttribute}
+    //       handleValueChange={handleValueChange}
+    //     />
+    //   );
+    // }
     return (
       <NumberInput
         placeholder={selectedAttribute?.label}
@@ -80,8 +80,7 @@ const ValueInputRenderer = ({
   }
 
   if (selectedAttribute.type === "enum") {
-    const asMulti =
-      condition?.op === "is_any_of" || condition?.op === "is_none_of";
+    const asMulti = true;
     return (
       <EnumInput
         defaultValues={(condition.value as string[]) || []}

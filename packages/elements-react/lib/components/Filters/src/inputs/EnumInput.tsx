@@ -9,7 +9,7 @@ import {
   Command,
   CommandEmpty,
   CommandGroup,
-  CommandInput,
+  // CommandInput,
   CommandItem,
   CommandList,
   CommandSeparator,
@@ -171,13 +171,21 @@ const EnumInput = React.memo(function EnumInput({
       </PopoverTrigger>
       <PopoverContent className="le-w-[200px] le-p-0">
         <Command>
-          <CommandInput
+          {/* <CommandInput
             placeholder={placeholder}
             value={searchQuery}
             onValueChange={(value) => {
               setSearchQuery(value);
             }}
-          />
+          /> */}
+          <input
+            className="le-flex le-items-center le-border-b le-px-3 le-h-8 le-border-0 le-w-full le-bg-transparent le-py-1 le-text-sm le-outline-none placeholder:le-text-muted-foreground disabled:le-cursor-not-allowed disabled:le-opacity-50"
+            placeholder={placeholder}
+            value={searchQuery}
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+            }}
+          ></input>
           <CommandSeparator />
           <CommandList
             ref={containerRef}
