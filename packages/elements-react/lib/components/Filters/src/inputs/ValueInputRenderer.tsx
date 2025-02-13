@@ -22,7 +22,7 @@ const ValueInputRenderer = ({
 }: ValueRendererInterface) => {
   if (
     !condition?.op ||
-    ["is_empty", "is_not_empty"].includes(condition?.op) ||
+    ["isNull", "isNotNull"].includes(condition?.op) ||
     !selectedAttribute ||
     selectedAttribute.type === "boolean"
   ) {
