@@ -3,8 +3,8 @@
   "name": "comp-472",
   "type": "registry:component",
   "registryDependencies": [
-    "https://originui.com/r/checkbox.json",
-    "https://originui.com/r/table.json"
+    "https://ui.locospec.com/r/checkbox.json",
+    "https://ui.locospec.com/r/table.json"
   ],
   "files": [
     {

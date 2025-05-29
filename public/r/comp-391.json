@@ -3,7 +3,7 @@
   "name": "comp-391",
   "type": "registry:component",
   "registryDependencies": [
-    "https://originui.com/r/avatar.json"
+    "https://ui.locospec.com/r/avatar.json"
   ],
   "files": [
     {

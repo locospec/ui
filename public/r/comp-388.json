@@ -3,9 +3,9 @@
   "name": "comp-388",
   "type": "registry:component",
   "registryDependencies": [
-    "https://originui.com/r/button.json",
-    "https://originui.com/r/popover.json",
-    "https://originui.com/r/textarea.json"
+    "https://ui.locospec.com/r/button.json",
+    "https://ui.locospec.com/r/popover.json",
+    "https://ui.locospec.com/r/textarea.json"
   ],
   "files": [
     {

@@ -74,7 +74,7 @@ export default function ComponentDetails({
   return (
     <div className="absolute top-2 right-2 flex gap-2 peer-data-comp-loading:hidden">
       <OpenInV0
-        componentSource={`https://originui.com/r/${component.name}.json`}
+        componentSource={`https://ui.locospec.com/r/${component.name}.json`}
       />
       <Dialog>
         <TooltipProvider delayDuration={0}>

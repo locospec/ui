@@ -28,7 +28,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://originui.com"),
+  metadataBase: new URL("https://ui.locospec.com"),
   title:
     "Origin UI - Beautiful UI components built with Tailwind CSS and React",
   description:

@@ -3,9 +3,9 @@
   "name": "comp-503",
   "type": "registry:component",
   "registryDependencies": [
-    "https://originui.com/r/calendar.json",
-    "https://originui.com/r/input.json",
-    "https://originui.com/r/label.json"
+    "https://ui.locospec.com/r/calendar.json",
+    "https://ui.locospec.com/r/input.json",
+    "https://ui.locospec.com/r/label.json"
   ],
   "files": [
     {

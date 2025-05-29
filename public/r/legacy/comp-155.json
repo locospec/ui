@@ -3,8 +3,8 @@
   "name": "comp-155",
   "type": "registry:component",
   "registryDependencies": [
-    "https://originui.com/r/label.json",
-    "https://originui.com/r/radio-group.json"
+    "https://ui.locospec.com/r/label.json",
+    "https://ui.locospec.com/r/radio-group.json"
   ],
   "files": [
     {

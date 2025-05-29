@@ -3,8 +3,8 @@
   "name": "comp-572",
   "type": "registry:component",
   "registryDependencies": [
-    "https://originui.com/r/tree.json",
-    "https://originui.com/r/input.json"
+    "https://ui.locospec.com/r/tree.json",
+    "https://ui.locospec.com/r/input.json"
   ],
   "files": [
     {

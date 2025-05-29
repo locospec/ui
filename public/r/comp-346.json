@@ -3,7 +3,7 @@
   "name": "comp-346",
   "type": "registry:component",
   "registryDependencies": [
-    "https://originui.com/r/accordion.json"
+    "https://ui.locospec.com/r/accordion.json"
   ],
   "files": [
     {
