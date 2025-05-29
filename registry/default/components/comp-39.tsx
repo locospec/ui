@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { ClockIcon } from "lucide-react"
-import { Label } from "react-aria-components"
+import { ClockIcon } from "lucide-react";
+import { Label } from "react-aria-components";
 
-import { DateInput, TimeField } from "@/registry/default/ui/datefield-rac"
+import { DateInput, TimeField } from "@/registry/default/ui/datefield-rac";
 
 export default function Component() {
   return (
@@ -33,5 +33,5 @@ export default function Component() {
         </a>
       </p>
     </TimeField>
-  )
+  );
 }

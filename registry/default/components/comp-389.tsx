@@ -1,26 +1,26 @@
-"use client"
+"use client";
 
-import { useState } from "react"
 import {
   ClubIcon,
   DiamondIcon,
   HeartIcon,
   LucideIcon,
   SpadeIcon,
-} from "lucide-react"
+} from "lucide-react";
+import { useState } from "react";
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/default/ui/button";
 import {
   Popover,
   PopoverAnchor,
   PopoverContent,
   PopoverTrigger,
-} from "@/registry/default/ui/popover"
+} from "@/registry/default/ui/popover";
 
 interface TourStep {
-  icon: LucideIcon
-  title: string
-  description: string
+  icon: LucideIcon;
+  title: string;
+  description: string;
 }
 
 const tourSteps: TourStep[] = [
@@ -48,11 +48,11 @@ const tourSteps: TourStep[] = [
     description:
       "Press ⌘K to open the command palette. Use arrow keys to navigate and Enter to select an action.",
   },
-]
+];
 
 interface CardProps {
-  number: number
-  isActive: boolean
+  number: number;
+  isActive: boolean;
 }
 
 function Card({ number, isActive }: CardProps) {
@@ -60,27 +60,27 @@ function Card({ number, isActive }: CardProps) {
     <div className="bg-secondary text-muted-foreground flex size-10 items-center justify-center rounded-md text-sm font-medium">
       {number + 1}
     </div>
-  )
+  );
 
-  return isActive ? <PopoverAnchor>{content}</PopoverAnchor> : content
+  return isActive ? <PopoverAnchor>{content}</PopoverAnchor> : content;
 }
 
 export default function Component() {
-  const [currentTip, setCurrentTip] = useState(0)
+  const [currentTip, setCurrentTip] = useState(0);
 
   const handleNavigation = () => {
     if (currentTip === tourSteps.length - 1) {
-      setCurrentTip(0)
+      setCurrentTip(0);
     } else {
-      setCurrentTip(currentTip + 1)
+      setCurrentTip(currentTip + 1);
     }
-  }
+  };
 
   return (
     <div className="flex flex-col gap-4">
       <Popover
-        onOpenChange={(open) => {
-          if (open) setCurrentTip(0)
+        onOpenChange={open => {
+          if (open) setCurrentTip(0);
         }}
       >
         <div className="grid grid-cols-2 place-items-center gap-4">
@@ -126,5 +126,5 @@ export default function Component() {
         </PopoverContent>
       </Popover>
     </div>
-  )
+  );
 }

@@ -3,7 +3,7 @@ import {
   TableBody,
   TableCell,
   TableRow,
-} from "@/registry/default/ui/table"
+} from "@/registry/default/ui/table";
 
 export default function Component() {
   return (
@@ -48,5 +48,5 @@ export default function Component() {
         Vertical table
       </p>
     </div>
-  )
+  );
 }

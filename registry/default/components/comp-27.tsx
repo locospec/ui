@@ -1,26 +1,26 @@
-"use client"
+"use client";
 
-import { useEffect, useId, useState } from "react"
-import { LoaderCircleIcon, MicIcon, SearchIcon } from "lucide-react"
+import { LoaderCircleIcon, MicIcon, SearchIcon } from "lucide-react";
+import { useEffect, useId, useState } from "react";
 
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
+import { Input } from "@/registry/default/ui/input";
+import { Label } from "@/registry/default/ui/label";
 
 export default function Component() {
-  const id = useId()
-  const [inputValue, setInputValue] = useState("")
-  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const id = useId();
+  const [inputValue, setInputValue] = useState("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     if (inputValue) {
-      setIsLoading(true)
+      setIsLoading(true);
       const timer = setTimeout(() => {
-        setIsLoading(false)
-      }, 500)
-      return () => clearTimeout(timer)
+        setIsLoading(false);
+      }, 500);
+      return () => clearTimeout(timer);
     }
-    setIsLoading(false)
-  }, [inputValue])
+    setIsLoading(false);
+  }, [inputValue]);
 
   return (
     <div className="*:not-first:mt-2">
@@ -32,7 +32,7 @@ export default function Component() {
           placeholder="Search..."
           type="search"
           value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
+          onChange={e => setInputValue(e.target.value)}
         />
         <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 peer-disabled:opacity-50">
           {isLoading ? (
@@ -55,5 +55,5 @@ export default function Component() {
         </button>
       </div>
     </div>
-  )
+  );
 }

@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { useId, useState } from "react"
-import { CheckIcon, ImagePlusIcon, XIcon } from "lucide-react"
+import { CheckIcon, ImagePlusIcon, XIcon } from "lucide-react";
+import { useId } from "react";
 
-import { useCharacterLimit } from "@/registry/default/hooks/use-character-limit"
-import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
-import { Button } from "@/registry/default/ui/button"
+import { useCharacterLimit } from "@/registry/default/hooks/use-character-limit";
+import { useFileUpload } from "@/registry/default/hooks/use-file-upload";
+import { Button } from "@/registry/default/ui/button";
 import {
   Dialog,
   DialogClose,
@@ -15,10 +15,10 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/registry/default/ui/dialog"
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
-import { Textarea } from "@/registry/default/ui/textarea"
+} from "@/registry/default/ui/dialog";
+import { Input } from "@/registry/default/ui/input";
+import { Label } from "@/registry/default/ui/label";
+import { Textarea } from "@/registry/default/ui/textarea";
 
 // Pretend we have initial image files
 const initialBgImage = [
@@ -29,7 +29,7 @@ const initialBgImage = [
     url: "/profile-bg.jpg",
     id: "profile-bg-123456789",
   },
-]
+];
 
 const initialAvatarImage = [
   {
@@ -39,12 +39,12 @@ const initialAvatarImage = [
     url: "/avatar-72-01.jpg",
     id: "avatar-123456789",
   },
-]
+];
 
 export default function Component() {
-  const id = useId()
+  const id = useId();
 
-  const maxLength = 180
+  const maxLength = 180;
   const {
     value,
     characterCount,
@@ -54,7 +54,7 @@ export default function Component() {
     maxLength,
     initialValue:
       "Hey, I am Margaret, a web developer who loves turning ideas into amazing websites!",
-  })
+  });
 
   return (
     <Dialog>
@@ -168,7 +168,7 @@ export default function Component() {
         </DialogFooter>
       </DialogContent>
     </Dialog>
-  )
+  );
 }
 
 function ProfileBg() {
@@ -176,9 +176,9 @@ function ProfileBg() {
     useFileUpload({
       accept: "image/*",
       initialFiles: initialBgImage,
-    })
+    });
 
-  const currentImage = files[0]?.preview || null
+  const currentImage = files[0]?.preview || null;
 
   return (
     <div className="h-32">
@@ -223,16 +223,16 @@ function ProfileBg() {
         aria-label="Upload image file"
       />
     </div>
-  )
+  );
 }
 
 function Avatar() {
   const [{ files }, { openFileDialog, getInputProps }] = useFileUpload({
     accept: "image/*",
     initialFiles: initialAvatarImage,
-  })
+  });
 
-  const currentImage = files[0]?.preview || null
+  const currentImage = files[0]?.preview || null;
 
   return (
     <div className="-mt-10 px-6">
@@ -261,5 +261,5 @@ function Avatar() {
         />
       </div>
     </div>
-  )
+  );
 }

@@ -1,13 +1,13 @@
-import { useId } from "react"
+import { useId } from "react";
 
-import { Label } from "@/registry/default/ui/label"
+import { Label } from "@/registry/default/ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/registry/default/ui/select"
+} from "@/registry/default/ui/select";
 
 function StatusDot({ className }: { className?: string }) {
   return (
@@ -22,11 +22,11 @@ function StatusDot({ className }: { className?: string }) {
     >
       <circle cx="4" cy="4" r="4" />
     </svg>
-  )
+  );
 }
 
 export default function Component() {
-  const id = useId()
+  const id = useId();
   return (
     <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Status select</Label>
@@ -71,5 +71,5 @@ export default function Component() {
         </SelectContent>
       </Select>
     </div>
-  )
+  );
 }

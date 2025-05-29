@@ -1,4 +1,4 @@
-import { CheckIcon, MonitorIcon, SmartphoneIcon, XIcon } from "lucide-react"
+import { CheckIcon, MonitorIcon, SmartphoneIcon, XIcon } from "lucide-react";
 
 import {
   Table,
@@ -7,7 +7,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/default/ui/table"
+} from "@/registry/default/ui/table";
 
 const items = [
   {
@@ -61,7 +61,7 @@ const items = [
       { name: "Samsung Internet", supported: false, version: "No" },
     ],
   },
-]
+];
 
 export default function Component() {
   return (
@@ -86,7 +86,7 @@ export default function Component() {
       <TableHeader>
         <TableRow className="*:border-border hover:bg-transparent [&>:not(:last-child)]:border-r">
           <TableCell></TableCell>
-          {items[0].desktop.map((browser) => (
+          {items[0].desktop.map(browser => (
             <TableHead
               key={browser.name}
               className="text-foreground h-auto py-3 align-bottom"
@@ -96,7 +96,7 @@ export default function Component() {
               </span>
             </TableHead>
           ))}
-          {items[0].mobile.map((browser) => (
+          {items[0].mobile.map(browser => (
             <TableHead
               key={browser.name}
               className="text-foreground h-auto py-3 align-bottom"
@@ -109,7 +109,7 @@ export default function Component() {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {items.map((item) => (
+        {items.map(item => (
           <TableRow
             key={item.feature}
             className="*:border-border [&>:not(:last-child)]:border-r"
@@ -147,5 +147,5 @@ export default function Component() {
         ))}
       </TableBody>
     </Table>
-  )
+  );
 }

@@ -1,5 +1,5 @@
-import { Label } from "@/registry/default/ui/label"
-import MultipleSelector, { Option } from "@/registry/default/ui/multiselect"
+import { Label } from "@/registry/default/ui/label";
+import MultipleSelector, { Option } from "@/registry/default/ui/multiselect";
 
 const frameworks: Option[] = [
   {
@@ -66,7 +66,7 @@ const frameworks: Option[] = [
     value: "lit",
     label: "Lit",
   },
-]
+];
 
 export default function Component() {
   return (
@@ -96,5 +96,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  )
+  );
 }

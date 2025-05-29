@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { useId, useState } from "react"
-import { MoonIcon, SunIcon } from "lucide-react"
+import { MoonIcon, SunIcon } from "lucide-react";
+import { useId, useState } from "react";
 
 export default function Component() {
-  const id = useId()
-  const [theme, setTheme] = useState<string>("light")
+  const id = useId();
+  const [theme, setTheme] = useState<string>("light");
 
   return (
     <div className="space-y-4">
@@ -20,7 +20,7 @@ export default function Component() {
           className="peer sr-only"
           checked={theme === "dark"}
           onChange={() =>
-            setTheme((prev) => (prev === "dark" ? "light" : "dark"))
+            setTheme(prev => (prev === "dark" ? "light" : "dark"))
           }
         />
         <label
@@ -42,5 +42,5 @@ export default function Component() {
         </label>
       </div>
     </div>
-  )
+  );
 }

@@ -1,17 +1,17 @@
-import * as AccordionPrimitive from "@radix-ui/react-accordion"
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import {
   BellIcon,
   ChevronDownIcon,
   LifeBuoyIcon,
   Link2Icon,
   ShieldCheckIcon,
-} from "lucide-react"
+} from "lucide-react";
 
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
-} from "@/registry/default/ui/accordion"
+} from "@/registry/default/ui/accordion";
 
 const items = [
   {
@@ -46,14 +46,14 @@ const items = [
     content:
       "Our support team is available around the ClockIcon to assist you. For billing inquiries, technical issues, or general questions, you can reach us through live chat, email at support@example.com, or schedule a call with our technical team. Premium support is available for enterprise customers.",
   },
-]
+];
 
 export default function Component() {
   return (
     <div className="space-y-4">
       <h2 className="text-xl font-bold">W/ icon, sub-header, and chevron</h2>
       <Accordion type="single" collapsible className="w-full" defaultValue="3">
-        {items.map((item) => (
+        {items.map(item => (
           <AccordionItem value={item.id} key={item.id} className="py-2">
             <AccordionPrimitive.Header className="flex">
               <AccordionPrimitive.Trigger className="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-center justify-between rounded-md py-2 text-left text-[15px] leading-6 font-semibold transition-all outline-none focus-visible:ring-[3px] [&[data-state=open]>svg]:rotate-180">
@@ -85,5 +85,5 @@ export default function Component() {
         ))}
       </Accordion>
     </div>
-  )
+  );
 }

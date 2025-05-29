@@ -1,16 +1,16 @@
-import { ChevronDownIcon } from "lucide-react"
+import { ChevronDownIcon } from "lucide-react";
 
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/registry/default/ui/accordion"
+} from "@/registry/default/ui/accordion";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/registry/default/ui/collapsible"
+} from "@/registry/default/ui/collapsible";
 
 const items = [
   {
@@ -78,7 +78,7 @@ const items = [
       },
     ],
   },
-]
+];
 
 export default function Component() {
   return (
@@ -90,7 +90,7 @@ export default function Component() {
         className="w-full -space-y-px"
         defaultValue="3"
       >
-        {items.map((item) => (
+        {items.map(item => (
           <AccordionItem
             value={item.id}
             key={item.id}
@@ -113,7 +113,7 @@ export default function Component() {
         ))}
       </Accordion>
     </div>
-  )
+  );
 }
 
 function CollapsibleDemo({
@@ -121,9 +121,9 @@ function CollapsibleDemo({
   content,
   open,
 }: {
-  title: string
-  content: string
-  open?: boolean
+  title: string;
+  content: string;
+  open?: boolean;
 }) {
   return (
     <Collapsible className="bg-accent border-t px-4 py-3" defaultOpen={open}>
@@ -139,5 +139,5 @@ function CollapsibleDemo({
         {content}
       </CollapsibleContent>
     </Collapsible>
-  )
+  );
 }

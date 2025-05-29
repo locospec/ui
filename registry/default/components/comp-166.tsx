@@ -1,18 +1,18 @@
-import { useId } from "react"
+import { useId } from "react";
 
-import { Badge } from "@/registry/default/ui/badge"
-import { Label } from "@/registry/default/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
+import { Badge } from "@/registry/default/ui/badge";
+import { Label } from "@/registry/default/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
 
 export default function Component() {
-  const id = useId()
+  const id = useId();
 
   const items = [
     { value: "1", label: "Hobby", price: "$9/mo" },
     { value: "2", label: "Plus", price: "$29/mo" },
     { value: "3", label: "Team", price: "$49/mo" },
     { value: "4", label: "Enterprise", price: "Custom" },
-  ]
+  ];
 
   return (
     <fieldset className="space-y-4">
@@ -23,7 +23,7 @@ export default function Component() {
         className="gap-0 -space-y-px rounded-md shadow-xs"
         defaultValue="2"
       >
-        {items.map((item) => (
+        {items.map(item => (
           <div
             key={`${id}-${item.value}`}
             className="border-input has-data-[state=checked]:border-primary/50 has-data-[state=checked]:bg-accent relative flex flex-col gap-4 border p-4 outline-none first:rounded-t-md last:rounded-b-md has-data-[state=checked]:z-10"
@@ -57,5 +57,5 @@ export default function Component() {
         ))}
       </RadioGroup>
     </fieldset>
-  )
+  );
 }

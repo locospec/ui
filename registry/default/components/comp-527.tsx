@@ -1,20 +1,20 @@
-"use client"
+"use client";
 
-import { useState } from "react"
+import { useState } from "react";
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/default/ui/button";
 import {
   Stepper,
   StepperIndicator,
   StepperItem,
   StepperSeparator,
   StepperTrigger,
-} from "@/registry/default/ui/stepper"
+} from "@/registry/default/ui/stepper";
 
-const steps = [1, 2, 3, 4]
+const steps = [1, 2, 3, 4];
 
 export default function Component() {
-  const [currentStep, setCurrentStep] = useState(1)
+  const [currentStep, setCurrentStep] = useState(1);
   return (
     <div className="space-y-8 text-center">
       <Stepper
@@ -22,7 +22,7 @@ export default function Component() {
         onValueChange={setCurrentStep}
         orientation="vertical"
       >
-        {steps.map((step) => (
+        {steps.map(step => (
           <StepperItem key={step} step={step} className="not-last:flex-1">
             <StepperTrigger asChild>
               <StepperIndicator />
@@ -35,7 +35,7 @@ export default function Component() {
         <Button
           variant="outline"
           className="w-32"
-          onClick={() => setCurrentStep((prev) => prev - 1)}
+          onClick={() => setCurrentStep(prev => prev - 1)}
           disabled={currentStep === 1}
         >
           Prev step
@@ -43,7 +43,7 @@ export default function Component() {
         <Button
           variant="outline"
           className="w-32"
-          onClick={() => setCurrentStep((prev) => prev + 1)}
+          onClick={() => setCurrentStep(prev => prev + 1)}
           disabled={currentStep > steps.length}
         >
           Next step
@@ -57,5 +57,5 @@ export default function Component() {
         Controlled vertical stepper with checkmarks
       </p>
     </div>
-  )
+  );
 }

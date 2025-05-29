@@ -1,10 +1,10 @@
-import { useId } from "react"
+import { useId } from "react";
 
-import { Label } from "@/registry/default/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
+import { Label } from "@/registry/default/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
 
 export default function Component() {
-  const id = useId()
+  const id = useId();
   return (
     <RadioGroup className="gap-6" defaultValue="1">
       <div className="flex items-start gap-2">
@@ -50,5 +50,5 @@ export default function Component() {
         </div>
       </div>
     </RadioGroup>
-  )
+  );
 }

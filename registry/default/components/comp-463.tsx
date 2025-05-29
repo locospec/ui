@@ -1,36 +1,36 @@
-import { useId } from "react"
 import {
   ChevronFirstIcon,
   ChevronLastIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
-} from "lucide-react"
+} from "lucide-react";
+import { useId } from "react";
 
-import { Label } from "@/registry/default/ui/label"
+import { Label } from "@/registry/default/ui/label";
 import {
   Pagination,
   PaginationContent,
   PaginationItem,
   PaginationLink,
-} from "@/registry/default/ui/pagination"
+} from "@/registry/default/ui/pagination";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/registry/default/ui/select"
+} from "@/registry/default/ui/select";
 
 type PaginationProps = {
-  currentPage: number
-  totalPages: number
-}
+  currentPage: number;
+  totalPages: number;
+};
 
 export default function Component({
   currentPage,
   totalPages,
 }: PaginationProps) {
-  const id = useId()
+  const id = useId();
   return (
     <div className="flex items-center justify-between gap-8">
       {/* Results per page */}
@@ -131,5 +131,5 @@ export default function Component({
         </Pagination>
       </div>
     </div>
-  )
+  );
 }

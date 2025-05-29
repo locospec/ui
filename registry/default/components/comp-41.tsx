@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { CalendarIcon } from "lucide-react"
+import { CalendarIcon } from "lucide-react";
 import {
   Button,
   DatePicker,
@@ -8,10 +8,10 @@ import {
   Group,
   Label,
   Popover,
-} from "react-aria-components"
+} from "react-aria-components";
 
-import { Calendar } from "@/registry/default/ui/calendar-rac"
-import { DateInput } from "@/registry/default/ui/datefield-rac"
+import { Calendar } from "@/registry/default/ui/calendar-rac";
+import { DateInput } from "@/registry/default/ui/datefield-rac";
 
 export default function Component() {
   return (
@@ -49,5 +49,5 @@ export default function Component() {
         </a>
       </p>
     </DatePicker>
-  )
+  );
 }

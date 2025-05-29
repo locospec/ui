@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState } from "react"
-import { OTPInput, SlotProps } from "input-otp"
+import { OTPInput, SlotProps } from "input-otp";
+import { useEffect, useRef, useState } from "react";
 
-import { cn } from "@/registry/default/lib/utils"
-import { Button } from "@/registry/default/ui/button"
+import { cn } from "@/registry/default/lib/utils";
+import { Button } from "@/registry/default/ui/button";
 import {
   Dialog,
   DialogClose,
@@ -13,34 +13,34 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/registry/default/ui/dialog"
+} from "@/registry/default/ui/dialog";
 
-const CORRECT_CODE = "6548"
+const CORRECT_CODE = "6548";
 
 export default function Component() {
-  const [value, setValue] = useState("")
-  const [hasGuessed, setHasGuessed] = useState<undefined | boolean>(undefined)
-  const inputRef = useRef<HTMLInputElement>(null)
-  const closeButtonRef = useRef<HTMLButtonElement>(null)
+  const [value, setValue] = useState("");
+  const [hasGuessed, setHasGuessed] = useState<undefined | boolean>(undefined);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     if (hasGuessed) {
-      closeButtonRef.current?.focus()
+      closeButtonRef.current?.focus();
     }
-  }, [hasGuessed])
+  }, [hasGuessed]);
 
   async function onSubmit(e?: React.FormEvent<HTMLFormElement>) {
-    e?.preventDefault?.()
+    e?.preventDefault?.();
 
-    inputRef.current?.select()
-    await new Promise((r) => setTimeout(r, 1_00))
+    inputRef.current?.select();
+    await new Promise(r => setTimeout(r, 1_00));
 
-    setHasGuessed(value === CORRECT_CODE)
+    setHasGuessed(value === CORRECT_CODE);
 
-    setValue("")
+    setValue("");
     setTimeout(() => {
-      inputRef.current?.blur()
-    }, 20)
+      inputRef.current?.blur();
+    }, 20);
   }
 
   return (
@@ -124,7 +124,7 @@ export default function Component() {
         )}
       </DialogContent>
     </Dialog>
-  )
+  );
 }
 
 function Slot(props: SlotProps) {
@@ -137,5 +137,5 @@ function Slot(props: SlotProps) {
     >
       {props.char !== null && <div>{props.char}</div>}
     </div>
-  )
+  );
 }

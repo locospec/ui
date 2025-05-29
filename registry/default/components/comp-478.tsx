@@ -1,6 +1,5 @@
-"use client"
+"use client";
 
-import { useId, useMemo, useState } from "react"
 import {
   Column,
   ColumnDef,
@@ -15,25 +14,26 @@ import {
   RowData,
   SortingState,
   useReactTable,
-} from "@tanstack/react-table"
+} from "@tanstack/react-table";
 import {
   ChevronDownIcon,
   ChevronUpIcon,
   ExternalLinkIcon,
   SearchIcon,
-} from "lucide-react"
+} from "lucide-react";
+import { useId, useMemo, useState } from "react";
 
-import { cn } from "@/registry/default/lib/utils"
-import { Checkbox } from "@/registry/default/ui/checkbox"
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
+import { cn } from "@/registry/default/lib/utils";
+import { Checkbox } from "@/registry/default/ui/checkbox";
+import { Input } from "@/registry/default/ui/input";
+import { Label } from "@/registry/default/ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/registry/default/ui/select"
+} from "@/registry/default/ui/select";
 import {
   Table,
   TableBody,
@@ -41,26 +41,26 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/default/ui/table"
+} from "@/registry/default/ui/table";
 
 declare module "@tanstack/react-table" {
   //allows us to define custom properties for our columns
   interface ColumnMeta<TData extends RowData, TValue> {
-    filterVariant?: "text" | "range" | "select"
+    filterVariant?: "text" | "range" | "select";
   }
 }
 
 type Item = {
-  id: string
-  keyword: string
+  id: string;
+  keyword: string;
   intents: Array<
     "Informational" | "Navigational" | "Commercial" | "Transactional"
-  >
-  volume: number
-  cpc: number
-  traffic: number
-  link: string
-}
+  >;
+  volume: number;
+  cpc: number;
+  traffic: number;
+  link: string;
+};
 
 const columns: ColumnDef<Item>[] = [
   {
@@ -71,14 +71,14 @@ const columns: ColumnDef<Item>[] = [
           table.getIsAllPageRowsSelected() ||
           (table.getIsSomePageRowsSelected() && "indeterminate")
         }
-        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+        onCheckedChange={value => table.toggleAllPageRowsSelected(!!value)}
         aria-label="Select all"
       />
     ),
     cell: ({ row }) => (
       <Checkbox
         checked={row.getIsSelected()}
-        onCheckedChange={(value) => row.toggleSelected(!!value)}
+        onCheckedChange={value => row.toggleSelected(!!value)}
         aria-label="Select row"
       />
     ),
@@ -94,16 +94,16 @@ const columns: ColumnDef<Item>[] = [
     header: "Intents",
     accessorKey: "intents",
     cell: ({ row }) => {
-      const intents = row.getValue("intents") as string[]
+      const intents = row.getValue("intents") as string[];
       return (
         <div className="flex gap-1">
-          {intents.map((intent) => {
+          {intents.map(intent => {
             const styles = {
               Informational: "bg-indigo-400/20 text-indigo-500",
               Navigational: "bg-emerald-400/20 text-emerald-500",
               Commercial: "bg-amber-400/20 text-amber-500",
               Transactional: "bg-rose-400/20 text-rose-500",
-            }[intent]
+            }[intent];
 
             return (
               <div
@@ -115,29 +115,29 @@ const columns: ColumnDef<Item>[] = [
               >
                 {intent.charAt(0)}
               </div>
-            )
+            );
           })}
         </div>
-      )
+      );
     },
     enableSorting: false,
     meta: {
       filterVariant: "select",
     },
     filterFn: (row, id, filterValue) => {
-      const rowValue = row.getValue(id)
-      return Array.isArray(rowValue) && rowValue.includes(filterValue)
+      const rowValue = row.getValue(id);
+      return Array.isArray(rowValue) && rowValue.includes(filterValue);
     },
   },
   {
     header: "Volume",
     accessorKey: "volume",
     cell: ({ row }) => {
-      const volume = parseInt(row.getValue("volume"))
+      const volume = parseInt(row.getValue("volume"));
       return new Intl.NumberFormat("en-US", {
         notation: "compact",
         maximumFractionDigits: 1,
-      }).format(volume)
+      }).format(volume);
     },
     meta: {
       filterVariant: "range",
@@ -155,11 +155,11 @@ const columns: ColumnDef<Item>[] = [
     header: "Traffic",
     accessorKey: "traffic",
     cell: ({ row }) => {
-      const traffic = parseInt(row.getValue("traffic"))
+      const traffic = parseInt(row.getValue("traffic"));
       return new Intl.NumberFormat("en-US", {
         notation: "compact",
         maximumFractionDigits: 1,
-      }).format(traffic)
+      }).format(traffic);
     },
     meta: {
       filterVariant: "range",
@@ -175,7 +175,7 @@ const columns: ColumnDef<Item>[] = [
     ),
     enableSorting: false,
   },
-]
+];
 
 const items: Item[] = [
   {
@@ -250,16 +250,16 @@ const items: Item[] = [
     traffic: 35,
     link: "https://ui.locospec.com",
   },
-]
+];
 
 export default function Component() {
-  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [sorting, setSorting] = useState<SortingState>([
     {
       id: "traffic",
       desc: false,
     },
-  ])
+  ]);
 
   const table = useReactTable({
     data: items,
@@ -277,7 +277,7 @@ export default function Component() {
     getFacetedMinMaxValues: getFacetedMinMaxValues(), // generate min/max values for range filter
     onSortingChange: setSorting,
     enableSortingRemoval: false,
-  })
+  });
 
   return (
     <div className="space-y-6">
@@ -307,9 +307,9 @@ export default function Component() {
 
       <Table>
         <TableHeader>
-          {table.getHeaderGroups().map((headerGroup) => (
+          {table.getHeaderGroups().map(headerGroup => (
             <TableRow key={headerGroup.id} className="bg-muted/50">
-              {headerGroup.headers.map((header) => {
+              {headerGroup.headers.map(header => {
                 return (
                   <TableHead
                     key={header.id}
@@ -329,14 +329,14 @@ export default function Component() {
                             "flex h-full cursor-pointer items-center justify-between gap-2 select-none"
                         )}
                         onClick={header.column.getToggleSortingHandler()}
-                        onKeyDown={(e) => {
+                        onKeyDown={e => {
                           // Enhanced keyboard handling for sorting
                           if (
                             header.column.getCanSort() &&
                             (e.key === "Enter" || e.key === " ")
                           ) {
-                            e.preventDefault()
-                            header.column.getToggleSortingHandler()?.(e)
+                            e.preventDefault();
+                            header.column.getToggleSortingHandler()?.(e);
                           }
                         }}
                         tabIndex={header.column.getCanSort() ? 0 : undefined}
@@ -371,19 +371,19 @@ export default function Component() {
                       )
                     )}
                   </TableHead>
-                )
+                );
               })}
             </TableRow>
           ))}
         </TableHeader>
         <TableBody>
           {table.getRowModel().rows?.length ? (
-            table.getRowModel().rows.map((row) => (
+            table.getRowModel().rows.map(row => (
               <TableRow
                 key={row.id}
                 data-state={row.getIsSelected() && "selected"}
               >
-                {row.getVisibleCells().map((cell) => (
+                {row.getVisibleCells().map(cell => (
                   <TableCell key={cell.id}>
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </TableCell>
@@ -411,32 +411,32 @@ export default function Component() {
         </a>
       </p>
     </div>
-  )
+  );
 }
 
 function Filter({ column }: { column: Column<any, unknown> }) {
-  const id = useId()
-  const columnFilterValue = column.getFilterValue()
-  const { filterVariant } = column.columnDef.meta ?? {}
+  const id = useId();
+  const columnFilterValue = column.getFilterValue();
+  const { filterVariant } = column.columnDef.meta ?? {};
   const columnHeader =
-    typeof column.columnDef.header === "string" ? column.columnDef.header : ""
+    typeof column.columnDef.header === "string" ? column.columnDef.header : "";
   const sortedUniqueValues = useMemo(() => {
-    if (filterVariant === "range") return []
+    if (filterVariant === "range") return [];
 
     // Get all unique values from the column
-    const values = Array.from(column.getFacetedUniqueValues().keys())
+    const values = Array.from(column.getFacetedUniqueValues().keys());
 
     // If the values are arrays, flatten them and get unique items
     const flattenedValues = values.reduce((acc: string[], curr) => {
       if (Array.isArray(curr)) {
-        return [...acc, ...curr]
+        return [...acc, ...curr];
       }
-      return [...acc, curr]
-    }, [])
+      return [...acc, curr];
+    }, []);
 
     // Get unique values and sort them
-    return Array.from(new Set(flattenedValues)).sort()
-  }, [column.getFacetedUniqueValues(), filterVariant])
+    return Array.from(new Set(flattenedValues)).sort();
+  }, [column.getFacetedUniqueValues(), filterVariant]);
 
   if (filterVariant === "range") {
     return (
@@ -447,7 +447,7 @@ function Filter({ column }: { column: Column<any, unknown> }) {
             id={`${id}-range-1`}
             className="flex-1 rounded-e-none [-moz-appearance:_textfield] focus:z-10 [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
             value={(columnFilterValue as [number, number])?.[0] ?? ""}
-            onChange={(e) =>
+            onChange={e =>
               column.setFilterValue((old: [number, number]) => [
                 e.target.value ? Number(e.target.value) : undefined,
                 old?.[1],
@@ -461,7 +461,7 @@ function Filter({ column }: { column: Column<any, unknown> }) {
             id={`${id}-range-2`}
             className="-ms-px flex-1 rounded-s-none [-moz-appearance:_textfield] focus:z-10 [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
             value={(columnFilterValue as [number, number])?.[1] ?? ""}
-            onChange={(e) =>
+            onChange={e =>
               column.setFilterValue((old: [number, number]) => [
                 old?.[0],
                 e.target.value ? Number(e.target.value) : undefined,
@@ -473,7 +473,7 @@ function Filter({ column }: { column: Column<any, unknown> }) {
           />
         </div>
       </div>
-    )
+    );
   }
 
   if (filterVariant === "select") {
@@ -482,8 +482,8 @@ function Filter({ column }: { column: Column<any, unknown> }) {
         <Label htmlFor={`${id}-select`}>{columnHeader}</Label>
         <Select
           value={columnFilterValue?.toString() ?? "all"}
-          onValueChange={(value) => {
-            column.setFilterValue(value === "all" ? undefined : value)
+          onValueChange={value => {
+            column.setFilterValue(value === "all" ? undefined : value);
           }}
         >
           <SelectTrigger id={`${id}-select`}>
@@ -491,7 +491,7 @@ function Filter({ column }: { column: Column<any, unknown> }) {
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">All</SelectItem>
-            {sortedUniqueValues.map((value) => (
+            {sortedUniqueValues.map(value => (
               <SelectItem key={String(value)} value={String(value)}>
                 {String(value)}
               </SelectItem>
@@ -499,7 +499,7 @@ function Filter({ column }: { column: Column<any, unknown> }) {
           </SelectContent>
         </Select>
       </div>
-    )
+    );
   }
 
   return (
@@ -510,7 +510,7 @@ function Filter({ column }: { column: Column<any, unknown> }) {
           id={`${id}-input`}
           className="peer ps-9"
           value={(columnFilterValue ?? "") as string}
-          onChange={(e) => column.setFilterValue(e.target.value)}
+          onChange={e => column.setFilterValue(e.target.value)}
           placeholder={`Search ${columnHeader.toLowerCase()}`}
           type="text"
         />
@@ -519,5 +519,5 @@ function Filter({ column }: { column: Column<any, unknown> }) {
         </div>
       </div>
     </div>
-  )
+  );
 }

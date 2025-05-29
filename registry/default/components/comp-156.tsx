@@ -1,22 +1,22 @@
-"use client"
+"use client";
 
-import { useEffect, useId, useRef, useState } from "react"
+import { useEffect, useId, useRef, useState } from "react";
 
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
+import { Input } from "@/registry/default/ui/input";
+import { Label } from "@/registry/default/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
 
 export default function Component() {
-  const radioId = useId()
-  const inputId = useId()
-  const [selectedValue, setSelectedValue] = useState("without-expansion")
-  const inputRef = useRef<HTMLInputElement>(null)
+  const radioId = useId();
+  const inputId = useId();
+  const [selectedValue, setSelectedValue] = useState("without-expansion");
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (selectedValue === "with-expansion" && inputRef.current) {
-      inputRef.current.focus()
+      inputRef.current.focus();
     }
-  }, [selectedValue])
+  }, [selectedValue]);
 
   return (
     <RadioGroup
@@ -86,5 +86,5 @@ export default function Component() {
         </div>
       </div>
     </RadioGroup>
-  )
+  );
 }

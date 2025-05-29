@@ -1,6 +1,5 @@
-"use client"
+"use client";
 
-import React, { useState } from "react"
 import {
   createOnDropHandler,
   dragAndDropFeature,
@@ -8,8 +7,8 @@ import {
   keyboardDragAndDropFeature,
   selectionFeature,
   syncDataLoaderFeature,
-} from "@headless-tree/core"
-import { AssistiveTreeDescription, useTree } from "@headless-tree/react"
+} from "@headless-tree/core";
+import { AssistiveTreeDescription, useTree } from "@headless-tree/react";
 import {
   RiBracesLine,
   RiCodeSSlashLine,
@@ -17,14 +16,15 @@ import {
   RiFileTextLine,
   RiImageLine,
   RiReactjsLine,
-} from "@remixicon/react"
+} from "@remixicon/react";
+import { useState } from "react";
 
-import { Tree, TreeItem, TreeItemLabel } from "@/registry/default/ui/tree"
+import { Tree, TreeItem, TreeItemLabel } from "@/registry/default/ui/tree";
 
 interface Item {
-  name: string
-  children?: string[]
-  fileExtension?: string
+  name: string;
+  children?: string[];
+  fileExtension?: string;
 }
 
 const initialItems: Record<string, Item> = {
@@ -82,36 +82,36 @@ const initialItems: Record<string, Item> = {
       "README.md",
     ],
   },
-}
+};
 
 // Helper function to get icon based on file extension
 function getFileIcon(extension: string | undefined, className: string) {
   switch (extension) {
     case "tsx":
     case "jsx":
-      return <RiReactjsLine className={className} />
+      return <RiReactjsLine className={className} />;
     case "ts":
     case "js":
     case "mjs":
-      return <RiCodeSSlashLine className={className} />
+      return <RiCodeSSlashLine className={className} />;
     case "json":
-      return <RiBracesLine className={className} />
+      return <RiBracesLine className={className} />;
     case "svg":
     case "ico":
     case "png":
     case "jpg":
-      return <RiImageLine className={className} />
+      return <RiImageLine className={className} />;
     case "md":
-      return <RiFileTextLine className={className} />
+      return <RiFileTextLine className={className} />;
     default:
-      return <RiFileLine className={className} />
+      return <RiFileLine className={className} />;
   }
 }
 
-const indent = 20
+const indent = 20;
 
 export default function Component() {
-  const [items, setItems] = useState(initialItems)
+  const [items, setItems] = useState(initialItems);
 
   const tree = useTree<Item>({
     initialState: {
@@ -120,26 +120,26 @@ export default function Component() {
     },
     indent,
     rootItemId: "root",
-    getItemName: (item) => item.getItemData()?.name ?? "Unknown",
-    isItemFolder: (item) => (item.getItemData()?.children?.length ?? 0) > 0,
+    getItemName: item => item.getItemData()?.name ?? "Unknown",
+    isItemFolder: item => (item.getItemData()?.children?.length ?? 0) > 0,
     canReorder: false,
     onDrop: createOnDropHandler((parentItem, newChildrenIds) => {
-      setItems((prevItems) => {
+      setItems(prevItems => {
         // Sort the children alphabetically
         const sortedChildren = [...newChildrenIds].sort((a, b) => {
-          const itemA = prevItems[a]
-          const itemB = prevItems[b]
+          const itemA = prevItems[a];
+          const itemB = prevItems[b];
 
           // First sort folders before files
-          const isAFolder = (itemA?.children?.length ?? 0) > 0
-          const isBFolder = (itemB?.children?.length ?? 0) > 0
+          const isAFolder = (itemA?.children?.length ?? 0) > 0;
+          const isBFolder = (itemB?.children?.length ?? 0) > 0;
 
-          if (isAFolder && !isBFolder) return -1
-          if (!isAFolder && isBFolder) return 1
+          if (isAFolder && !isBFolder) return -1;
+          if (!isAFolder && isBFolder) return 1;
 
           // Then sort alphabetically by name
-          return (itemA?.name ?? "").localeCompare(itemB?.name ?? "")
-        })
+          return (itemA?.name ?? "").localeCompare(itemB?.name ?? "");
+        });
 
         return {
           ...prevItems,
@@ -147,12 +147,12 @@ export default function Component() {
             ...prevItems[parentItem.getId()],
             children: sortedChildren,
           },
-        }
-      })
+        };
+      });
     }),
     dataLoader: {
-      getItem: (itemId) => items[itemId],
-      getChildren: (itemId) => items[itemId]?.children ?? [],
+      getItem: itemId => items[itemId],
+      getChildren: itemId => items[itemId]?.children ?? [],
     },
     features: [
       syncDataLoaderFeature,
@@ -161,7 +161,7 @@ export default function Component() {
       dragAndDropFeature,
       keyboardDragAndDropFeature,
     ],
-  })
+  });
 
   return (
     <div className="flex h-full flex-col gap-2 *:first:grow">
@@ -172,7 +172,7 @@ export default function Component() {
           tree={tree}
         >
           <AssistiveTreeDescription tree={tree} />
-          {tree.getItems().map((item) => {
+          {tree.getItems().map(item => {
             return (
               <TreeItem key={item.getId()} item={item} className="pb-0!">
                 <TreeItemLabel className="rounded-none py-1">
@@ -186,7 +186,7 @@ export default function Component() {
                   </span>
                 </TreeItemLabel>
               </TreeItem>
-            )
+            );
           })}
         </Tree>
       </div>
@@ -207,5 +207,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  )
+  );
 }

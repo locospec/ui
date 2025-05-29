@@ -1,4 +1,4 @@
-import { CheckIcon } from "lucide-react"
+import { CheckIcon } from "lucide-react";
 
 import {
   Timeline,
@@ -9,7 +9,7 @@ import {
   TimelineItem,
   TimelineSeparator,
   TimelineTitle,
-} from "@/registry/default/ui/timeline"
+} from "@/registry/default/ui/timeline";
 
 const items = [
   {
@@ -40,12 +40,12 @@ const items = [
     description:
       "Quality assurance testing, performance optimization, and production deployment preparation.",
   },
-]
+];
 
 export default function Component() {
   return (
     <Timeline defaultValue={3}>
-      {items.map((item) => (
+      {items.map(item => (
         <TimelineItem
           key={item.id}
           step={item.id}
@@ -66,5 +66,5 @@ export default function Component() {
         </TimelineItem>
       ))}
     </Timeline>
-  )
+  );
 }

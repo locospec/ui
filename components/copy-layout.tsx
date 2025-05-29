@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import { CheckIcon, TerminalIcon } from "lucide-react"
+import { CheckIcon, TerminalIcon } from "lucide-react";
 
-import { useCopy } from "@/hooks/use-copy"
+import { useCopy } from "@/hooks/use-copy";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/registry/default/ui/tooltip"
+} from "@/registry/default/ui/tooltip";
 
 const CopyLayout = ({ command }: { command: string | undefined }) => {
-  const { copied, copy } = useCopy()
+  const { copied, copy } = useCopy();
 
   return (
     <TooltipProvider delayDuration={0}>
@@ -36,7 +36,7 @@ const CopyLayout = ({ command }: { command: string | undefined }) => {
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
-  )
-}
+  );
+};
 
-export default CopyLayout
+export default CopyLayout;

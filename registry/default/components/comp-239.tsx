@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   Header,
@@ -6,9 +6,9 @@ import {
   ListBoxItem,
   ListBoxSection,
   Separator,
-} from "react-aria-components"
+} from "react-aria-components";
 
-import { Label } from "@/registry/default/ui/label"
+import { Label } from "@/registry/default/ui/label";
 
 export default function Component() {
   return (
@@ -110,5 +110,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  )
+  );
 }

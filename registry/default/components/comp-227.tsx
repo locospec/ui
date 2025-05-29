@@ -1,7 +1,7 @@
-import { useId } from "react"
+import { useId } from "react";
 
-import { cn } from "@/registry/default/lib/utils"
-import { Label } from "@/registry/default/ui/label"
+import { cn } from "@/registry/default/lib/utils";
+import { Label } from "@/registry/default/ui/label";
 import {
   Select,
   SelectContent,
@@ -10,14 +10,14 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/registry/default/ui/select"
+} from "@/registry/default/ui/select";
 
 const Square = ({
   className,
   children,
 }: {
-  className?: string
-  children: React.ReactNode
+  className?: string;
+  children: React.ReactNode;
 }) => (
   <span
     data-square
@@ -29,10 +29,10 @@ const Square = ({
   >
     {children}
   </span>
-)
+);
 
 export default function Component() {
-  const id = useId()
+  const id = useId();
   return (
     <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Options with placeholder avatar</Label>
@@ -62,5 +62,5 @@ export default function Component() {
         </SelectContent>
       </Select>
     </div>
-  )
+  );
 }

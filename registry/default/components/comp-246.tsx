@@ -1,11 +1,11 @@
-import { cn } from "@/registry/default/lib/utils"
-import { Label } from "@/registry/default/ui/label"
-import { Slider } from "@/registry/default/ui/slider"
+import { cn } from "@/registry/default/lib/utils";
+import { Label } from "@/registry/default/ui/label";
+import { Slider } from "@/registry/default/ui/slider";
 
 export default function Component() {
-  const max = 12
-  const skipInterval = 2 // Set to 1 to allow no text skipping
-  const ticks = [...Array(max + 1)].map((_, i) => i)
+  const max = 12;
+  const skipInterval = 2; // Set to 1 to allow no text skipping
+  const ticks = [...Array(max + 1)].map((_, i) => i);
 
   return (
     <div className="*:not-first:mt-4">
@@ -35,5 +35,5 @@ export default function Component() {
         </span>
       </div>
     </div>
-  )
+  );
 }

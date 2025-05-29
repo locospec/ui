@@ -1,23 +1,23 @@
-"use client"
+"use client";
 
-import { useId, useState } from "react"
-import { format } from "date-fns"
-import { CalendarIcon } from "lucide-react"
-import { DateRange } from "react-day-picker"
+import { format } from "date-fns";
+import { CalendarIcon } from "lucide-react";
+import { useId, useState } from "react";
+import { DateRange } from "react-day-picker";
 
-import { cn } from "@/registry/default/lib/utils"
-import { Button } from "@/registry/default/ui/button"
-import { Calendar } from "@/registry/default/ui/calendar"
-import { Label } from "@/registry/default/ui/label"
+import { cn } from "@/registry/default/lib/utils";
+import { Button } from "@/registry/default/ui/button";
+import { Calendar } from "@/registry/default/ui/calendar";
+import { Label } from "@/registry/default/ui/label";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/registry/default/ui/popover"
+} from "@/registry/default/ui/popover";
 
 export default function Component() {
-  const id = useId()
-  const [date, setDate] = useState<DateRange | undefined>()
+  const id = useId();
+  const [date, setDate] = useState<DateRange | undefined>();
 
   return (
     <div>
@@ -77,5 +77,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  )
+  );
 }

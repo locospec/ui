@@ -1,13 +1,13 @@
-import { BoxIcon, HouseIcon, PanelsTopLeftIcon } from "lucide-react"
+import { BoxIcon, HouseIcon, PanelsTopLeftIcon } from "lucide-react";
 
-import { Badge } from "@/registry/default/ui/badge"
-import { ScrollArea, ScrollBar } from "@/registry/default/ui/scroll-area"
+import { Badge } from "@/registry/default/ui/badge";
+import { ScrollArea, ScrollBar } from "@/registry/default/ui/scroll-area";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/registry/default/ui/tabs"
+} from "@/registry/default/ui/tabs";
 
 export default function Component() {
   return (
@@ -66,5 +66,5 @@ export default function Component() {
         </p>
       </TabsContent>
     </Tabs>
-  )
+  );
 }

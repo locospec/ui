@@ -1,6 +1,5 @@
-"use client"
+"use client";
 
-import { CSSProperties, useEffect, useState } from "react"
 import {
   Column,
   ColumnDef,
@@ -9,21 +8,22 @@ import {
   getSortedRowModel,
   SortingState,
   useReactTable,
-} from "@tanstack/react-table"
+} from "@tanstack/react-table";
 import {
   ArrowLeftToLineIcon,
   ArrowRightToLineIcon,
   EllipsisIcon,
   PinOffIcon,
-} from "lucide-react"
+} from "lucide-react";
+import { CSSProperties, useEffect, useState } from "react";
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/default/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu"
+} from "@/registry/default/ui/dropdown-menu";
 import {
   Table,
   TableBody,
@@ -31,34 +31,34 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/default/ui/table"
+} from "@/registry/default/ui/table";
 
 type Item = {
-  id: string
-  name: string
-  email: string
-  location: string
-  flag: string
-  status: "Active" | "Inactive" | "Pending"
-  balance: number
-  department: string
-  role: string
-  joinDate: string
-  lastActive: string
-  performance: "Good" | "Very Good" | "Excellent" | "Outstanding"
-}
+  id: string;
+  name: string;
+  email: string;
+  location: string;
+  flag: string;
+  status: "Active" | "Inactive" | "Pending";
+  balance: number;
+  department: string;
+  role: string;
+  joinDate: string;
+  lastActive: string;
+  performance: "Good" | "Very Good" | "Excellent" | "Outstanding";
+};
 
 // Helper function to compute pinning styles for columns
 const getPinningStyles = (column: Column<Item>): CSSProperties => {
-  const isPinned = column.getIsPinned()
+  const isPinned = column.getIsPinned();
   return {
     left: isPinned === "left" ? `${column.getStart("left")}px` : undefined,
     right: isPinned === "right" ? `${column.getAfter("right")}px` : undefined,
     position: isPinned ? "sticky" : "relative",
     width: column.getSize(),
     zIndex: isPinned ? 1 : 0,
-  }
-}
+  };
+};
 
 const columns: ColumnDef<Item>[] = [
   {
@@ -90,12 +90,12 @@ const columns: ColumnDef<Item>[] = [
     header: "Balance",
     accessorKey: "balance",
     cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("balance"))
+      const amount = parseFloat(row.getValue("balance"));
       const formatted = new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",
-      }).format(amount)
-      return formatted
+      }).format(amount);
+      return formatted;
     },
   },
   {
@@ -118,22 +118,22 @@ const columns: ColumnDef<Item>[] = [
     header: "Performance",
     accessorKey: "performance",
   },
-]
+];
 
 export default function Component() {
-  const [data, setData] = useState<Item[]>([])
-  const [sorting, setSorting] = useState<SortingState>([])
+  const [data, setData] = useState<Item[]>([]);
+  const [sorting, setSorting] = useState<SortingState>([]);
 
   useEffect(() => {
     async function fetchPosts() {
       const res = await fetch(
         "https://raw.githubusercontent.com/origin-space/origin-images/refs/heads/main/users-01_fertyx.json"
-      )
-      const data = await res.json()
-      setData(data.slice(0, 5)) // Limit to 5 items
+      );
+      const data = await res.json();
+      setData(data.slice(0, 5)); // Limit to 5 items
     }
-    fetchPosts()
-  }, [])
+    fetchPosts();
+  }, []);
 
   const table = useReactTable({
     data,
@@ -146,7 +146,7 @@ export default function Component() {
       sorting,
     },
     enableSortingRemoval: false,
-  })
+  });
 
   return (
     <div>
@@ -157,15 +157,15 @@ export default function Component() {
         }}
       >
         <TableHeader>
-          {table.getHeaderGroups().map((headerGroup) => (
+          {table.getHeaderGroups().map(headerGroup => (
             <TableRow key={headerGroup.id} className="bg-muted/50">
-              {headerGroup.headers.map((header) => {
-                const { column } = header
-                const isPinned = column.getIsPinned()
+              {headerGroup.headers.map(header => {
+                const { column } = header;
+                const isPinned = column.getIsPinned();
                 const isLastLeftPinned =
-                  isPinned === "left" && column.getIsLastColumn("left")
+                  isPinned === "left" && column.getIsLastColumn("left");
                 const isFirstRightPinned =
-                  isPinned === "right" && column.getIsFirstColumn("right")
+                  isPinned === "right" && column.getIsFirstColumn("right");
 
                 return (
                   <TableHead
@@ -263,25 +263,25 @@ export default function Component() {
                       )}
                     </div>
                   </TableHead>
-                )
+                );
               })}
             </TableRow>
           ))}
         </TableHeader>
         <TableBody>
           {table.getRowModel().rows?.length ? (
-            table.getRowModel().rows.map((row) => (
+            table.getRowModel().rows.map(row => (
               <TableRow
                 key={row.id}
                 data-state={row.getIsSelected() && "selected"}
               >
-                {row.getVisibleCells().map((cell) => {
-                  const { column } = cell
-                  const isPinned = column.getIsPinned()
+                {row.getVisibleCells().map(cell => {
+                  const { column } = cell;
+                  const isPinned = column.getIsPinned();
                   const isLastLeftPinned =
-                    isPinned === "left" && column.getIsLastColumn("left")
+                    isPinned === "left" && column.getIsLastColumn("left");
                   const isFirstRightPinned =
-                    isPinned === "right" && column.getIsFirstColumn("right")
+                    isPinned === "right" && column.getIsFirstColumn("right");
 
                   return (
                     <TableCell
@@ -302,7 +302,7 @@ export default function Component() {
                         cell.getContext()
                       )}
                     </TableCell>
-                  )
+                  );
                 })}
               </TableRow>
             ))
@@ -327,5 +327,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  )
+  );
 }

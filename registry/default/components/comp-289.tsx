@@ -1,6 +1,6 @@
-import { TriangleAlertIcon, XIcon } from "lucide-react"
+import { TriangleAlertIcon, XIcon } from "lucide-react";
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/default/ui/button";
 
 export default function Component() {
   return (
@@ -41,5 +41,5 @@ export default function Component() {
         </Button>
       </div>
     </div>
-  )
+  );
 }

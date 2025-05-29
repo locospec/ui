@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import { CircleCheckIcon, XIcon } from "lucide-react"
-import { toast } from "sonner"
+import { CircleCheckIcon, XIcon } from "lucide-react";
+import { toast } from "sonner";
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/default/ui/button";
 
 export default function Component() {
   return (
     <Button
       variant="outline"
       onClick={() => {
-        toast.custom((t) => (
+        toast.custom(t => (
           <div className="bg-background text-foreground w-full rounded-md border px-4 py-3 shadow-lg sm:w-[var(--width)]">
             <div className="flex gap-2">
               <div className="flex grow gap-3">
@@ -49,10 +49,10 @@ export default function Component() {
               </Button>
             </div>
           </div>
-        ))
+        ));
       }}
     >
       Custom sonner
     </Button>
-  )
+  );
 }

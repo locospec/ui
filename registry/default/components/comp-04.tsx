@@ -1,10 +1,10 @@
-import { useId } from "react"
+import { useId } from "react";
 
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
+import { Input } from "@/registry/default/ui/input";
+import { Label } from "@/registry/default/ui/label";
 
 export default function Component() {
-  const id = useId()
+  const id = useId();
   return (
     <div className="*:not-first:mt-2">
       <div className="flex items-center justify-between gap-1">
@@ -15,5 +15,5 @@ export default function Component() {
       </div>
       <Input id={id} placeholder="Email" type="email" />
     </div>
-  )
+  );
 }

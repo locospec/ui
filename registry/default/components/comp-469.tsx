@@ -6,7 +6,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/default/ui/table"
+} from "@/registry/default/ui/table";
 
 const items = [
   {
@@ -49,7 +49,7 @@ const items = [
     status: "Active",
     balance: "-$1,000.00",
   },
-]
+];
 
 export default function Component() {
   return (
@@ -66,7 +66,7 @@ export default function Component() {
         </TableHeader>
         <tbody aria-hidden="true" className="table-row h-2"></tbody>
         <TableBody className="[&_td:first-child]:rounded-l-lg [&_td:last-child]:rounded-r-lg">
-          {items.map((item) => (
+          {items.map(item => (
             <TableRow
               key={item.id}
               className="odd:bg-muted/50 odd:hover:bg-muted/50 border-none hover:bg-transparent"
@@ -93,5 +93,5 @@ export default function Component() {
         Striped table
       </p>
     </div>
-  )
+  );
 }

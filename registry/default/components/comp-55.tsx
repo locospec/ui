@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { useId } from "react"
-import { withMask } from "use-mask-input"
+import { useId } from "react";
+import { withMask } from "use-mask-input";
 
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
+import { Input } from "@/registry/default/ui/input";
+import { Label } from "@/registry/default/ui/label";
 
 export default function Component() {
-  const id = useId()
+  const id = useId();
   return (
     <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Timestamp</Label>
@@ -36,5 +36,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  )
+  );
 }

@@ -1,6 +1,6 @@
-import { Info, XIcon } from "lucide-react"
+import { Info, XIcon } from "lucide-react";
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/default/ui/button";
 
 export default function Component() {
   return (
@@ -41,5 +41,5 @@ export default function Component() {
         </div>
       </div>
     </div>
-  )
+  );
 }

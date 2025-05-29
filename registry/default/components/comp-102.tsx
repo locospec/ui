@@ -1,6 +1,6 @@
-import { ChevronDownIcon, ChevronUpIcon } from "lucide-react"
+import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/default/ui/button";
 
 export default function Component() {
   return (
@@ -25,5 +25,5 @@ export default function Component() {
         <ChevronDownIcon size={16} aria-hidden="true" />
       </Button>
     </div>
-  )
+  );
 }

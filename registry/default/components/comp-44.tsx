@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { useId } from "react"
-import { OTPInput, SlotProps } from "input-otp"
+import { OTPInput, SlotProps } from "input-otp";
+import { useId } from "react";
 
-import { cn } from "@/registry/default/lib/utils"
-import { Label } from "@/registry/default/ui/label"
+import { cn } from "@/registry/default/lib/utils";
+import { Label } from "@/registry/default/ui/label";
 
 export default function Component() {
-  const id = useId()
+  const id = useId();
   return (
     <div className="*:not-first:mt-2">
       <Label htmlFor={id}>OTP input single</Label>
@@ -39,7 +39,7 @@ export default function Component() {
         </a>
       </p>
     </div>
-  )
+  );
 }
 
 function Slot(props: SlotProps) {
@@ -52,5 +52,5 @@ function Slot(props: SlotProps) {
     >
       {props.char !== null && <div>{props.char}</div>}
     </div>
-  )
+  );
 }

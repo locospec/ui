@@ -1,16 +1,15 @@
-"use client"
+"use client";
 
-import React from "react"
-import { hotkeysCoreFeature, syncDataLoaderFeature } from "@headless-tree/core"
-import { useTree } from "@headless-tree/react"
+import { hotkeysCoreFeature, syncDataLoaderFeature } from "@headless-tree/core";
+import { useTree } from "@headless-tree/react";
 
-import { Tree, TreeItem, TreeItemLabel } from "@/registry/default/ui/tree"
+import { Tree, TreeItem, TreeItemLabel } from "@/registry/default/ui/tree";
 
 interface Item {
-  name: string
-  href?: string
-  children?: string[]
-  current?: boolean
+  name: string;
+  href?: string;
+  children?: string[];
+  current?: boolean;
 }
 
 const items: Record<string, Item> = {
@@ -29,25 +28,25 @@ const items: Record<string, Item> = {
   resources: { name: "Resources", children: ["examples", "faq"] },
   examples: { name: "Code Examples", href: "#" },
   faq: { name: "FAQ", href: "#" },
-}
+};
 
-const indent = 20
+const indent = 20;
 
 // Find the path from root to the current item
 function findPathToCurrent(
   items: Record<string, Item>,
   rootId: string
 ): string[] {
-  const path: string[] = []
+  const path: string[] = [];
 
   function findPath(itemId: string): boolean {
-    const item = items[itemId]
-    if (!item) return false
+    const item = items[itemId];
+    if (!item) return false;
 
     // If this is the current item, we found the path
     if (item.current) {
-      path.unshift(itemId)
-      return true
+      path.unshift(itemId);
+      return true;
     }
 
     // If this item has children, search them
@@ -55,23 +54,23 @@ function findPathToCurrent(
       for (const childId of item.children) {
         if (findPath(childId)) {
           // If we found the path in this branch, add this item to the path
-          path.unshift(itemId)
-          return true
+          path.unshift(itemId);
+          return true;
         }
       }
     }
 
-    return false
+    return false;
   }
 
-  findPath(rootId)
-  return path
+  findPath(rootId);
+  return path;
 }
 
 // Get all parent IDs that need to be expanded
-const pathToCurrent = findPathToCurrent(items, "main")
+const pathToCurrent = findPathToCurrent(items, "main");
 // Remove the current item from the path if it's a leaf node
-const expandedItems = pathToCurrent.filter((id) => items[id].children?.length)
+const expandedItems = pathToCurrent.filter(id => items[id].children?.length);
 
 export default function Component() {
   const tree = useTree<Item>({
@@ -80,19 +79,19 @@ export default function Component() {
     },
     indent,
     rootItemId: "main",
-    getItemName: (item) => item.getItemData().name,
-    isItemFolder: (item) => (item.getItemData()?.children?.length ?? 0) > 0,
+    getItemName: item => item.getItemData().name,
+    isItemFolder: item => (item.getItemData()?.children?.length ?? 0) > 0,
     dataLoader: {
-      getItem: (itemId) => items[itemId],
-      getChildren: (itemId) => items[itemId].children ?? [],
+      getItem: itemId => items[itemId],
+      getChildren: itemId => items[itemId].children ?? [],
     },
     features: [syncDataLoaderFeature, hotkeysCoreFeature],
-  })
+  });
 
   return (
     <div className="flex h-full flex-col gap-2 *:first:grow">
       <Tree indent={indent} tree={tree}>
-        {tree.getItems().map((item) => {
+        {tree.getItems().map(item => {
           return (
             <TreeItem
               key={item.getId()}
@@ -110,7 +109,7 @@ export default function Component() {
                 <TreeItemLabel />
               )}
             </TreeItem>
-          )
+          );
         })}
       </Tree>
 
@@ -130,5 +129,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  )
+  );
 }

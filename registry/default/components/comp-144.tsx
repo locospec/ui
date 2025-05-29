@@ -1,10 +1,10 @@
-import { useId } from "react"
+import { useId } from "react";
 
-import { Checkbox } from "@/registry/default/ui/checkbox"
-import { Label } from "@/registry/default/ui/label"
+import { Checkbox } from "@/registry/default/ui/checkbox";
+import { Label } from "@/registry/default/ui/label";
 
 export default function Component() {
-  const id = useId()
+  const id = useId();
   return (
     <div className="border-input has-data-[state=checked]:border-primary/50 relative flex w-full items-start gap-2 rounded-md border p-4 shadow-xs outline-none">
       <Checkbox
@@ -24,5 +24,5 @@ export default function Component() {
         </p>
       </div>
     </div>
-  )
+  );
 }

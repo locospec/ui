@@ -1,26 +1,26 @@
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react"
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 
-import { usePagination } from "@/registry/default/hooks/use-pagination"
+import { usePagination } from "@/registry/default/hooks/use-pagination";
 import {
   Pagination,
   PaginationContent,
   PaginationEllipsis,
   PaginationItem,
   PaginationLink,
-} from "@/registry/default/ui/pagination"
+} from "@/registry/default/ui/pagination";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/registry/default/ui/select"
+} from "@/registry/default/ui/select";
 
 type PaginationProps = {
-  currentPage: number
-  totalPages: number
-  paginationItemsToDisplay?: number
-}
+  currentPage: number;
+  totalPages: number;
+  paginationItemsToDisplay?: number;
+};
 
 export default function Component({
   currentPage,
@@ -31,7 +31,7 @@ export default function Component({
     currentPage,
     totalPages,
     paginationItemsToDisplay,
-  })
+  });
 
   return (
     <div className="flex items-center justify-between gap-3">
@@ -71,7 +71,7 @@ export default function Component({
             )}
 
             {/* Page number links */}
-            {pages.map((page) => (
+            {pages.map(page => (
               <PaginationItem key={page}>
                 <PaginationLink
                   href={`#/page/${page}`}
@@ -127,5 +127,5 @@ export default function Component({
         </Select>
       </div>
     </div>
-  )
+  );
 }

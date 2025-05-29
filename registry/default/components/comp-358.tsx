@@ -1,12 +1,12 @@
-import { GlobeIcon } from "lucide-react"
+import { GlobeIcon } from "lucide-react";
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/default/ui/button";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/registry/default/ui/tooltip"
+} from "@/registry/default/ui/tooltip";
 
 export default function Component() {
   return (
@@ -37,5 +37,5 @@ export default function Component() {
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
-  )
+  );
 }

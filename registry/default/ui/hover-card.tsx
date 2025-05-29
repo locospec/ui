@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import * as HoverCardPrimitive from "@radix-ui/react-hover-card"
+import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
+import * as React from "react";
 
-import { cn } from "@/registry/default/lib/utils"
+import { cn } from "@/registry/default/lib/utils";
 
 function HoverCard({
   ...props
 }: React.ComponentProps<typeof HoverCardPrimitive.Root>) {
-  return <HoverCardPrimitive.Root data-slot="hover-card" {...props} />
+  return <HoverCardPrimitive.Root data-slot="hover-card" {...props} />;
 }
 
 function HoverCardTrigger({
@@ -16,7 +16,7 @@ function HoverCardTrigger({
 }: React.ComponentProps<typeof HoverCardPrimitive.Trigger>) {
   return (
     <HoverCardPrimitive.Trigger data-slot="hover-card-trigger" {...props} />
-  )
+  );
 }
 
 function HoverCardContent({
@@ -26,7 +26,7 @@ function HoverCardContent({
   showArrow = false,
   ...props
 }: React.ComponentProps<typeof HoverCardPrimitive.Content> & {
-  showArrow?: boolean
+  showArrow?: boolean;
 }) {
   return (
     <HoverCardPrimitive.Content
@@ -44,7 +44,7 @@ function HoverCardContent({
         <HoverCardPrimitive.Arrow className="fill-popover -my-px drop-shadow-[0_1px_0_var(--border)]" />
       )}
     </HoverCardPrimitive.Content>
-  )
+  );
 }
 
-export { HoverCard, HoverCardContent, HoverCardTrigger }
+export { HoverCard, HoverCardContent, HoverCardTrigger };

@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { BellIcon } from "lucide-react"
+import { BellIcon } from "lucide-react";
+import { useState } from "react";
 
-import { Badge } from "@/registry/default/ui/badge"
-import { Button } from "@/registry/default/ui/button"
+import { Badge } from "@/registry/default/ui/badge";
+import { Button } from "@/registry/default/ui/button";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/registry/default/ui/popover"
+} from "@/registry/default/ui/popover";
 
 const initialNotifications = [
   {
@@ -60,7 +60,7 @@ const initialNotifications = [
     timestamp: "2 weeks ago",
     unread: false,
   },
-]
+];
 
 function Dot({ className }: { className?: string }) {
   return (
@@ -75,31 +75,31 @@ function Dot({ className }: { className?: string }) {
     >
       <circle cx="3" cy="3" r="3" />
     </svg>
-  )
+  );
 }
 
 export default function Component() {
-  const [notifications, setNotifications] = useState(initialNotifications)
-  const unreadCount = notifications.filter((n) => n.unread).length
+  const [notifications, setNotifications] = useState(initialNotifications);
+  const unreadCount = notifications.filter(n => n.unread).length;
 
   const handleMarkAllAsRead = () => {
     setNotifications(
-      notifications.map((notification) => ({
+      notifications.map(notification => ({
         ...notification,
         unread: false,
       }))
-    )
-  }
+    );
+  };
 
   const handleNotificationClick = (id: number) => {
     setNotifications(
-      notifications.map((notification) =>
+      notifications.map(notification =>
         notification.id === id
           ? { ...notification, unread: false }
           : notification
       )
-    )
-  }
+    );
+  };
 
   return (
     <Popover>
@@ -135,7 +135,7 @@ export default function Component() {
           aria-orientation="horizontal"
           className="bg-border -mx-1 my-1 h-px"
         ></div>
-        {notifications.map((notification) => (
+        {notifications.map(notification => (
           <div
             key={notification.id}
             className="hover:bg-accent rounded-md px-3 py-2 text-sm transition-colors"
@@ -170,5 +170,5 @@ export default function Component() {
         ))}
       </PopoverContent>
     </Popover>
-  )
+  );
 }

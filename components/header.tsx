@@ -1,29 +1,29 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import Link from "next/link"
-import LogoDark from "@/public/logo-dark.svg"
-import Logo from "@/public/logo.svg"
-import { RiGithubFill, RiMenu2Line, RiTwitterXFill } from "@remixicon/react"
+import LogoDark from "@/public/logo-dark.svg";
+import Logo from "@/public/logo.svg";
+import { RiGithubFill, RiMenu2Line, RiTwitterXFill } from "@remixicon/react";
+import Image from "next/image";
+import Link from "next/link";
 
-import { useIsMobile } from "@/hooks/use-mobile"
-import HeaderLink from "@/components/header-link"
-import ThemeToggle from "@/components/theme-toggle"
+import HeaderLink from "@/components/header-link";
+import ThemeToggle from "@/components/theme-toggle";
+import { useIsMobile } from "@/hooks/use-mobile";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu"
+} from "@/registry/default/ui/dropdown-menu";
 
 const links = [
   { text: "Layouts", href: "/layouts", isNew: true },
   // { text: "Colors", href: "/colors" },
   { text: "Easing Classes", href: "/easings" },
-]
+];
 
 export default function Header() {
-  const isMobile = useIsMobile()
+  const isMobile = useIsMobile();
 
   return (
     <header className="before:bg-[linear-gradient(to_right,--theme(--color-border/.3),--theme(--color-border)_200px,--theme(--color-border)_calc(100%-200px),--theme(--color-border/.3))] relative mb-14 before:absolute before:-inset-x-32 before:bottom-0 before:h-px">
@@ -55,7 +55,7 @@ export default function Header() {
           {!isMobile && (
             <>
               <div className="flex items-center gap-4 md:gap-10">
-                {links.map((link) => (
+                {links.map(link => (
                   <HeaderLink
                     key={link.href}
                     text={link.text}
@@ -98,7 +98,7 @@ export default function Header() {
                   </button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
-                  {links.map((link) => (
+                  {links.map(link => (
                     <DropdownMenuItem
                       className="cursor-pointer focus:bg-transparent focus:underline"
                       key={link.href}
@@ -114,5 +114,5 @@ export default function Header() {
         </div>
       </div>
     </header>
-  )
+  );
 }

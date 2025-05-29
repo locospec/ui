@@ -1,4 +1,4 @@
-import { InfoIcon } from "lucide-react"
+import { InfoIcon } from "lucide-react";
 
 export default function Component() {
   return (
@@ -12,5 +12,5 @@ export default function Component() {
         Just a quick note!
       </p>
     </div>
-  )
+  );
 }

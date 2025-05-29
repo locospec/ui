@@ -1,23 +1,23 @@
-import { useId } from "react"
-import { CheckIcon, MinusIcon } from "lucide-react"
+import { CheckIcon, MinusIcon } from "lucide-react";
+import { useId } from "react";
 
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
+import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
 
 const items = [
   { value: "1", label: "Light", image: "/ui-light.png" },
   { value: "2", label: "Dark", image: "/ui-dark.png" },
   { value: "3", label: "System", image: "/ui-system.png" },
-]
+];
 
 export default function Component() {
-  const id = useId()
+  const id = useId();
   return (
     <fieldset className="space-y-4">
       <legend className="text-foreground text-sm leading-none font-medium">
         Choose a theme
       </legend>
       <RadioGroup className="flex gap-3" defaultValue="1">
-        {items.map((item) => (
+        {items.map(item => (
           <label key={`${id}-${item.value}`}>
             <RadioGroupItem
               id={`${id}-${item.value}`}
@@ -48,5 +48,5 @@ export default function Component() {
         ))}
       </RadioGroup>
     </fieldset>
-  )
+  );
 }

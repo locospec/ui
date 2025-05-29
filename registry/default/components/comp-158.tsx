@@ -1,4 +1,4 @@
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
+import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
 
 export default function Component() {
   return (
@@ -44,5 +44,5 @@ export default function Component() {
         />
       </RadioGroup>
     </fieldset>
-  )
+  );
 }

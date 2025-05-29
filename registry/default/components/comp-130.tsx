@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { MoonIcon, SunIcon } from "lucide-react"
+import { MoonIcon, SunIcon } from "lucide-react";
+import { useState } from "react";
 
-import { Toggle } from "@/registry/default/ui/toggle"
+import { Toggle } from "@/registry/default/ui/toggle";
 
 export default function Component() {
-  const [theme, setTheme] = useState<string>("light")
+  const [theme, setTheme] = useState<string>("light");
 
   return (
     <div>
@@ -15,7 +15,7 @@ export default function Component() {
         className="group data-[state=on]:hover:bg-muted size-9 data-[state=on]:bg-transparent"
         pressed={theme === "dark"}
         onPressedChange={() =>
-          setTheme((prev) => (prev === "dark" ? "light" : "dark"))
+          setTheme(prev => (prev === "dark" ? "light" : "dark"))
         }
         aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
       >
@@ -32,5 +32,5 @@ export default function Component() {
         />
       </Toggle>
     </div>
-  )
+  );
 }

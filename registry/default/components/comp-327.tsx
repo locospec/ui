@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { useId, useRef, useState } from "react"
-import { CheckIcon, CopyIcon, UserRoundPlusIcon } from "lucide-react"
+import { CheckIcon, CopyIcon, UserRoundPlusIcon } from "lucide-react";
+import { useId, useRef, useState } from "react";
 
-import { cn } from "@/registry/default/lib/utils"
-import { Button } from "@/registry/default/ui/button"
+import { cn } from "@/registry/default/lib/utils";
+import { Button } from "@/registry/default/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -12,44 +12,44 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/registry/default/ui/dialog"
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
+} from "@/registry/default/ui/dialog";
+import { Input } from "@/registry/default/ui/input";
+import { Label } from "@/registry/default/ui/label";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/registry/default/ui/tooltip"
+} from "@/registry/default/ui/tooltip";
 
 export default function Component() {
-  const id = useId()
+  const id = useId();
   const [emails, setEmails] = useState([
     "mark@yourcompany.com",
     "jane@yourcompany.com",
     "",
-  ])
-  const [copied, setCopied] = useState<boolean>(false)
-  const inputRef = useRef<HTMLInputElement>(null)
-  const lastInputRef = useRef<HTMLInputElement>(null)
+  ]);
+  const [copied, setCopied] = useState<boolean>(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const lastInputRef = useRef<HTMLInputElement>(null);
 
   const addEmail = () => {
-    setEmails([...emails, ""])
-  }
+    setEmails([...emails, ""]);
+  };
 
   const handleEmailChange = (index: number, value: string) => {
-    const newEmails = [...emails]
-    newEmails[index] = value
-    setEmails(newEmails)
-  }
+    const newEmails = [...emails];
+    newEmails[index] = value;
+    setEmails(newEmails);
+  };
 
   const handleCopy = () => {
     if (inputRef.current) {
-      navigator.clipboard.writeText(inputRef.current.value)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 1500)
+      navigator.clipboard.writeText(inputRef.current.value);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
     }
-  }
+  };
 
   return (
     <Dialog>
@@ -57,9 +57,9 @@ export default function Component() {
         <Button variant="outline">Invite members</Button>
       </DialogTrigger>
       <DialogContent
-        onOpenAutoFocus={(e) => {
-          e.preventDefault()
-          lastInputRef.current?.focus()
+        onOpenAutoFocus={e => {
+          e.preventDefault();
+          lastInputRef.current?.focus();
         }}
       >
         <div className="flex flex-col gap-2">
@@ -89,7 +89,7 @@ export default function Component() {
                     placeholder="hi@yourcompany.com"
                     type="email"
                     value={email}
-                    onChange={(e) => handleEmailChange(index, e.target.value)}
+                    onChange={e => handleEmailChange(index, e.target.value)}
                     ref={index === emails.length - 1 ? lastInputRef : undefined}
                   />
                 ))}
@@ -161,5 +161,5 @@ export default function Component() {
         </div>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

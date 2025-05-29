@@ -1,22 +1,22 @@
-"use client"
+"use client";
 
-import { useState } from "react"
+import { useState } from "react";
 
-import { cn } from "@/registry/default/lib/utils"
-import { Button } from "@/registry/default/ui/button"
+import { cn } from "@/registry/default/lib/utils";
+import { Button } from "@/registry/default/ui/button";
 
 const CopyClass = ({ value }: { value: string }) => {
-  const [copied, setCopied] = useState<boolean>(false)
+  const [copied, setCopied] = useState<boolean>(false);
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(value)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 1500)
+      await navigator.clipboard.writeText(value);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
     } catch (err) {
-      console.error("Failed to copy text: ", err)
+      console.error("Failed to copy text: ", err);
     }
-  }
+  };
 
   return (
     <div>
@@ -74,7 +74,7 @@ const CopyClass = ({ value }: { value: string }) => {
         </div>
       </Button>
     </div>
-  )
-}
+  );
+};
 
-export default CopyClass
+export default CopyClass;

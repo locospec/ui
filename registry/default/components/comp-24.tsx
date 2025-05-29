@@ -1,22 +1,22 @@
-"use client"
+"use client";
 
-import { useId, useRef, useState } from "react"
-import { CircleXIcon } from "lucide-react"
+import { CircleXIcon } from "lucide-react";
+import { useId, useRef, useState } from "react";
 
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
+import { Input } from "@/registry/default/ui/input";
+import { Label } from "@/registry/default/ui/label";
 
 export default function Component() {
-  const id = useId()
-  const [inputValue, setInputValue] = useState("Click to clear")
-  const inputRef = useRef<HTMLInputElement>(null)
+  const id = useId();
+  const [inputValue, setInputValue] = useState("Click to clear");
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleClearInput = () => {
-    setInputValue("")
+    setInputValue("");
     if (inputRef.current) {
-      inputRef.current.focus()
+      inputRef.current.focus();
     }
-  }
+  };
 
   return (
     <div className="*:not-first:mt-2">
@@ -29,7 +29,7 @@ export default function Component() {
           placeholder="Type something..."
           type="text"
           value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
+          onChange={e => setInputValue(e.target.value)}
         />
         {inputValue && (
           <button
@@ -42,5 +42,5 @@ export default function Component() {
         )}
       </div>
     </div>
-  )
+  );
 }

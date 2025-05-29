@@ -1,30 +1,30 @@
-"use client"
+"use client";
 
-import { useId, useRef, useState } from "react"
-import { CheckIcon, CopyIcon } from "lucide-react"
+import { CheckIcon, CopyIcon } from "lucide-react";
+import { useId, useRef, useState } from "react";
 
-import { cn } from "@/registry/default/lib/utils"
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
+import { cn } from "@/registry/default/lib/utils";
+import { Input } from "@/registry/default/ui/input";
+import { Label } from "@/registry/default/ui/label";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/registry/default/ui/tooltip"
+} from "@/registry/default/ui/tooltip";
 
 export default function Component() {
-  const id = useId()
-  const [copied, setCopied] = useState<boolean>(false)
-  const inputRef = useRef<HTMLInputElement>(null)
+  const id = useId();
+  const [copied, setCopied] = useState<boolean>(false);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleCopy = () => {
     if (inputRef.current) {
-      navigator.clipboard.writeText(inputRef.current.value)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 1500)
+      navigator.clipboard.writeText(inputRef.current.value);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
     }
-  }
+  };
 
   return (
     <div className="*:not-first:mt-2">
@@ -76,5 +76,5 @@ export default function Component() {
         </TooltipProvider>
       </div>
     </div>
-  )
+  );
 }

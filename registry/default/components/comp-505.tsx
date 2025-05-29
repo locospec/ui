@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { format } from "date-fns"
+import { format } from "date-fns";
+import { useState } from "react";
 
-import { Button } from "@/registry/default/ui/button"
-import { Calendar } from "@/registry/default/ui/calendar"
-import { ScrollArea } from "@/registry/default/ui/scroll-area"
+import { Button } from "@/registry/default/ui/button";
+import { Calendar } from "@/registry/default/ui/calendar";
+import { ScrollArea } from "@/registry/default/ui/scroll-area";
 
 export default function Component() {
-  const today = new Date()
-  const [date, setDate] = useState<Date>(today)
-  const [time, setTime] = useState<string | null>(null)
+  const today = new Date();
+  const [date, setDate] = useState<Date>(today);
+  const [time, setTime] = useState<string | null>(null);
 
   // Mock time slots data
   const timeSlots = [
@@ -32,7 +32,7 @@ export default function Component() {
     { time: "16:30", available: true },
     { time: "17:00", available: true },
     { time: "17:30", available: true },
-  ]
+  ];
 
   return (
     <div>
@@ -41,10 +41,10 @@ export default function Component() {
           <Calendar
             mode="single"
             selected={date}
-            onSelect={(newDate) => {
+            onSelect={newDate => {
               if (newDate) {
-                setDate(newDate)
-                setTime(null)
+                setDate(newDate);
+                setTime(null);
               }
             }}
             className="p-2 sm:pe-5"
@@ -97,5 +97,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  )
+  );
 }

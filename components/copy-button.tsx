@@ -1,23 +1,23 @@
-"use client"
+"use client";
 
-import { useCopy } from "@/hooks/use-copy"
-import { cn } from "@/registry/default/lib/utils"
-import { Button } from "@/registry/default/ui/button"
+import { useCopy } from "@/hooks/use-copy";
+import { cn } from "@/registry/default/lib/utils";
+import { Button } from "@/registry/default/ui/button";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/registry/default/ui/tooltip"
+} from "@/registry/default/ui/tooltip";
 
 const CopyButton = ({
   componentSource,
   className,
 }: {
-  componentSource: string | null
-  className?: string
+  componentSource: string | null;
+  className?: string;
 }) => {
-  const { copied, copy } = useCopy()
+  const { copied, copy } = useCopy();
 
   return (
     <div className={cn("dark absolute top-2 right-2", className)}>
@@ -76,7 +76,7 @@ const CopyButton = ({
         </Tooltip>
       </TooltipProvider>
     </div>
-  )
-}
+  );
+};
 
-export default CopyButton
+export default CopyButton;

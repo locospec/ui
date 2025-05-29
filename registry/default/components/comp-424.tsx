@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { XIcon } from "lucide-react"
+import { XIcon } from "lucide-react";
+import { useState } from "react";
 
-import { Badge } from "@/registry/default/ui/badge"
+import { Badge } from "@/registry/default/ui/badge";
 
 export default function Component() {
-  const [isActive, setIsActive] = useState(true)
+  const [isActive, setIsActive] = useState(true);
 
-  if (!isActive) return null
+  if (!isActive) return null;
 
   return (
     <Badge className="gap-0">
@@ -20,5 +20,5 @@ export default function Component() {
         <XIcon size={12} aria-hidden="true" />
       </button>
     </Badge>
-  )
+  );
 }

@@ -1,7 +1,7 @@
-import { useId } from "react"
-import { CheckIcon, RefreshCcwIcon } from "lucide-react"
+import { CheckIcon, RefreshCcwIcon } from "lucide-react";
+import { useId } from "react";
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/default/ui/button";
 import {
   Dialog,
   DialogClose,
@@ -10,12 +10,12 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/registry/default/ui/dialog"
-import { Label } from "@/registry/default/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
+} from "@/registry/default/ui/dialog";
+import { Label } from "@/registry/default/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
 
 export default function Component() {
-  const id = useId()
+  const id = useId();
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -164,5 +164,5 @@ export default function Component() {
         </form>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

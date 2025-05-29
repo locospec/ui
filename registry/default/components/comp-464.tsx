@@ -3,27 +3,27 @@ import {
   ChevronLastIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
-} from "lucide-react"
+} from "lucide-react";
 
 import {
   Pagination,
   PaginationContent,
   PaginationItem,
   PaginationLink,
-} from "@/registry/default/ui/pagination"
+} from "@/registry/default/ui/pagination";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/registry/default/ui/select"
+} from "@/registry/default/ui/select";
 
 type PaginationProps = {
-  currentPage: number
-  totalPages: number
-  paginationItemsToDisplay?: number
-}
+  currentPage: number;
+  totalPages: number;
+  paginationItemsToDisplay?: number;
+};
 
 export default function Component({
   currentPage,
@@ -65,13 +65,11 @@ export default function Component({
               <SelectValue placeholder="Select page" />
             </SelectTrigger>
             <SelectContent>
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
-                (page) => (
-                  <SelectItem key={page} value={String(page)}>
-                    Page {page}
-                  </SelectItem>
-                )
-              )}
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                <SelectItem key={page} value={String(page)}>
+                  Page {page}
+                </SelectItem>
+              ))}
             </SelectContent>
           </Select>
         </PaginationItem>
@@ -109,5 +107,5 @@ export default function Component({
         </PaginationItem>
       </PaginationContent>
     </Pagination>
-  )
+  );
 }

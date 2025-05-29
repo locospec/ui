@@ -1,54 +1,54 @@
-"use client"
+"use client";
 
-import { useId, useState } from "react"
-import { RiLoader3Line, RiNavigationLine } from "@remixicon/react"
+import { RiLoader3Line, RiNavigationLine } from "@remixicon/react";
+import { useId, useState } from "react";
 
-import { cn } from "@/registry/default/lib/utils"
-import { Button } from "@/registry/default/ui/button"
-import { Input } from "@/registry/default/ui/input"
+import { cn } from "@/registry/default/lib/utils";
+import { Button } from "@/registry/default/ui/button";
+import { Input } from "@/registry/default/ui/input";
 
-import { subscribe } from "./subscribe-action"
+import { subscribe } from "./subscribe-action";
 
 // Add type for form state
-type FormStatus = "idle" | "loading" | "success" | "error"
+type FormStatus = "idle" | "loading" | "success" | "error";
 
 function Form() {
-  const id = useId()
+  const id = useId();
   const [formState, setFormState] = useState({
     email: "",
     status: "idle" as FormStatus,
     message: "",
-  })
+  });
 
-  const isLoading = formState.status === "loading"
+  const isLoading = formState.status === "loading";
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setFormState((prev) => ({ ...prev, status: "loading", message: "" }))
+    e.preventDefault();
+    setFormState(prev => ({ ...prev, status: "loading", message: "" }));
 
     try {
-      const result = await subscribe(formState.email)
+      const result = await subscribe(formState.email);
       if (!result.success) {
-        setFormState((prev) => ({
+        setFormState(prev => ({
           ...prev,
           status: "error",
           message: result.error,
-        }))
+        }));
       } else {
         setFormState({
           email: "",
           status: "success",
           message: "Thanks for subscribing!",
-        })
+        });
       }
     } catch (error) {
-      setFormState((prev) => ({
+      setFormState(prev => ({
         ...prev,
         status: "error",
         message: error instanceof Error ? error.message : "Failed to subscribe",
-      }))
+      }));
     }
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
@@ -68,8 +68,8 @@ function Form() {
               placeholder="Enter your email..."
               type="email"
               value={formState.email}
-              onChange={(e) =>
-                setFormState((prev) => ({ ...prev, email: e.target.value }))
+              onChange={e =>
+                setFormState(prev => ({ ...prev, email: e.target.value }))
               }
               disabled={isLoading || undefined}
               aria-label="Subscribe to the newsletter"
@@ -112,7 +112,7 @@ function Form() {
         )}
       </div>
     </form>
-  )
+  );
 }
 
 export function SubscribeBottom() {
@@ -133,11 +133,11 @@ export function SubscribeBottom() {
         <Form />
       </div>
     </div>
-  )
+  );
 }
 
 function Illustration({ className }: { className?: string }) {
-  const id = useId()
+  const id = useId();
   return (
     <svg
       className={className}
@@ -173,5 +173,5 @@ function Illustration({ className }: { className?: string }) {
         </filter>
       </defs>
     </svg>
-  )
+  );
 }

@@ -1,22 +1,22 @@
-"use client"
+"use client";
 
-import { useEffect, useId, useRef, useState } from "react"
+import { useEffect, useId, useRef, useState } from "react";
 
-import { Checkbox } from "@/registry/default/ui/checkbox"
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
+import { Checkbox } from "@/registry/default/ui/checkbox";
+import { Input } from "@/registry/default/ui/input";
+import { Label } from "@/registry/default/ui/label";
 
 export default function Component() {
-  const checkboxId = useId()
-  const inputId = useId()
-  const [checked, setChecked] = useState<boolean | "indeterminate">(false)
-  const inputRef = useRef<HTMLInputElement>(null)
+  const checkboxId = useId();
+  const inputId = useId();
+  const [checked, setChecked] = useState<boolean | "indeterminate">(false);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (checked === true && inputRef.current) {
-      inputRef.current.focus()
+      inputRef.current.focus();
     }
-  }, [checked])
+  }, [checked]);
 
   return (
     <div>
@@ -62,5 +62,5 @@ export default function Component() {
         </div>
       </div>
     </div>
-  )
+  );
 }

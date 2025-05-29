@@ -5,7 +5,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/default/ui/table"
+} from "@/registry/default/ui/table";
 
 const items = [
   {
@@ -48,7 +48,7 @@ const items = [
     status: "Active",
     balance: "-$1,000.00",
   },
-]
+];
 
 export default function Component() {
   return (
@@ -64,7 +64,7 @@ export default function Component() {
           </TableRow>
         </TableHeader>
         <TableBody className="[&_td:first-child]:rounded-l-lg [&_td:last-child]:rounded-r-lg">
-          {items.map((item) => (
+          {items.map(item => (
             <TableRow
               key={item.id}
               className="*:border-border hover:bg-transparent [&>:not(:last-child)]:border-r"
@@ -82,5 +82,5 @@ export default function Component() {
         Table with vertical lines
       </p>
     </div>
-  )
+  );
 }

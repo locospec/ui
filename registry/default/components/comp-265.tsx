@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { useId } from "react"
+import { useId } from "react";
 
-import { useSliderWithInput } from "@/registry/default/hooks/use-slider-with-input"
-import { Button } from "@/registry/default/ui/button"
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
-import { Slider } from "@/registry/default/ui/slider"
+import { useSliderWithInput } from "@/registry/default/hooks/use-slider-with-input";
+import { Button } from "@/registry/default/ui/button";
+import { Input } from "@/registry/default/ui/input";
+import { Label } from "@/registry/default/ui/label";
+import { Slider } from "@/registry/default/ui/slider";
 
 const items = [
   { id: 1, price: 80 },
@@ -129,16 +129,16 @@ const items = [
   { id: 118, price: 895 },
   { id: 119, price: 898 },
   { id: 120, price: 900 },
-]
+];
 
 export default function Component() {
-  const id = useId()
+  const id = useId();
 
   // Define the number of ticks
-  const tick_count = 40
+  const tick_count = 40;
   // Find the min and max values across all items
-  const minValue = Math.min(...items.map((item) => item.price))
-  const maxValue = Math.max(...items.map((item) => item.price))
+  const minValue = Math.min(...items.map(item => item.price));
+  const maxValue = Math.max(...items.map(item => item.price));
 
   const {
     sliderValue,
@@ -146,33 +146,33 @@ export default function Component() {
     validateAndUpdateValue,
     handleInputChange,
     handleSliderChange,
-  } = useSliderWithInput({ minValue, maxValue, initialValue: [200, 780] }) // set initialValue: [minValue, maxValue] to show all items by default
+  } = useSliderWithInput({ minValue, maxValue, initialValue: [200, 780] }); // set initialValue: [minValue, maxValue] to show all items by default
 
   // Calculate the price step based on the min and max prices
-  const priceStep = (maxValue - minValue) / tick_count
+  const priceStep = (maxValue - minValue) / tick_count;
 
   // Calculate item counts for each price range
   const itemCounts = Array(tick_count)
     .fill(0)
     .map((_, tick) => {
-      const rangeMin = minValue + tick * priceStep
-      const rangeMax = minValue + (tick + 1) * priceStep
+      const rangeMin = minValue + tick * priceStep;
+      const rangeMax = minValue + (tick + 1) * priceStep;
       return items.filter(
-        (item) => item.price >= rangeMin && item.price < rangeMax
-      ).length
-    })
+        item => item.price >= rangeMin && item.price < rangeMax
+      ).length;
+    });
 
   // Find maximum count for scaling
-  const maxCount = Math.max(...itemCounts)
+  const maxCount = Math.max(...itemCounts);
 
   const handleSliderValueChange = (values: number[]) => {
-    handleSliderChange(values)
-  }
+    handleSliderChange(values);
+  };
 
   // Function to count items in the selected range
   const countItemsInRange = (min: number, max: number) => {
-    return items.filter((item) => item.price >= min && item.price <= max).length
-  }
+    return items.filter(item => item.price >= min && item.price <= max).length;
+  };
 
   const isBarInSelectedRange = (
     index: number,
@@ -180,14 +180,14 @@ export default function Component() {
     priceStep: number,
     sliderValue: number[]
   ) => {
-    const rangeMin = minValue + index * priceStep
-    const rangeMax = minValue + (index + 1) * priceStep
+    const rangeMin = minValue + index * priceStep;
+    const rangeMax = minValue + (index + 1) * priceStep;
     return (
       countItemsInRange(sliderValue[0], sliderValue[1]) > 0 &&
       rangeMin <= sliderValue[1] &&
       rangeMax >= sliderValue[0]
-    )
-  }
+    );
+  };
 
   return (
     <div className="*:not-first:mt-4">
@@ -235,11 +235,11 @@ export default function Component() {
               type="text"
               inputMode="decimal"
               value={inputValues[0]}
-              onChange={(e) => handleInputChange(e, 0)}
+              onChange={e => handleInputChange(e, 0)}
               onBlur={() => validateAndUpdateValue(inputValues[0], 0)}
-              onKeyDown={(e) => {
+              onKeyDown={e => {
                 if (e.key === "Enter") {
-                  validateAndUpdateValue(inputValues[0], 0)
+                  validateAndUpdateValue(inputValues[0], 0);
                 }
               }}
               aria-label="Enter minimum price"
@@ -258,11 +258,11 @@ export default function Component() {
               type="text"
               inputMode="decimal"
               value={inputValues[1]}
-              onChange={(e) => handleInputChange(e, 1)}
+              onChange={e => handleInputChange(e, 1)}
               onBlur={() => validateAndUpdateValue(inputValues[1], 1)}
-              onKeyDown={(e) => {
+              onKeyDown={e => {
                 if (e.key === "Enter") {
-                  validateAndUpdateValue(inputValues[1], 1)
+                  validateAndUpdateValue(inputValues[1], 1);
                 }
               }}
               aria-label="Enter maximum price"
@@ -279,5 +279,5 @@ export default function Component() {
         Show {countItemsInRange(sliderValue[0], sliderValue[1])} items
       </Button>
     </div>
-  )
+  );
 }

@@ -1,14 +1,14 @@
-import type { Metadata } from "next"
+import type { Metadata } from "next";
 
-import PageHeader from "@/components/page-header"
+import PageHeader from "@/components/page-header";
 
-import Card from "./card"
+import Card from "./card";
 
 export const metadata: Metadata = {
   title: "UI Layouts built with Tailwind CSS and React - Origin UI",
   description:
     "Beautiful UI layouts built with Tailwind CSS and React to help you get started with your next project.",
-}
+};
 
 const cards = [
   {
@@ -74,7 +74,7 @@ const cards = [
     cmd: "npx shadcn init https://ui-experiments-green.vercel.app/r/experiment-01.json",
     imgHeight: 894,
   },
-]
+];
 
 export default function Page() {
   return (
@@ -86,10 +86,10 @@ export default function Page() {
 
       {/* Cards */}
       <div className="space-y-16">
-        {cards.map((card) => (
+        {cards.map(card => (
           <Card key={card.id} card={card} />
         ))}
       </div>
     </>
-  )
+  );
 }

@@ -1,29 +1,29 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { CheckIcon, CopyIcon } from "lucide-react"
+import { CheckIcon, CopyIcon } from "lucide-react";
+import { useState } from "react";
 
-import { cn } from "@/registry/default/lib/utils"
-import { Button } from "@/registry/default/ui/button"
+import { cn } from "@/registry/default/lib/utils";
+import { Button } from "@/registry/default/ui/button";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/registry/default/ui/tooltip"
+} from "@/registry/default/ui/tooltip";
 
 export default function Component() {
-  const [copied, setCopied] = useState<boolean>(false)
+  const [copied, setCopied] = useState<boolean>(false);
 
   const handleCopy = async () => {
     try {
       // await navigator.clipboard.writeText("string to copy");
-      setCopied(true)
-      setTimeout(() => setCopied(false), 1500)
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
     } catch (err) {
-      console.error("Failed to copy text: ", err)
+      console.error("Failed to copy text: ", err);
     }
-  }
+  };
 
   return (
     <TooltipProvider delayDuration={0}>
@@ -64,5 +64,5 @@ export default function Component() {
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
-  )
+  );
 }

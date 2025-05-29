@@ -1,6 +1,5 @@
-"use client"
+"use client";
 
-import { useEffect, useId, useState } from "react"
 import {
   ColumnDef,
   flexRender,
@@ -10,7 +9,7 @@ import {
   PaginationState,
   SortingState,
   useReactTable,
-} from "@tanstack/react-table"
+} from "@tanstack/react-table";
 import {
   ChevronDownIcon,
   ChevronFirstIcon,
@@ -18,25 +17,26 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
   ChevronUpIcon,
-} from "lucide-react"
+} from "lucide-react";
+import { useEffect, useId, useState } from "react";
 
-import { cn } from "@/registry/default/lib/utils"
-import { Badge } from "@/registry/default/ui/badge"
-import { Button } from "@/registry/default/ui/button"
-import { Checkbox } from "@/registry/default/ui/checkbox"
-import { Label } from "@/registry/default/ui/label"
+import { cn } from "@/registry/default/lib/utils";
+import { Badge } from "@/registry/default/ui/badge";
+import { Button } from "@/registry/default/ui/button";
+import { Checkbox } from "@/registry/default/ui/checkbox";
+import { Label } from "@/registry/default/ui/label";
 import {
   Pagination,
   PaginationContent,
   PaginationItem,
-} from "@/registry/default/ui/pagination"
+} from "@/registry/default/ui/pagination";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/registry/default/ui/select"
+} from "@/registry/default/ui/select";
 import {
   Table,
   TableBody,
@@ -44,17 +44,17 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/default/ui/table"
+} from "@/registry/default/ui/table";
 
 type Item = {
-  id: string
-  name: string
-  email: string
-  location: string
-  flag: string
-  status: "Active" | "Inactive" | "Pending"
-  balance: number
-}
+  id: string;
+  name: string;
+  email: string;
+  location: string;
+  flag: string;
+  status: "Active" | "Inactive" | "Pending";
+  balance: number;
+};
 
 const columns: ColumnDef<Item>[] = [
   {
@@ -65,14 +65,14 @@ const columns: ColumnDef<Item>[] = [
           table.getIsAllPageRowsSelected() ||
           (table.getIsSomePageRowsSelected() && "indeterminate")
         }
-        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+        onCheckedChange={value => table.toggleAllPageRowsSelected(!!value)}
         aria-label="Select all"
       />
     ),
     cell: ({ row }) => (
       <Checkbox
         checked={row.getIsSelected()}
-        onCheckedChange={(value) => row.toggleSelected(!!value)}
+        onCheckedChange={value => row.toggleSelected(!!value)}
         aria-label="Select row"
       />
     ),
@@ -122,42 +122,42 @@ const columns: ColumnDef<Item>[] = [
     header: "Balance",
     accessorKey: "balance",
     cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("balance"))
+      const amount = parseFloat(row.getValue("balance"));
       const formatted = new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",
-      }).format(amount)
-      return formatted
+      }).format(amount);
+      return formatted;
     },
     size: 120,
   },
-]
+];
 
 export default function Component() {
-  const id = useId()
+  const id = useId();
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
     pageSize: 5,
-  })
+  });
 
   const [sorting, setSorting] = useState<SortingState>([
     {
       id: "name",
       desc: false,
     },
-  ])
+  ]);
 
-  const [data, setData] = useState<Item[]>([])
+  const [data, setData] = useState<Item[]>([]);
   useEffect(() => {
     async function fetchPosts() {
       const res = await fetch(
         "https://raw.githubusercontent.com/origin-space/origin-images/refs/heads/main/users-01_fertyx.json"
-      )
-      const data = await res.json()
-      setData([...data, ...data])
+      );
+      const data = await res.json();
+      setData([...data, ...data]);
     }
-    fetchPosts()
-  }, [])
+    fetchPosts();
+  }, []);
 
   const table = useReactTable({
     data,
@@ -172,16 +172,16 @@ export default function Component() {
       sorting,
       pagination,
     },
-  })
+  });
 
   return (
     <div className="space-y-4">
       <div className="bg-background overflow-hidden rounded-md border">
         <Table className="table-fixed">
           <TableHeader>
-            {table.getHeaderGroups().map((headerGroup) => (
+            {table.getHeaderGroups().map(headerGroup => (
               <TableRow key={headerGroup.id} className="hover:bg-transparent">
-                {headerGroup.headers.map((header) => {
+                {headerGroup.headers.map(header => {
                   return (
                     <TableHead
                       key={header.id}
@@ -195,14 +195,14 @@ export default function Component() {
                               "flex h-full cursor-pointer items-center justify-between gap-2 select-none"
                           )}
                           onClick={header.column.getToggleSortingHandler()}
-                          onKeyDown={(e) => {
+                          onKeyDown={e => {
                             // Enhanced keyboard handling for sorting
                             if (
                               header.column.getCanSort() &&
                               (e.key === "Enter" || e.key === " ")
                             ) {
-                              e.preventDefault()
-                              header.column.getToggleSortingHandler()?.(e)
+                              e.preventDefault();
+                              header.column.getToggleSortingHandler()?.(e);
                             }
                           }}
                           tabIndex={header.column.getCanSort() ? 0 : undefined}
@@ -235,19 +235,19 @@ export default function Component() {
                         )
                       )}
                     </TableHead>
-                  )
+                  );
                 })}
               </TableRow>
             ))}
           </TableHeader>
           <TableBody>
             {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map((row) => (
+              table.getRowModel().rows.map(row => (
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
                 >
-                  {row.getVisibleCells().map((cell) => (
+                  {row.getVisibleCells().map(cell => (
                     <TableCell key={cell.id}>
                       {flexRender(
                         cell.column.columnDef.cell,
@@ -280,15 +280,15 @@ export default function Component() {
           </Label>
           <Select
             value={table.getState().pagination.pageSize.toString()}
-            onValueChange={(value) => {
-              table.setPageSize(Number(value))
+            onValueChange={value => {
+              table.setPageSize(Number(value));
             }}
           >
             <SelectTrigger id={id} className="w-fit whitespace-nowrap">
               <SelectValue placeholder="Select number of results" />
             </SelectTrigger>
             <SelectContent className="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2">
-              {[5, 10, 25, 50].map((pageSize) => (
+              {[5, 10, 25, 50].map(pageSize => (
                 <SelectItem key={pageSize} value={pageSize.toString()}>
                   {pageSize}
                 </SelectItem>
@@ -395,5 +395,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  )
+  );
 }

@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { getLocalTimeZone, today } from "@internationalized/date"
-import type { DateRange } from "react-aria-components"
+import { getLocalTimeZone, today } from "@internationalized/date";
+import { useState } from "react";
+import type { DateRange } from "react-aria-components";
 
-import { RangeCalendar } from "@/registry/default/ui/calendar-rac"
+import { RangeCalendar } from "@/registry/default/ui/calendar-rac";
 
 export default function Component() {
-  const now = today(getLocalTimeZone())
+  const now = today(getLocalTimeZone());
   const [date, setDate] = useState<DateRange | null>({
     start: now,
     end: now.add({ days: 3 }),
-  })
+  });
 
   return (
     <div>
@@ -36,5 +36,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  )
+  );
 }

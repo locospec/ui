@@ -7,19 +7,19 @@ import {
   GaugeIcon,
   LucideIcon,
   ZapIcon,
-} from "lucide-react"
+} from "lucide-react";
 
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/registry/default/ui/accordion"
+} from "@/registry/default/ui/accordion";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/registry/default/ui/collapsible"
+} from "@/registry/default/ui/collapsible";
 
 const items = [
   {
@@ -99,14 +99,14 @@ const items = [
       },
     ],
   },
-]
+];
 
 export default function Component() {
   return (
     <div className="space-y-4">
       <h2 className="text-xl font-bold">Multi-level w/ icon</h2>
       <Accordion type="single" collapsible className="w-full" defaultValue="3">
-        {items.map((item) => (
+        {items.map(item => (
           <AccordionItem
             value={item.id}
             key={item.id}
@@ -137,7 +137,7 @@ export default function Component() {
         ))}
       </Accordion>
     </div>
-  )
+  );
 }
 
 function CollapsibleDemo({
@@ -146,10 +146,10 @@ function CollapsibleDemo({
   open,
   icon: Icon,
 }: {
-  title: string
-  content: string
-  open?: boolean
-  icon: LucideIcon
+  title: string;
+  content: string;
+  open?: boolean;
+  icon: LucideIcon;
 }) {
   return (
     <Collapsible className="border-t py-3 ps-6 pe-4" defaultOpen={open}>
@@ -168,5 +168,5 @@ function CollapsibleDemo({
         {content}
       </CollapsibleContent>
     </Collapsible>
-  )
+  );
 }

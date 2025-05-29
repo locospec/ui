@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import * as ToastPrimitives from "@radix-ui/react-toast"
-import { cva, type VariantProps } from "class-variance-authority"
-import { XIcon } from "lucide-react"
+import * as ToastPrimitives from "@radix-ui/react-toast";
+import { cva, type VariantProps } from "class-variance-authority";
+import { XIcon } from "lucide-react";
+import * as React from "react";
 
-import { cn } from "@/registry/default/lib/utils"
+import { cn } from "@/registry/default/lib/utils";
 
-const ToastProvider = ToastPrimitives.Provider
+const ToastProvider = ToastPrimitives.Provider;
 
 function ToastViewport({
   className,
@@ -21,7 +21,7 @@ function ToastViewport({
       )}
       {...props}
     />
-  )
+  );
 }
 
 const toastVariants = cva(
@@ -38,7 +38,7 @@ const toastVariants = cva(
       variant: "default",
     },
   }
-)
+);
 
 function Toast({
   className,
@@ -51,7 +51,7 @@ function Toast({
       className={cn(toastVariants({ variant }), className)}
       {...props}
     />
-  )
+  );
 }
 
 function ToastAction({
@@ -71,7 +71,7 @@ function ToastAction({
     >
       {props.children}
     </ToastPrimitives.Action>
-  )
+  );
 }
 
 function ToastClose({
@@ -100,7 +100,7 @@ function ToastClose({
         />
       )}
     </ToastPrimitives.Close>
-  )
+  );
 }
 
 function ToastTitle({
@@ -112,7 +112,7 @@ function ToastTitle({
       className={cn("text-sm font-medium", className)}
       {...props}
     />
-  )
+  );
 }
 
 function ToastDescription({
@@ -124,12 +124,12 @@ function ToastDescription({
       className={cn("text-muted-foreground text-sm", className)}
       {...props}
     />
-  )
+  );
 }
 
-type ToastProps = React.ComponentPropsWithoutRef<typeof Toast>
+type ToastProps = React.ComponentPropsWithoutRef<typeof Toast>;
 
-type ToastActionElement = React.ReactElement<typeof ToastAction>
+type ToastActionElement = React.ReactElement<typeof ToastAction>;
 
 export {
   Toast,
@@ -141,4 +141,4 @@ export {
   ToastViewport,
   type ToastActionElement,
   type ToastProps,
-}
+};

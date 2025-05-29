@@ -1,18 +1,18 @@
-import { BoxIcon, HouseIcon, PanelsTopLeftIcon } from "lucide-react"
+import { BoxIcon, HouseIcon, PanelsTopLeftIcon } from "lucide-react";
 
-import { Badge } from "@/registry/default/ui/badge"
+import { Badge } from "@/registry/default/ui/badge";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/registry/default/ui/tabs"
+} from "@/registry/default/ui/tabs";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/registry/default/ui/tooltip"
+} from "@/registry/default/ui/tooltip";
 
 export default function Component() {
   return (
@@ -88,5 +88,5 @@ export default function Component() {
         </TabsContent>
       </div>
     </Tabs>
-  )
+  );
 }

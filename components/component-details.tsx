@@ -1,75 +1,75 @@
-"use client"
+"use client";
 
-import { JSX, useEffect, useState } from "react"
-import { DialogDescription } from "@radix-ui/react-dialog"
-import { CodeIcon } from "lucide-react"
-import type { RegistryItem } from "shadcn/registry"
+import { DialogDescription } from "@radix-ui/react-dialog";
+import { CodeIcon } from "lucide-react";
+import { JSX, useEffect, useState } from "react";
+import type { RegistryItem } from "shadcn/registry";
 
-import { convertRegistryPaths } from "@/lib/utils"
-import ComponentCli from "@/components/cli-commands"
-import CodeBlock, { highlight } from "@/components/code-block"
-import CopyButton from "@/components/copy-button"
-import OpenInV0 from "@/components/open-in-v0"
-import { Button } from "@/registry/default/ui/button"
+import ComponentCli from "@/components/cli-commands";
+import CodeBlock, { highlight } from "@/components/code-block";
+import CopyButton from "@/components/copy-button";
+import OpenInV0 from "@/components/open-in-v0";
+import { convertRegistryPaths } from "@/lib/utils";
+import { Button } from "@/registry/default/ui/button";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/registry/default/ui/dialog"
+} from "@/registry/default/ui/dialog";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/registry/default/ui/tooltip"
+} from "@/registry/default/ui/tooltip";
 
 export default function ComponentDetails({
   component,
 }: {
-  component: RegistryItem
+  component: RegistryItem;
 }) {
-  const [code, setCode] = useState<string | null>(null)
+  const [code, setCode] = useState<string | null>(null);
   const [highlightedCode, setHighlightedCode] = useState<JSX.Element | null>(
     null
-  )
+  );
 
   useEffect(() => {
     const handleEmptyCode = () => {
-      setCode("")
-      setHighlightedCode(null)
-    }
+      setCode("");
+      setHighlightedCode(null);
+    };
 
     const loadCode = async () => {
       try {
-        const response = await fetch(`/r/${component.name}.json`)
+        const response = await fetch(`/r/${component.name}.json`);
         if (!response.ok) {
-          handleEmptyCode()
-          return
+          handleEmptyCode();
+          return;
         }
 
-        const contentType = response.headers.get("content-type")
+        const contentType = response.headers.get("content-type");
         if (!contentType || !contentType.includes("application/json")) {
-          handleEmptyCode()
-          return
+          handleEmptyCode();
+          return;
         }
 
-        const data = await response.json()
-        const codeContent = convertRegistryPaths(data.files[0].content) || ""
-        setCode(codeContent)
+        const data = await response.json();
+        const codeContent = convertRegistryPaths(data.files[0].content) || "";
+        setCode(codeContent);
 
         // Pre-highlight the code
-        const highlighted = await highlight(codeContent, "tsx")
-        setHighlightedCode(highlighted)
+        const highlighted = await highlight(codeContent, "tsx");
+        setHighlightedCode(highlighted);
       } catch (error) {
-        console.error("Failed to load code:", error)
-        handleEmptyCode()
+        console.error("Failed to load code:", error);
+        handleEmptyCode();
       }
-    }
+    };
 
-    loadCode()
-  }, [component.name])
+    loadCode();
+  }, [component.name]);
 
   return (
     <div className="absolute top-2 right-2 flex gap-2 peer-data-comp-loading:hidden">
@@ -138,5 +138,5 @@ export default function ComponentDetails({
         </DialogContent>
       </Dialog>
     </div>
-  )
+  );
 }

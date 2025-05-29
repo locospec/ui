@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import { useState } from "react"
+import { useState } from "react";
 
-import { Label } from "@/registry/default/ui/label"
-import { Slider } from "@/registry/default/ui/slider"
+import { Label } from "@/registry/default/ui/label";
+import { Slider } from "@/registry/default/ui/slider";
 
 export default function Component() {
-  const [value, setValue] = useState([3])
+  const [value, setValue] = useState([3]);
 
-  const labels = ["Awful", "Poor", "Okay", "Good", "Amazing"]
+  const labels = ["Awful", "Poor", "Okay", "Good", "Amazing"];
 
   return (
     <div className="space-y-3">
@@ -28,5 +28,5 @@ export default function Component() {
         <span className="text-2xl">😍</span>
       </div>
     </div>
-  )
+  );
 }

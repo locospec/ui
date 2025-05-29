@@ -1,7 +1,13 @@
-"use client"
+"use client";
 
-import { MinusIcon, PlusIcon } from "lucide-react"
-import { Button, Group, Input, Label, NumberField } from "react-aria-components"
+import { MinusIcon, PlusIcon } from "lucide-react";
+import {
+  Button,
+  Group,
+  Input,
+  Label,
+  NumberField,
+} from "react-aria-components";
 
 export default function Component() {
   return (
@@ -42,5 +48,5 @@ export default function Component() {
         </a>
       </p>
     </NumberField>
-  )
+  );
 }

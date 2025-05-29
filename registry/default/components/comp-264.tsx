@@ -1,27 +1,27 @@
-"use client"
+"use client";
 
-import React, { useRef } from "react"
-import { RotateCcwIcon } from "lucide-react"
+import { RotateCcwIcon } from "lucide-react";
+import React, { useRef } from "react";
 
-import { useSliderWithInput } from "@/registry/default/hooks/use-slider-with-input"
-import { Button } from "@/registry/default/ui/button"
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
-import { Slider } from "@/registry/default/ui/slider"
+import { useSliderWithInput } from "@/registry/default/hooks/use-slider-with-input";
+import { Button } from "@/registry/default/ui/button";
+import { Input } from "@/registry/default/ui/input";
+import { Label } from "@/registry/default/ui/label";
+import { Slider } from "@/registry/default/ui/slider";
 
 export default function Component() {
   // Create refs to store reset functions
-  const resetFunctionsRef = useRef<(() => void)[]>([])
+  const resetFunctionsRef = useRef<(() => void)[]>([]);
 
   // Function to reset all sliders to default
   const resetAll = () => {
-    resetFunctionsRef.current.forEach((resetFn) => resetFn())
-  }
+    resetFunctionsRef.current.forEach(resetFn => resetFn());
+  };
 
   // Function to register reset functions
   const registerResetFunction = (resetFn: () => void, index: number) => {
-    resetFunctionsRef.current[index] = resetFn
-  }
+    resetFunctionsRef.current[index] = resetFn;
+  };
 
   return (
     <div className="space-y-4">
@@ -35,7 +35,7 @@ export default function Component() {
           initialValue={[-2]}
           defaultValue={[0]}
           label="X"
-          onRegisterReset={(resetFn) => registerResetFunction(resetFn, 0)}
+          onRegisterReset={resetFn => registerResetFunction(resetFn, 0)}
         />
         <SliderWithInput
           minValue={-10}
@@ -43,7 +43,7 @@ export default function Component() {
           initialValue={[4]}
           defaultValue={[0]}
           label="Y"
-          onRegisterReset={(resetFn) => registerResetFunction(resetFn, 1)}
+          onRegisterReset={resetFn => registerResetFunction(resetFn, 1)}
         />
         <SliderWithInput
           minValue={-10}
@@ -51,7 +51,7 @@ export default function Component() {
           initialValue={[2]}
           defaultValue={[0]}
           label="Z"
-          onRegisterReset={(resetFn) => registerResetFunction(resetFn, 2)}
+          onRegisterReset={resetFn => registerResetFunction(resetFn, 2)}
         />
       </div>
       <Button className="w-full" variant="outline" onClick={resetAll}>
@@ -63,7 +63,7 @@ export default function Component() {
         Reset
       </Button>
     </div>
-  )
+  );
 }
 
 function SliderWithInput({
@@ -74,12 +74,12 @@ function SliderWithInput({
   label,
   onRegisterReset,
 }: {
-  minValue: number
-  maxValue: number
-  initialValue: number[]
-  defaultValue: number[]
-  label: string
-  onRegisterReset: (resetFn: () => void) => void
+  minValue: number;
+  maxValue: number;
+  initialValue: number[];
+  defaultValue: number[];
+  label: string;
+  onRegisterReset: (resetFn: () => void) => void;
 }) {
   const {
     sliderValue,
@@ -88,12 +88,12 @@ function SliderWithInput({
     handleInputChange,
     handleSliderChange,
     resetToDefault,
-  } = useSliderWithInput({ minValue, maxValue, initialValue, defaultValue })
+  } = useSliderWithInput({ minValue, maxValue, initialValue, defaultValue });
 
   // Register the reset function when the component mounts
   React.useEffect(() => {
-    onRegisterReset(resetToDefault)
-  }, [onRegisterReset, resetToDefault])
+    onRegisterReset(resetToDefault);
+  }, [onRegisterReset, resetToDefault]);
 
   return (
     <div className="flex items-center gap-2">
@@ -111,15 +111,15 @@ function SliderWithInput({
         type="text"
         inputMode="decimal"
         value={inputValues[0]}
-        onChange={(e) => handleInputChange(e, 0)}
+        onChange={e => handleInputChange(e, 0)}
         onBlur={() => validateAndUpdateValue(inputValues[0], 0)}
-        onKeyDown={(e) => {
+        onKeyDown={e => {
           if (e.key === "Enter") {
-            validateAndUpdateValue(inputValues[0], 0)
+            validateAndUpdateValue(inputValues[0], 0);
           }
         }}
         aria-label="Enter value"
       />
     </div>
-  )
+  );
 }

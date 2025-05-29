@@ -1,6 +1,5 @@
-"use client"
+"use client";
 
-import { useState } from "react"
 import {
   MinusIcon,
   PlusIcon,
@@ -8,15 +7,16 @@ import {
   Volume2Icon,
   VolumeIcon,
   VolumeXIcon,
-} from "lucide-react"
+} from "lucide-react";
+import { useState } from "react";
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/default/ui/button";
 
 export default function Component() {
-  const [volume, setVolume] = useState(3) // Initialize volume state (0-9)
+  const [volume, setVolume] = useState(3); // Initialize volume state (0-9)
 
-  const decreaseVolume = () => setVolume((prev) => Math.max(0, prev - 1))
-  const increaseVolume = () => setVolume((prev) => Math.min(6, prev + 1))
+  const decreaseVolume = () => setVolume(prev => Math.max(0, prev - 1));
+  const increaseVolume = () => setVolume(prev => Math.min(6, prev + 1));
 
   // Optimized volume icon selection
   const Icon =
@@ -26,7 +26,7 @@ export default function Component() {
         ? VolumeIcon
         : volume < 5
           ? Volume1Icon
-          : Volume2Icon
+          : Volume2Icon;
 
   return (
     <div
@@ -67,5 +67,5 @@ export default function Component() {
         <PlusIcon size={16} aria-hidden="true" />
       </Button>
     </div>
-  )
+  );
 }

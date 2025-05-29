@@ -1,19 +1,19 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { DropdownNavProps, DropdownProps } from "react-day-picker"
+import { useState } from "react";
+import { DropdownNavProps, DropdownProps } from "react-day-picker";
 
-import { Calendar } from "@/registry/default/ui/calendar"
+import { Calendar } from "@/registry/default/ui/calendar";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/registry/default/ui/select"
+} from "@/registry/default/ui/select";
 
 export default function Component() {
-  const [date, setDate] = useState<Date | undefined>(new Date())
+  const [date, setDate] = useState<Date | undefined>(new Date());
 
   const handleCalendarChange = (
     _value: string | number,
@@ -23,9 +23,9 @@ export default function Component() {
       target: {
         value: String(_value),
       },
-    } as React.ChangeEvent<HTMLSelectElement>
-    _e(_event)
-  }
+    } as React.ChangeEvent<HTMLSelectElement>;
+    _e(_event);
+  };
 
   return (
     <div>
@@ -43,15 +43,15 @@ export default function Component() {
               <div className="flex w-full items-center justify-center gap-3 [&>span]:text-sm [&>span]:font-medium">
                 {props.children}
               </div>
-            )
+            );
           },
           YearsDropdown: (props: DropdownProps) => {
             return (
               <Select
                 value={String(props.value)}
-                onValueChange={(value) => {
+                onValueChange={value => {
                   if (props.onChange) {
-                    handleCalendarChange(value, props.onChange)
+                    handleCalendarChange(value, props.onChange);
                   }
                 }}
               >
@@ -59,7 +59,7 @@ export default function Component() {
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="max-h-[min(26rem,var(--radix-select-content-available-height))]">
-                  {props.options?.map((option) => (
+                  {props.options?.map(option => (
                     <SelectItem
                       key={option.value}
                       value={String(option.value)}
@@ -70,7 +70,7 @@ export default function Component() {
                   ))}
                 </SelectContent>
               </Select>
-            )
+            );
           },
         }}
       />
@@ -90,5 +90,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  )
+  );
 }

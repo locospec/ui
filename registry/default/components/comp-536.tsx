@@ -7,7 +7,7 @@ import {
   TimelineItem,
   TimelineSeparator,
   TimelineTitle,
-} from "@/registry/default/ui/timeline"
+} from "@/registry/default/ui/timeline";
 
 const items = [
   {
@@ -45,12 +45,12 @@ const items = [
     description: "The issue has been fixed. Please review the changes.",
     image: "/avatar-40-05.jpg",
   },
-]
+];
 
 export default function Component() {
   return (
     <Timeline>
-      {items.map((item) => (
+      {items.map(item => (
         <TimelineItem
           key={item.id}
           step={item.id}
@@ -79,5 +79,5 @@ export default function Component() {
         </TimelineItem>
       ))}
     </Timeline>
-  )
+  );
 }

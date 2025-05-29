@@ -1,9 +1,9 @@
-import Image from "next/image"
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
 
-import { categories } from "@/config/components"
-import SearchButton from "@/components/search-button"
-import { SubscribeBottom } from "@/components/subscribe-form"
+import SearchButton from "@/components/search-button";
+import { SubscribeBottom } from "@/components/subscribe-form";
+import { categories } from "@/config/components";
 
 export default function Page() {
   return (
@@ -23,11 +23,11 @@ export default function Page() {
         <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {categories
             .sort((a, b) => {
-              if (a.isNew && !b.isNew) return -1
-              if (!a.isNew && b.isNew) return 1
-              return 0
+              if (a.isNew && !b.isNew) return -1;
+              if (!a.isNew && b.isNew) return 1;
+              return 0;
             })
-            .map((category) => (
+            .map(category => (
               <CategoryCard
                 key={category.slug}
                 slug={category.slug}
@@ -41,15 +41,15 @@ export default function Page() {
 
       <SubscribeBottom />
     </div>
-  )
+  );
 }
 
 type CategoryCardProps = {
-  slug: string
-  name: string
-  componentsCount?: number
-  isNew?: boolean
-}
+  slug: string;
+  name: string;
+  componentsCount?: number;
+  isNew?: boolean;
+};
 
 function CategoryCard({
   slug,
@@ -57,10 +57,10 @@ function CategoryCard({
   componentsCount,
   isNew = false,
 }: CategoryCardProps) {
-  const href = `/${slug}`
-  const imageBasePath = `/thumbs/${slug}`
-  const alt = `${name} components`
-  const isComingSoon = componentsCount === undefined
+  const href = `/${slug}`;
+  const imageBasePath = `/thumbs/${slug}`;
+  const alt = `${name} components`;
+  const isComingSoon = componentsCount === undefined;
 
   return (
     <div className="space-y-3 text-center">
@@ -117,13 +117,13 @@ function CategoryCard({
         </p>
       </div>
     </div>
-  )
+  );
 }
 
 type ImageComponentProps = {
-  imageBasePath: string
-  alt: string
-}
+  imageBasePath: string;
+  alt: string;
+};
 
 function ImageComponent({ imageBasePath, alt }: ImageComponentProps) {
   return (
@@ -143,5 +143,5 @@ function ImageComponent({ imageBasePath, alt }: ImageComponentProps) {
         height={198}
       />
     </>
-  )
+  );
 }

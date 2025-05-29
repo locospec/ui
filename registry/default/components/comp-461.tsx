@@ -1,21 +1,21 @@
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react"
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 
-import { usePagination } from "@/registry/default/hooks/use-pagination"
-import { cn } from "@/registry/default/lib/utils"
-import { buttonVariants } from "@/registry/default/ui/button"
+import { usePagination } from "@/registry/default/hooks/use-pagination";
+import { cn } from "@/registry/default/lib/utils";
+import { buttonVariants } from "@/registry/default/ui/button";
 import {
   Pagination,
   PaginationContent,
   PaginationEllipsis,
   PaginationItem,
   PaginationLink,
-} from "@/registry/default/ui/pagination"
+} from "@/registry/default/ui/pagination";
 
 type PaginationProps = {
-  currentPage: number
-  totalPages: number
-  paginationItemsToDisplay?: number
-}
+  currentPage: number;
+  totalPages: number;
+  paginationItemsToDisplay?: number;
+};
 
 export default function Component({
   currentPage,
@@ -26,7 +26,7 @@ export default function Component({
     currentPage,
     totalPages,
     paginationItemsToDisplay,
-  })
+  });
 
   return (
     <Pagination>
@@ -57,7 +57,7 @@ export default function Component({
         )}
 
         {/* Page number links */}
-        {pages.map((page) => (
+        {pages.map(page => (
           <PaginationItem key={page}>
             <PaginationLink
               className={cn(
@@ -112,5 +112,5 @@ export default function Component({
         </PaginationItem>
       </PaginationContent>
     </Pagination>
-  )
+  );
 }

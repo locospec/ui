@@ -1,21 +1,21 @@
-"use client"
+"use client";
 
-import React, { useState } from "react"
 import {
   hotkeysCoreFeature,
   renamingFeature,
   selectionFeature,
   syncDataLoaderFeature,
-} from "@headless-tree/core"
-import { useTree } from "@headless-tree/react"
-import { FileIcon, FolderIcon, FolderOpenIcon } from "lucide-react"
+} from "@headless-tree/core";
+import { useTree } from "@headless-tree/react";
+import { FileIcon, FolderIcon, FolderOpenIcon } from "lucide-react";
+import { useState } from "react";
 
-import { Input } from "@/registry/default/ui/input"
-import { Tree, TreeItem, TreeItemLabel } from "@/registry/default/ui/tree"
+import { Input } from "@/registry/default/ui/input";
+import { Tree, TreeItem, TreeItemLabel } from "@/registry/default/ui/tree";
 
 interface Item {
-  name: string
-  children?: string[]
+  name: string;
+  children?: string[];
 }
 
 // Initial data
@@ -47,12 +47,12 @@ const initialItems: Record<string, Item> = {
   operations: { name: "Operations", children: ["hr", "finance"] },
   hr: { name: "HR" },
   finance: { name: "Finance" },
-}
+};
 
-const indent = 20
+const indent = 20;
 
 export default function Component() {
-  const [items, setItems] = useState(initialItems)
+  const [items, setItems] = useState(initialItems);
 
   const tree = useTree<Item>({
     initialState: {
@@ -60,22 +60,22 @@ export default function Component() {
     },
     indent,
     rootItemId: "company",
-    getItemName: (item) => item.getItemData().name,
-    isItemFolder: (item) => (item.getItemData()?.children?.length ?? 0) > 0,
+    getItemName: item => item.getItemData().name,
+    isItemFolder: item => (item.getItemData()?.children?.length ?? 0) > 0,
     dataLoader: {
-      getItem: (itemId) => items[itemId],
-      getChildren: (itemId) => items[itemId].children ?? [],
+      getItem: itemId => items[itemId],
+      getChildren: itemId => items[itemId].children ?? [],
     },
     onRename: (item, newName) => {
       // Update the item name in our state
-      const itemId = item.getId()
-      setItems((prevItems) => ({
+      const itemId = item.getId();
+      setItems(prevItems => ({
         ...prevItems,
         [itemId]: {
           ...prevItems[itemId],
           name: newName,
         },
-      }))
+      }));
     },
     features: [
       syncDataLoaderFeature,
@@ -83,12 +83,12 @@ export default function Component() {
       renamingFeature,
       selectionFeature,
     ],
-  })
+  });
 
   return (
     <div className="flex h-full flex-col gap-2 *:first:grow">
       <Tree indent={indent} tree={tree}>
-        {tree.getItems().map((item) => {
+        {tree.getItems().map(item => {
           return (
             <TreeItem key={item.getId()} item={item}>
               <TreeItemLabel>
@@ -114,7 +114,7 @@ export default function Component() {
                 </span>
               </TreeItemLabel>
             </TreeItem>
-          )
+          );
         })}
       </Tree>
 
@@ -134,5 +134,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  )
+  );
 }

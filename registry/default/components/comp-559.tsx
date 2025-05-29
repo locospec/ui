@@ -3,7 +3,7 @@ import {
   CropperCropArea,
   CropperDescription,
   CropperImage,
-} from "@/registry/default/ui/cropper"
+} from "@/registry/default/ui/cropper";
 
 export default function Component() {
   return (
@@ -33,5 +33,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  )
+  );
 }

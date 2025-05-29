@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { useId } from "react"
-import { CreditCardIcon } from "lucide-react"
-import { usePaymentInputs } from "react-payment-inputs"
+import { CreditCardIcon } from "lucide-react";
+import { useId } from "react";
+import { usePaymentInputs } from "react-payment-inputs";
 
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
+import { Input } from "@/registry/default/ui/input";
+import { Label } from "@/registry/default/ui/label";
 
 export default function Component() {
-  const id = useId()
-  const { getCardNumberProps } = usePaymentInputs()
+  const id = useId();
+  const { getCardNumberProps } = usePaymentInputs();
 
   return (
     <div className="*:not-first:mt-2">
@@ -40,5 +40,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  )
+  );
 }

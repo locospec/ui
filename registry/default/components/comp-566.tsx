@@ -1,14 +1,13 @@
-"use client"
+"use client";
 
-import React from "react"
-import { hotkeysCoreFeature, syncDataLoaderFeature } from "@headless-tree/core"
-import { useTree } from "@headless-tree/react"
+import { hotkeysCoreFeature, syncDataLoaderFeature } from "@headless-tree/core";
+import { useTree } from "@headless-tree/react";
 
-import { Tree, TreeItem, TreeItemLabel } from "@/registry/default/ui/tree"
+import { Tree, TreeItem, TreeItemLabel } from "@/registry/default/ui/tree";
 
 interface Item {
-  name: string
-  children?: string[]
+  name: string;
+  children?: string[];
 }
 
 const items: Record<string, Item> = {
@@ -39,9 +38,9 @@ const items: Record<string, Item> = {
   operations: { name: "Operations", children: ["hr", "finance"] },
   hr: { name: "HR" },
   finance: { name: "Finance" },
-}
+};
 
-const indent = 20
+const indent = 20;
 
 export default function Component() {
   const tree = useTree<Item>({
@@ -50,14 +49,14 @@ export default function Component() {
     },
     indent,
     rootItemId: "company",
-    getItemName: (item) => item.getItemData().name,
-    isItemFolder: (item) => (item.getItemData()?.children?.length ?? 0) > 0,
+    getItemName: item => item.getItemData().name,
+    isItemFolder: item => (item.getItemData()?.children?.length ?? 0) > 0,
     dataLoader: {
-      getItem: (itemId) => items[itemId],
-      getChildren: (itemId) => items[itemId].children ?? [],
+      getItem: itemId => items[itemId],
+      getChildren: itemId => items[itemId].children ?? [],
     },
     features: [syncDataLoaderFeature, hotkeysCoreFeature],
-  })
+  });
 
   return (
     <div className="flex h-full flex-col gap-2 *:first:grow">
@@ -67,12 +66,12 @@ export default function Component() {
           indent={indent}
           tree={tree}
         >
-          {tree.getItems().map((item) => {
+          {tree.getItems().map(item => {
             return (
               <TreeItem key={item.getId()} item={item}>
                 <TreeItemLabel className="before:bg-background relative before:absolute before:inset-x-0 before:-inset-y-0.5 before:-z-10" />
               </TreeItem>
-            )
+            );
           })}
         </Tree>
       </div>
@@ -93,5 +92,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  )
+  );
 }

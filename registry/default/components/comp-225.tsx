@@ -1,6 +1,6 @@
-import { useId } from "react"
+import { useId } from "react";
 
-import { Label } from "@/registry/default/ui/label"
+import { Label } from "@/registry/default/ui/label";
 import {
   Select,
   SelectContent,
@@ -9,7 +9,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/registry/default/ui/select"
+} from "@/registry/default/ui/select";
 
 const countries = [
   {
@@ -51,10 +51,10 @@ const countries = [
       { value: "14", label: "New Zealand", flag: "🇳🇿" },
     ],
   },
-]
+];
 
 export default function Component() {
-  const id = useId()
+  const id = useId();
   return (
     <div className="*:not-first:mt-2">
       <Label htmlFor={id}>Options with flag</Label>
@@ -66,10 +66,10 @@ export default function Component() {
           <SelectValue placeholder="Select framework" />
         </SelectTrigger>
         <SelectContent className="[&_*[role=option]>span>svg]:text-muted-foreground/80 [&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2 [&_*[role=option]>span]:flex [&_*[role=option]>span]:items-center [&_*[role=option]>span]:gap-2 [&_*[role=option]>span>svg]:shrink-0">
-          {countries.map((continent) => (
+          {countries.map(continent => (
             <SelectGroup key={continent.continent}>
               <SelectLabel className="ps-2">{continent.continent}</SelectLabel>
-              {continent.items.map((item) => (
+              {continent.items.map(item => (
                 <SelectItem key={item.value} value={item.value}>
                   <span className="text-lg leading-none">{item.flag}</span>{" "}
                   <span className="truncate">{item.label}</span>
@@ -80,5 +80,5 @@ export default function Component() {
         </SelectContent>
       </Select>
     </div>
-  )
+  );
 }

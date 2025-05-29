@@ -1,7 +1,7 @@
-import * as React from "react"
-import { ChevronDownIcon } from "lucide-react"
+import { ChevronDownIcon } from "lucide-react";
+import * as React from "react";
 
-import { cn } from "@/registry/default/lib/utils"
+import { cn } from "@/registry/default/lib/utils";
 
 const SelectNative = ({
   className,
@@ -29,7 +29,7 @@ const SelectNative = ({
         </span>
       )}
     </div>
-  )
-}
+  );
+};
 
-export { SelectNative }
+export { SelectNative };

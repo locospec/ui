@@ -2,7 +2,7 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/registry/default/ui/avatar"
+} from "@/registry/default/ui/avatar";
 
 export default function Component() {
   return (
@@ -15,5 +15,5 @@ export default function Component() {
         <span className="sr-only">Offline</span>
       </span>
     </div>
-  )
+  );
 }

@@ -1,18 +1,18 @@
-"use client"
+"use client";
 
-import React from "react"
+import React from "react";
 
 import {
   Cropper,
   CropperCropArea,
   CropperDescription,
   CropperImage,
-} from "@/registry/default/ui/cropper"
+} from "@/registry/default/ui/cropper";
 
-type Area = { x: number; y: number; width: number; height: number }
+type Area = { x: number; y: number; width: number; height: number };
 
 export default function Component() {
-  const [cropData, setCropData] = React.useState<Area | null>(null)
+  const [cropData, setCropData] = React.useState<Area | null>(null);
 
   return (
     <div className="flex flex-col items-center gap-2">
@@ -51,5 +51,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  )
+  );
 }

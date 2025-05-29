@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import Link from "next/link"
+import Link from "next/link";
 
-import { cn } from "@/registry/default/lib/utils"
-import { buttonVariants } from "@/registry/default/ui/button"
+import { cn } from "@/registry/default/lib/utils";
+import { buttonVariants } from "@/registry/default/ui/button";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/registry/default/ui/tooltip"
+} from "@/registry/default/ui/tooltip";
 
 const OpenInV0 = ({ componentSource }: { componentSource: string }) => {
   return (
@@ -49,7 +49,7 @@ const OpenInV0 = ({ componentSource }: { componentSource: string }) => {
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
-  )
-}
+  );
+};
 
-export default OpenInV0
+export default OpenInV0;

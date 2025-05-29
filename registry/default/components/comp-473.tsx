@@ -1,6 +1,6 @@
-import { useId } from "react"
+import { useId } from "react";
 
-import { Checkbox } from "@/registry/default/ui/checkbox"
+import { Checkbox } from "@/registry/default/ui/checkbox";
 import {
   Table,
   TableBody,
@@ -9,7 +9,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/default/ui/table"
+} from "@/registry/default/ui/table";
 
 const items = [
   {
@@ -52,10 +52,10 @@ const items = [
     status: "Active",
     balance: "-$1,000.00",
   },
-]
+];
 
 export default function Component() {
-  const id = useId()
+  const id = useId();
   return (
     <div>
       <div className="bg-background overflow-hidden rounded-md border">
@@ -73,7 +73,7 @@ export default function Component() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {items.map((item) => (
+            {items.map(item => (
               <TableRow key={item.id}>
                 <TableCell>
                   <Checkbox id={`table-checkbox-${item.id}`} />
@@ -98,5 +98,5 @@ export default function Component() {
         Card Table
       </p>
     </div>
-  )
+  );
 }

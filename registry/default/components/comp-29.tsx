@@ -1,7 +1,13 @@
-"use client"
+"use client";
 
-import { ChevronDownIcon, ChevronUpIcon } from "lucide-react"
-import { Button, Group, Input, Label, NumberField } from "react-aria-components"
+import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
+import {
+  Button,
+  Group,
+  Input,
+  Label,
+  NumberField,
+} from "react-aria-components";
 
 export default function Component() {
   return (
@@ -51,5 +57,5 @@ export default function Component() {
         </a>
       </p>
     </NumberField>
-  )
+  );
 }

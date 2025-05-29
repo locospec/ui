@@ -4,20 +4,20 @@ import {
   MessageCircleIcon,
   PencilIcon,
   PlusIcon,
-} from "lucide-react"
+} from "lucide-react";
 
 import {
   Timeline,
   TimelineContent,
   TimelineItem,
-} from "@/registry/default/ui/timeline"
+} from "@/registry/default/ui/timeline";
 
 const items: {
-  id: number
-  user: string
-  image: string
-  action: ActionType
-  date: Date
+  id: number;
+  user: string;
+  image: string;
+  action: ActionType;
+  date: Date;
 }[] = [
   {
     id: 1,
@@ -47,9 +47,9 @@ const items: {
     action: "create",
     date: new Date(Date.now() - 600000), // 10 minutes ago
   },
-]
+];
 
-type ActionType = "post" | "reply" | "edit" | "create"
+type ActionType = "post" | "reply" | "edit" | "create";
 
 function getActionIcon(action: ActionType): LucideIcon {
   const icons: Record<ActionType, LucideIcon> = {
@@ -57,8 +57,8 @@ function getActionIcon(action: ActionType): LucideIcon {
     reply: MessageCircleIcon,
     edit: PencilIcon,
     create: PlusIcon,
-  }
-  return icons[action]
+  };
+  return icons[action];
 }
 
 function getActionText(action: ActionType): string {
@@ -67,25 +67,25 @@ function getActionText(action: ActionType): string {
     reply: "replied to a comment",
     edit: "edited a post",
     create: "created a new project",
-  }
-  return texts[action]
+  };
+  return texts[action];
 }
 
 function getRelativeTimeString(date: Date): string {
-  const now = new Date()
-  const diffInSeconds = Math.floor((now.getTime() - date.getTime()) / 1000)
+  const now = new Date();
+  const diffInSeconds = Math.floor((now.getTime() - date.getTime()) / 1000);
 
   if (diffInSeconds < 60) {
-    return `${diffInSeconds} seconds ago`
+    return `${diffInSeconds} seconds ago`;
   } else if (diffInSeconds < 3600) {
-    const minutes = Math.floor(diffInSeconds / 60)
-    return `${minutes} ${minutes === 1 ? "minute" : "minutes"} ago`
+    const minutes = Math.floor(diffInSeconds / 60);
+    return `${minutes} ${minutes === 1 ? "minute" : "minutes"} ago`;
   } else if (diffInSeconds < 86400) {
-    const hours = Math.floor(diffInSeconds / 3600)
-    return `${hours} ${hours === 1 ? "hour" : "hours"} ago`
+    const hours = Math.floor(diffInSeconds / 3600);
+    return `${hours} ${hours === 1 ? "hour" : "hours"} ago`;
   } else {
-    const days = Math.floor(diffInSeconds / 86400)
-    return `${days} ${days === 1 ? "day" : "days"} ago`
+    const days = Math.floor(diffInSeconds / 86400);
+    return `${days} ${days === 1 ? "day" : "days"} ago`;
   }
 }
 
@@ -94,8 +94,8 @@ export default function Component() {
     <div className="space-y-3">
       <div className="text-muted-foreground text-xs font-medium">Activity</div>
       <Timeline>
-        {items.map((item) => {
-          const ActionIcon = getActionIcon(item.action)
+        {items.map(item => {
+          const ActionIcon = getActionIcon(item.action);
           return (
             <TimelineItem
               key={item.id}
@@ -121,9 +121,9 @@ export default function Component() {
                 </span>
               </TimelineContent>
             </TimelineItem>
-          )
+          );
         })}
       </Timeline>
     </div>
-  )
+  );
 }

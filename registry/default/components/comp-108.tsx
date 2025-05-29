@@ -1,6 +1,6 @@
-import { EllipsisIcon, FilesIcon, FilmIcon } from "lucide-react"
+import { EllipsisIcon, FilesIcon, FilmIcon } from "lucide-react";
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/default/ui/button";
 
 export default function Component() {
   return (
@@ -28,5 +28,5 @@ export default function Component() {
         <EllipsisIcon size={16} aria-hidden="true" />
       </Button>
     </div>
-  )
+  );
 }

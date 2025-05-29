@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { ListBox, ListBoxItem } from "react-aria-components"
+import { ListBox, ListBoxItem } from "react-aria-components";
 
-import { Label } from "@/registry/default/ui/label"
+import { Label } from "@/registry/default/ui/label";
 
 export default function Component() {
   return (
@@ -58,5 +58,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  )
+  );
 }

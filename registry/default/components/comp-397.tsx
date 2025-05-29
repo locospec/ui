@@ -2,7 +2,7 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/registry/default/ui/avatar"
+} from "@/registry/default/ui/avatar";
 
 export default function Component() {
   return (
@@ -35,5 +35,5 @@ export default function Component() {
         </svg>
       </span>
     </div>
-  )
+  );
 }

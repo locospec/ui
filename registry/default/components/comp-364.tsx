@@ -2,7 +2,7 @@ import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@/registry/default/ui/hover-card"
+} from "@/registry/default/ui/hover-card";
 
 export default function HoverCardDemo() {
   return (
@@ -77,5 +77,5 @@ export default function HoverCardDemo() {
         </div>
       </HoverCardContent>
     </HoverCard>
-  )
+  );
 }

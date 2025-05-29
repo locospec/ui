@@ -1,6 +1,5 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
 import {
   ColumnDef,
   flexRender,
@@ -8,10 +7,11 @@ import {
   getSortedRowModel,
   SortingState,
   useReactTable,
-} from "@tanstack/react-table"
-import { ChevronDownIcon, ChevronUpIcon } from "lucide-react"
+} from "@tanstack/react-table";
+import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
+import { useEffect, useState } from "react";
 
-import { cn } from "@/registry/default/lib/utils"
+import { cn } from "@/registry/default/lib/utils";
 import {
   Table,
   TableBody,
@@ -19,22 +19,22 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/default/ui/table"
+} from "@/registry/default/ui/table";
 
 type Item = {
-  id: string
-  name: string
-  email: string
-  location: string
-  flag: string
-  status: "Active" | "Inactive" | "Pending"
-  balance: number
-  department: string
-  role: string
-  joinDate: string
-  lastActive: string
-  performance: "Excellent" | "Good" | "Average" | "Poor"
-}
+  id: string;
+  name: string;
+  email: string;
+  location: string;
+  flag: string;
+  status: "Active" | "Inactive" | "Pending";
+  balance: number;
+  department: string;
+  role: string;
+  joinDate: string;
+  lastActive: string;
+  performance: "Excellent" | "Good" | "Average" | "Poor";
+};
 
 const columns: ColumnDef<Item>[] = [
   {
@@ -68,12 +68,12 @@ const columns: ColumnDef<Item>[] = [
     header: "Balance",
     accessorKey: "balance",
     cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("balance"))
+      const amount = parseFloat(row.getValue("balance"));
       const formatted = new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",
-      }).format(amount)
-      return formatted
+      }).format(amount);
+      return formatted;
     },
   },
   {
@@ -96,27 +96,27 @@ const columns: ColumnDef<Item>[] = [
     header: "Performance",
     accessorKey: "performance",
   },
-]
+];
 
 export default function Component() {
-  const [data, setData] = useState<Item[]>([])
+  const [data, setData] = useState<Item[]>([]);
   const [sorting, setSorting] = useState<SortingState>([
     {
       id: "name",
       desc: false,
     },
-  ])
+  ]);
 
   useEffect(() => {
     async function fetchPosts() {
       const res = await fetch(
         "https://raw.githubusercontent.com/origin-space/origin-images/refs/heads/main/users-01_fertyx.json"
-      )
-      const data = await res.json()
-      setData(data.slice(0, 5)) // Limit to 5 items
+      );
+      const data = await res.json();
+      setData(data.slice(0, 5)); // Limit to 5 items
     }
-    fetchPosts()
-  }, [])
+    fetchPosts();
+  }, []);
 
   const table = useReactTable({
     data,
@@ -129,7 +129,7 @@ export default function Component() {
       sorting,
     },
     enableSortingRemoval: false,
-  })
+  });
 
   return (
     <div>
@@ -140,9 +140,9 @@ export default function Component() {
         }}
       >
         <TableHeader>
-          {table.getHeaderGroups().map((headerGroup) => (
+          {table.getHeaderGroups().map(headerGroup => (
             <TableRow key={headerGroup.id} className="bg-muted/50">
-              {headerGroup.headers.map((header) => {
+              {headerGroup.headers.map(header => {
                 return (
                   <TableHead
                     key={header.id}
@@ -168,14 +168,14 @@ export default function Component() {
                             "flex h-full cursor-pointer items-center justify-between gap-2 select-none"
                         )}
                         onClick={header.column.getToggleSortingHandler()}
-                        onKeyDown={(e) => {
+                        onKeyDown={e => {
                           // Enhanced keyboard handling for sorting
                           if (
                             header.column.getCanSort() &&
                             (e.key === "Enter" || e.key === " ")
                           ) {
-                            e.preventDefault()
-                            header.column.getToggleSortingHandler()?.(e)
+                            e.preventDefault();
+                            header.column.getToggleSortingHandler()?.(e);
                           }
                         }}
                         tabIndex={header.column.getCanSort() ? 0 : undefined}
@@ -216,19 +216,19 @@ export default function Component() {
                       />
                     )}
                   </TableHead>
-                )
+                );
               })}
             </TableRow>
           ))}
         </TableHeader>
         <TableBody>
           {table.getRowModel().rows?.length ? (
-            table.getRowModel().rows.map((row) => (
+            table.getRowModel().rows.map(row => (
               <TableRow
                 key={row.id}
                 data-state={row.getIsSelected() && "selected"}
               >
-                {row.getVisibleCells().map((cell) => (
+                {row.getVisibleCells().map(cell => (
                   <TableCell key={cell.id} className="truncate">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </TableCell>
@@ -256,5 +256,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  )
+  );
 }

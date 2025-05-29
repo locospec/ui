@@ -1,37 +1,37 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { TicketPercent, XIcon } from "lucide-react"
+import { TicketPercent, XIcon } from "lucide-react";
+import { useEffect, useState } from "react";
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/default/ui/button";
 
 // Define the sale end date - eg: new Date('2024-12-31T23:59:59');
 const saleEndDate = new Date(
   Date.now() + 9 * 60 * 60 * 1000 + 45 * 60 * 1000 + 24 * 1000
-) // Setting 9h 45m 24s from now for demo purposes
+); // Setting 9h 45m 24s from now for demo purposes
 
 interface TimeLeft {
-  days: number
-  hours: number
-  minutes: number
-  seconds: number
-  isExpired: boolean
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+  isExpired: boolean;
 }
 
 export default function Component() {
-  const [isVisible, setIsVisible] = useState(true)
+  const [isVisible, setIsVisible] = useState(true);
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
     hours: 0,
     minutes: 0,
     seconds: 0,
     isExpired: false,
-  })
+  });
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const now = new Date()
-      const difference = saleEndDate.getTime() - now.getTime()
+      const now = new Date();
+      const difference = saleEndDate.getTime() - now.getTime();
 
       if (difference <= 0) {
         setTimeLeft({
@@ -40,16 +40,16 @@ export default function Component() {
           minutes: 0,
           seconds: 0,
           isExpired: true,
-        })
-        return
+        });
+        return;
       }
 
-      const days = Math.floor(difference / (1000 * 60 * 60 * 24))
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
       const hours = Math.floor(
         (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      )
-      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))
-      const seconds = Math.floor((difference % (1000 * 60)) / 1000)
+      );
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
       setTimeLeft({
         days,
@@ -57,17 +57,17 @@ export default function Component() {
         minutes,
         seconds,
         isExpired: false,
-      })
-    }
+      });
+    };
 
     // Calculate immediately and then every second
-    calculateTimeLeft()
-    const timer = setInterval(calculateTimeLeft, 1000)
+    calculateTimeLeft();
+    const timer = setInterval(calculateTimeLeft, 1000);
 
-    return () => clearInterval(timer)
-  }, [])
+    return () => clearInterval(timer);
+  }, []);
 
-  if (!isVisible || timeLeft.isExpired) return null
+  if (!isVisible || timeLeft.isExpired) return null;
 
   return (
     <div className="dark bg-muted text-foreground px-4 py-3">
@@ -128,5 +128,5 @@ export default function Component() {
         </Button>
       </div>
     </div>
-  )
+  );
 }

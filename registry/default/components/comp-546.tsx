@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { AlertCircleIcon, ImageIcon, UploadIcon, XIcon } from "lucide-react"
+import { AlertCircleIcon, ImageIcon, UploadIcon, XIcon } from "lucide-react";
 
-import { useFileUpload } from "@/registry/default/hooks/use-file-upload"
-import { Button } from "@/registry/default/ui/button"
+import { useFileUpload } from "@/registry/default/hooks/use-file-upload";
+import { Button } from "@/registry/default/ui/button";
 
 // Create some dummy initial files
 const initialFiles = [
@@ -35,12 +35,12 @@ const initialFiles = [
     url: "https://picsum.photos/1000/800?grayscale&random=4",
     id: "image-04-123456789",
   },
-]
+];
 
 export default function Component() {
-  const maxSizeMB = 5
-  const maxSize = maxSizeMB * 1024 * 1024 // 5MB default
-  const maxFiles = 6
+  const maxSizeMB = 5;
+  const maxSize = maxSizeMB * 1024 * 1024; // 5MB default
+  const maxFiles = 6;
 
   const [
     { files, isDragging, errors },
@@ -59,7 +59,7 @@ export default function Component() {
     multiple: true,
     maxFiles,
     initialFiles,
-  })
+  });
 
   return (
     <div className="flex flex-col gap-2">
@@ -99,7 +99,7 @@ export default function Component() {
             </div>
 
             <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-              {files.map((file) => (
+              {files.map(file => (
                 <div
                   key={file.id}
                   className="bg-accent relative aspect-square rounded-md"
@@ -165,5 +165,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  )
+  );
 }

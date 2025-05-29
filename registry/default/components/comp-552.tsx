@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   AlertCircleIcon,
@@ -12,13 +12,13 @@ import {
   UploadIcon,
   VideoIcon,
   XIcon,
-} from "lucide-react"
+} from "lucide-react";
 
 import {
   formatBytes,
   useFileUpload,
-} from "@/registry/default/hooks/use-file-upload"
-import { Button } from "@/registry/default/ui/button"
+} from "@/registry/default/hooks/use-file-upload";
+import { Button } from "@/registry/default/ui/button";
 
 // Create some dummy initial files
 const initialFiles = [
@@ -43,11 +43,11 @@ const initialFiles = [
     url: "https://example.com/audio.mp3",
     id: "audio-123456789",
   },
-]
+];
 
 const getFileIcon = (file: { file: File | { type: string; name: string } }) => {
-  const fileType = file.file instanceof File ? file.file.type : file.file.type
-  const fileName = file.file instanceof File ? file.file.name : file.file.name
+  const fileType = file.file instanceof File ? file.file.type : file.file.type;
+  const fileName = file.file instanceof File ? file.file.name : file.file.name;
 
   const iconMap = {
     pdf: {
@@ -86,22 +86,22 @@ const getFileIcon = (file: { file: File | { type: string; name: string } }) => {
       icon: ImageIcon,
       conditions: (type: string) => type.startsWith("image/"),
     },
-  }
+  };
 
   for (const { icon: Icon, conditions } of Object.values(iconMap)) {
     if (conditions(fileType, fileName)) {
-      return <Icon className="size-5 opacity-60" />
+      return <Icon className="size-5 opacity-60" />;
     }
   }
 
-  return <FileIcon className="size-5 opacity-60" />
-}
+  return <FileIcon className="size-5 opacity-60" />;
+};
 
 const getFilePreview = (file: {
-  file: File | { type: string; name: string; url?: string }
+  file: File | { type: string; name: string; url?: string };
 }) => {
-  const fileType = file.file instanceof File ? file.file.type : file.file.type
-  const fileName = file.file instanceof File ? file.file.name : file.file.name
+  const fileType = file.file instanceof File ? file.file.type : file.file.type;
+  const fileName = file.file instanceof File ? file.file.name : file.file.name;
 
   const renderImage = (src: string) => (
     <img
@@ -109,15 +109,15 @@ const getFilePreview = (file: {
       alt={fileName}
       className="size-full rounded-t-[inherit] object-cover"
     />
-  )
+  );
 
   return (
     <div className="bg-accent flex aspect-square items-center justify-center overflow-hidden rounded-t-[inherit]">
       {fileType.startsWith("image/") ? (
         file.file instanceof File ? (
           (() => {
-            const previewUrl = URL.createObjectURL(file.file)
-            return renderImage(previewUrl)
+            const previewUrl = URL.createObjectURL(file.file);
+            return renderImage(previewUrl);
           })()
         ) : file.file.url ? (
           renderImage(file.file.url)
@@ -128,13 +128,13 @@ const getFilePreview = (file: {
         getFileIcon(file)
       )}
     </div>
-  )
-}
+  );
+};
 
 export default function Component() {
-  const maxSizeMB = 5
-  const maxSize = maxSizeMB * 1024 * 1024 // 5MB default
-  const maxFiles = 6
+  const maxSizeMB = 5;
+  const maxSize = maxSizeMB * 1024 * 1024; // 5MB default
+  const maxFiles = 6;
 
   const [
     { files, isDragging, errors },
@@ -153,7 +153,7 @@ export default function Component() {
     maxFiles,
     maxSize,
     initialFiles,
-  })
+  });
 
   return (
     <div className="flex flex-col gap-2">
@@ -197,7 +197,7 @@ export default function Component() {
             </div>
 
             <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-              {files.map((file) => (
+              {files.map(file => (
                 <div
                   key={file.id}
                   className="bg-background relative flex flex-col rounded-md border"
@@ -267,5 +267,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  )
+  );
 }

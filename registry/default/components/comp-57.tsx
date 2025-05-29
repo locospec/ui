@@ -1,21 +1,21 @@
-"use client"
+"use client";
 
-import { useId, useState } from "react"
-import { Tag, TagInput } from "emblor"
+import { Tag, TagInput } from "emblor";
+import { useId, useState } from "react";
 
-import { Label } from "@/registry/default/ui/label"
+import { Label } from "@/registry/default/ui/label";
 
 const tags = [
   {
     id: "1",
     text: "Red",
   },
-]
+];
 
 export default function Component() {
-  const id = useId()
-  const [exampleTags, setExampleTags] = useState<Tag[]>(tags)
-  const [activeTagIndex, setActiveTagIndex] = useState<number | null>(null)
+  const id = useId();
+  const [exampleTags, setExampleTags] = useState<Tag[]>(tags);
+  const [activeTagIndex, setActiveTagIndex] = useState<number | null>(null);
 
   return (
     <div className="*:not-first:mt-2">
@@ -23,8 +23,8 @@ export default function Component() {
       <TagInput
         id={id}
         tags={exampleTags}
-        setTags={(newTags) => {
-          setExampleTags(newTags)
+        setTags={newTags => {
+          setExampleTags(newTags);
         }}
         placeholder="Add a tag"
         styleClasses={{
@@ -56,5 +56,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  )
+  );
 }

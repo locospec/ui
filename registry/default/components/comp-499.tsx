@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import type { WeekNumberProps } from "react-day-picker"
+import { useState } from "react";
+import type { WeekNumberProps } from "react-day-picker";
 
-import { Calendar } from "@/registry/default/ui/calendar"
+import { Calendar } from "@/registry/default/ui/calendar";
 
 export default function Component() {
-  const [date, setDate] = useState<Date | undefined>(new Date())
+  const [date, setDate] = useState<Date | undefined>(new Date());
 
   return (
     <div>
@@ -25,7 +25,7 @@ export default function Component() {
                   {week.weekNumber}
                 </span>
               </th>
-            )
+            );
           },
         }}
       />
@@ -45,5 +45,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  )
+  );
 }

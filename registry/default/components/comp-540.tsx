@@ -7,7 +7,7 @@ import {
   TimelineItem,
   TimelineSeparator,
   TimelineTitle,
-} from "@/registry/default/ui/timeline"
+} from "@/registry/default/ui/timeline";
 
 const items = [
   {
@@ -34,12 +34,12 @@ const items = [
     title: "Testing & Deployment",
     description: "Performance optimization.",
   },
-]
+];
 
 export default function Component() {
   return (
     <Timeline defaultValue={3} orientation="horizontal">
-      {items.map((item) => (
+      {items.map(item => (
         <TimelineItem key={item.id} step={item.id}>
           <TimelineHeader>
             <TimelineSeparator />
@@ -51,5 +51,5 @@ export default function Component() {
         </TimelineItem>
       ))}
     </Timeline>
-  )
+  );
 }

@@ -1,20 +1,20 @@
-"use client"
+"use client";
 
-import { useId } from "react"
+import { useId } from "react";
 
-import { useCharacterLimit } from "@/registry/default/hooks/use-character-limit"
-import { Label } from "@/registry/default/ui/label"
-import { Textarea } from "@/registry/default/ui/textarea"
+import { useCharacterLimit } from "@/registry/default/hooks/use-character-limit";
+import { Label } from "@/registry/default/ui/label";
+import { Textarea } from "@/registry/default/ui/textarea";
 
 export default function Component() {
-  const id = useId()
-  const maxLength = 180
+  const id = useId();
+  const maxLength = 180;
   const {
     value,
     characterCount,
     handleChange,
     maxLength: limit,
-  } = useCharacterLimit({ maxLength })
+  } = useCharacterLimit({ maxLength });
 
   return (
     <div className="*:not-first:mt-2">
@@ -36,5 +36,5 @@ export default function Component() {
         characters left
       </p>
     </div>
-  )
+  );
 }

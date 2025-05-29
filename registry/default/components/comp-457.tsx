@@ -1,16 +1,16 @@
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react"
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 
 import {
   Pagination,
   PaginationContent,
   PaginationItem,
   PaginationLink,
-} from "@/registry/default/ui/pagination"
+} from "@/registry/default/ui/pagination";
 
 type PaginationProps = {
-  currentPage: number
-  totalPages: number
-}
+  currentPage: number;
+  totalPages: number;
+};
 
 export default function Component({
   currentPage,
@@ -53,5 +53,5 @@ export default function Component({
         </PaginationItem>
       </PaginationContent>
     </Pagination>
-  )
+  );
 }

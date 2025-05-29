@@ -1,30 +1,30 @@
-import { useId, useMemo } from "react"
+import { useId, useMemo } from "react";
 
-import { Label } from "@/registry/default/ui/label"
+import { Label } from "@/registry/default/ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/registry/default/ui/select"
+} from "@/registry/default/ui/select";
 
 export default function Component() {
-  const id = useId()
+  const id = useId();
 
-  const timezones = Intl.supportedValuesOf("timeZone")
+  const timezones = Intl.supportedValuesOf("timeZone");
 
   const formattedTimezones = useMemo(() => {
     return timezones
-      .map((timezone) => {
+      .map(timezone => {
         const formatter = new Intl.DateTimeFormat("en", {
           timeZone: timezone,
           timeZoneName: "shortOffset",
-        })
-        const parts = formatter.formatToParts(new Date())
+        });
+        const parts = formatter.formatToParts(new Date());
         const offset =
-          parts.find((part) => part.type === "timeZoneName")?.value || ""
-        const modifiedOffset = offset === "GMT" ? "GMT+0" : offset
+          parts.find(part => part.type === "timeZoneName")?.value || "";
+        const modifiedOffset = offset === "GMT" ? "GMT+0" : offset;
 
         return {
           value: timezone,
@@ -32,10 +32,10 @@ export default function Component() {
           numericOffset: parseInt(
             offset.replace("GMT", "").replace("+", "") || "0"
           ),
-        }
+        };
       })
-      .sort((a, b) => a.numericOffset - b.numericOffset)
-  }, [timezones])
+      .sort((a, b) => a.numericOffset - b.numericOffset);
+  }, [timezones]);
 
   return (
     <div className="*:not-first:mt-2">
@@ -53,5 +53,5 @@ export default function Component() {
         </SelectContent>
       </Select>
     </div>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-import { GitCompare, GitFork, GitMerge, GitPullRequest } from "lucide-react"
+import { GitCompare, GitFork, GitMerge, GitPullRequest } from "lucide-react";
 
 import {
   Timeline,
@@ -9,7 +9,7 @@ import {
   TimelineItem,
   TimelineSeparator,
   TimelineTitle,
-} from "@/registry/default/ui/timeline"
+} from "@/registry/default/ui/timeline";
 
 const items = [
   {
@@ -43,12 +43,12 @@ const items = [
       "Merged the feature branch into the main branch. Ready for deployment.",
     icon: GitMerge,
   },
-]
+];
 
 export default function Component() {
   return (
     <Timeline defaultValue={3}>
-      {items.map((item) => (
+      {items.map(item => (
         <TimelineItem
           key={item.id}
           step={item.id}
@@ -68,5 +68,5 @@ export default function Component() {
         </TimelineItem>
       ))}
     </Timeline>
-  )
+  );
 }

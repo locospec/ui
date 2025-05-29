@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { useId, useState } from "react"
-import { CheckIcon, ChevronDownIcon } from "lucide-react"
+import { CheckIcon, ChevronDownIcon } from "lucide-react";
+import { useId, useState } from "react";
 
-import { cn } from "@/registry/default/lib/utils"
-import { Button } from "@/registry/default/ui/button"
+import { cn } from "@/registry/default/lib/utils";
+import { Button } from "@/registry/default/ui/button";
 import {
   Command,
   CommandEmpty,
@@ -12,13 +12,13 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/registry/default/ui/command"
-import { Label } from "@/registry/default/ui/label"
+} from "@/registry/default/ui/command";
+import { Label } from "@/registry/default/ui/label";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/registry/default/ui/popover"
+} from "@/registry/default/ui/popover";
 
 const frameworks = [
   {
@@ -85,12 +85,12 @@ const frameworks = [
     value: "lit",
     label: "Lit",
   },
-]
+];
 
 export default function Component() {
-  const id = useId()
-  const [open, setOpen] = useState<boolean>(false)
-  const [value, setValue] = useState<string>("")
+  const id = useId();
+  const [open, setOpen] = useState<boolean>(false);
+  const [value, setValue] = useState<string>("");
 
   return (
     <div className="*:not-first:mt-2">
@@ -106,8 +106,7 @@ export default function Component() {
           >
             <span className={cn("truncate", !value && "text-muted-foreground")}>
               {value
-                ? frameworks.find((framework) => framework.value === value)
-                    ?.label
+                ? frameworks.find(framework => framework.value === value)?.label
                 : "Select framework"}
             </span>
             <ChevronDownIcon
@@ -126,13 +125,13 @@ export default function Component() {
             <CommandList>
               <CommandEmpty>No framework found.</CommandEmpty>
               <CommandGroup>
-                {frameworks.map((framework) => (
+                {frameworks.map(framework => (
                   <CommandItem
                     key={framework.value}
                     value={framework.value}
-                    onSelect={(currentValue) => {
-                      setValue(currentValue === value ? "" : currentValue)
-                      setOpen(false)
+                    onSelect={currentValue => {
+                      setValue(currentValue === value ? "" : currentValue);
+                      setOpen(false);
                     }}
                   >
                     {framework.label}
@@ -147,5 +146,5 @@ export default function Component() {
         </PopoverContent>
       </Popover>
     </div>
-  )
+  );
 }

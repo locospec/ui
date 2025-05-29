@@ -1,4 +1,4 @@
-import { Shuffle } from "lucide-react"
+import { Shuffle } from "lucide-react";
 
 import {
   Stepper,
@@ -6,7 +6,7 @@ import {
   StepperItem,
   StepperSeparator,
   StepperTrigger,
-} from "@/registry/default/ui/stepper"
+} from "@/registry/default/ui/stepper";
 
 export default function Component() {
   return (
@@ -49,5 +49,5 @@ export default function Component() {
         Stepper with mixed elements
       </p>
     </div>
-  )
+  );
 }

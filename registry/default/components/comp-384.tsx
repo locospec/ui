@@ -1,9 +1,9 @@
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/default/ui/button";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/registry/default/ui/popover"
+} from "@/registry/default/ui/popover";
 
 export default function Component() {
   return (
@@ -27,5 +27,5 @@ export default function Component() {
         </div>
       </PopoverContent>
     </Popover>
-  )
+  );
 }

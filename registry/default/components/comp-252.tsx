@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Volume2Icon, VolumeXIcon } from "lucide-react"
+import { Volume2Icon, VolumeXIcon } from "lucide-react";
+import { useState } from "react";
 
-import { Label } from "@/registry/default/ui/label"
-import { Slider } from "@/registry/default/ui/slider"
+import { Label } from "@/registry/default/ui/label";
+import { Slider } from "@/registry/default/ui/slider";
 
 export default function Component() {
-  const [value, setValue] = useState([25])
+  const [value, setValue] = useState([25]);
 
   return (
     <div className="space-y-3">
@@ -33,5 +33,5 @@ export default function Component() {
         />
       </div>
     </div>
-  )
+  );
 }

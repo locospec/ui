@@ -1,4 +1,4 @@
-import { ArrowRightIcon, Eclipse } from "lucide-react"
+import { ArrowRightIcon, Eclipse } from "lucide-react";
 
 export default function Component() {
   return (
@@ -27,5 +27,5 @@ export default function Component() {
         </div>
       </div>
     </div>
-  )
+  );
 }

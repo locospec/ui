@@ -6,7 +6,7 @@ import {
   StepperSeparator,
   StepperTitle,
   StepperTrigger,
-} from "@/registry/default/ui/stepper"
+} from "@/registry/default/ui/stepper";
 
 const steps = [
   {
@@ -24,7 +24,7 @@ const steps = [
     title: "Step Three",
     description: "Desc for step three",
   },
-]
+];
 
 export default function Component() {
   return (
@@ -57,5 +57,5 @@ export default function Component() {
         Vertical stepper with inline titles and descriptions
       </p>
     </div>
-  )
+  );
 }

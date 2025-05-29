@@ -1,41 +1,41 @@
-"use client"
+"use client";
 
-import { useId, useRef, useState } from "react"
 import {
   RiCodeFill,
   RiFacebookFill,
   RiMailLine,
   RiTwitterXFill,
-} from "@remixicon/react"
-import { CheckIcon, CopyIcon } from "lucide-react"
+} from "@remixicon/react";
+import { CheckIcon, CopyIcon } from "lucide-react";
+import { useId, useRef, useState } from "react";
 
-import { cn } from "@/registry/default/lib/utils"
-import { Button } from "@/registry/default/ui/button"
-import { Input } from "@/registry/default/ui/input"
+import { cn } from "@/registry/default/lib/utils";
+import { Button } from "@/registry/default/ui/button";
+import { Input } from "@/registry/default/ui/input";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/registry/default/ui/popover"
+} from "@/registry/default/ui/popover";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/registry/default/ui/tooltip"
+} from "@/registry/default/ui/tooltip";
 
 export default function Component() {
-  const id = useId()
-  const [copied, setCopied] = useState<boolean>(false)
-  const inputRef = useRef<HTMLInputElement>(null)
+  const id = useId();
+  const [copied, setCopied] = useState<boolean>(false);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleCopy = () => {
     if (inputRef.current) {
-      navigator.clipboard.writeText(inputRef.current.value)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 1500)
+      navigator.clipboard.writeText(inputRef.current.value);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
     }
-  }
+  };
 
   return (
     <div className="flex flex-col gap-4">
@@ -129,5 +129,5 @@ export default function Component() {
         </PopoverContent>
       </Popover>
     </div>
-  )
+  );
 }

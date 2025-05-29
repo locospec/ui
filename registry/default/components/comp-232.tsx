@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { Fragment, useId, useState } from "react"
-import { CheckIcon, ChevronDownIcon } from "lucide-react"
+import { CheckIcon, ChevronDownIcon } from "lucide-react";
+import { Fragment, useId, useState } from "react";
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/default/ui/button";
 import {
   Command,
   CommandEmpty,
@@ -11,13 +11,13 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/registry/default/ui/command"
-import { Label } from "@/registry/default/ui/label"
+} from "@/registry/default/ui/command";
+import { Label } from "@/registry/default/ui/label";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/registry/default/ui/popover"
+} from "@/registry/default/ui/popover";
 
 const countries = [
   {
@@ -59,12 +59,12 @@ const countries = [
       { value: "New Zealand", flag: "🇳🇿" },
     ],
   },
-]
+];
 
 export default function Component() {
-  const id = useId()
-  const [open, setOpen] = useState<boolean>(false)
-  const [value, setValue] = useState<string>("")
+  const id = useId();
+  const [open, setOpen] = useState<boolean>(false);
+  const [value, setValue] = useState<string>("");
 
   return (
     <div className="*:not-first:mt-2">
@@ -83,8 +83,8 @@ export default function Component() {
                 <span className="text-lg leading-none">
                   {
                     countries
-                      .map((group) =>
-                        group.items.find((item) => item.value === value)
+                      .map(group =>
+                        group.items.find(item => item.value === value)
                       )
                       .filter(Boolean)[0]?.flag
                   }
@@ -109,16 +109,16 @@ export default function Component() {
             <CommandInput placeholder="Search country..." />
             <CommandList>
               <CommandEmpty>No country found.</CommandEmpty>
-              {countries.map((group) => (
+              {countries.map(group => (
                 <Fragment key={group.continent}>
                   <CommandGroup heading={group.continent}>
-                    {group.items.map((country) => (
+                    {group.items.map(country => (
                       <CommandItem
                         key={country.value}
                         value={country.value}
-                        onSelect={(currentValue) => {
-                          setValue(currentValue)
-                          setOpen(false)
+                        onSelect={currentValue => {
+                          setValue(currentValue);
+                          setOpen(false);
                         }}
                       >
                         <span className="text-lg leading-none">
@@ -138,5 +138,5 @@ export default function Component() {
         </PopoverContent>
       </Popover>
     </div>
-  )
+  );
 }

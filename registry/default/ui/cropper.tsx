@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { Cropper as CropperPrimitive } from "@origin-space/image-cropper"
+import { Cropper as CropperPrimitive } from "@origin-space/image-cropper";
 
-import { cn } from "@/registry/default/lib/utils"
+import { cn } from "@/registry/default/lib/utils";
 
 function Cropper({
   className,
@@ -17,7 +17,7 @@ function Cropper({
       )}
       {...props}
     />
-  )
+  );
 }
 
 function CropperDescription({
@@ -30,7 +30,7 @@ function CropperDescription({
       className={cn("sr-only", className)}
       {...props}
     />
-  )
+  );
 }
 
 function CropperImage({
@@ -46,7 +46,7 @@ function CropperImage({
       )}
       {...props}
     />
-  )
+  );
 }
 
 function CropperCropArea({
@@ -62,7 +62,7 @@ function CropperCropArea({
       )}
       {...props}
     />
-  )
+  );
 }
 
-export { Cropper, CropperDescription, CropperImage, CropperCropArea }
+export { Cropper, CropperCropArea, CropperDescription, CropperImage };

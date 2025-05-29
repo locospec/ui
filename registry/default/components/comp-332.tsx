@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { ArrowRightIcon } from "lucide-react"
+import { ArrowRightIcon } from "lucide-react";
+import { useState } from "react";
 
-import { cn } from "@/registry/default/lib/utils"
-import { Button } from "@/registry/default/ui/button"
+import { cn } from "@/registry/default/lib/utils";
+import { Button } from "@/registry/default/ui/button";
 import {
   Dialog,
   DialogClose,
@@ -14,10 +14,10 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/registry/default/ui/dialog"
+} from "@/registry/default/ui/dialog";
 
 export default function Component() {
-  const [step, setStep] = useState(1)
+  const [step, setStep] = useState(1);
 
   const stepContent = [
     {
@@ -40,20 +40,20 @@ export default function Component() {
       description:
         "Access our extensive documentation and community resources to make the most of Origin UI.",
     },
-  ]
+  ];
 
-  const totalSteps = stepContent.length
+  const totalSteps = stepContent.length;
 
   const handleContinue = () => {
     if (step < totalSteps) {
-      setStep(step + 1)
+      setStep(step + 1);
     }
-  }
+  };
 
   return (
     <Dialog
-      onOpenChange={(open) => {
-        if (open) setStep(1)
+      onOpenChange={open => {
+        if (open) setStep(1);
       }}
     >
       <DialogTrigger asChild>
@@ -117,5 +117,5 @@ export default function Component() {
         </div>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

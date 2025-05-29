@@ -1,10 +1,10 @@
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/default/ui/button";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/registry/default/ui/popover"
-import { Textarea } from "@/registry/default/ui/textarea"
+} from "@/registry/default/ui/popover";
+import { Textarea } from "@/registry/default/ui/textarea";
 
 export default function Component() {
   return (
@@ -28,5 +28,5 @@ export default function Component() {
         </PopoverContent>
       </Popover>
     </div>
-  )
+  );
 }

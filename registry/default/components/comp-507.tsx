@@ -1,6 +1,5 @@
-"use client"
+"use client";
 
-import { useState } from "react"
 import {
   endOfMonth,
   endOfYear,
@@ -9,44 +8,45 @@ import {
   subDays,
   subMonths,
   subYears,
-} from "date-fns"
-import { DateRange } from "react-day-picker"
+} from "date-fns";
+import { useState } from "react";
+import { DateRange } from "react-day-picker";
 
-import { Button } from "@/registry/default/ui/button"
-import { Calendar } from "@/registry/default/ui/calendar"
+import { Button } from "@/registry/default/ui/button";
+import { Calendar } from "@/registry/default/ui/calendar";
 
 export default function Component() {
-  const today = new Date()
+  const today = new Date();
   const yesterday = {
     from: subDays(today, 1),
     to: subDays(today, 1),
-  }
+  };
   const last7Days = {
     from: subDays(today, 6),
     to: today,
-  }
+  };
   const last30Days = {
     from: subDays(today, 29),
     to: today,
-  }
+  };
   const monthToDate = {
     from: startOfMonth(today),
     to: today,
-  }
+  };
   const lastMonth = {
     from: startOfMonth(subMonths(today, 1)),
     to: endOfMonth(subMonths(today, 1)),
-  }
+  };
   const yearToDate = {
     from: startOfYear(today),
     to: today,
-  }
+  };
   const lastYear = {
     from: startOfYear(subYears(today, 1)),
     to: endOfYear(subYears(today, 1)),
-  }
-  const [month, setMonth] = useState(today)
-  const [date, setDate] = useState<DateRange | undefined>(last7Days)
+  };
+  const [month, setMonth] = useState(today);
+  const [date, setDate] = useState<DateRange | undefined>(last7Days);
 
   return (
     <div>
@@ -63,8 +63,8 @@ export default function Component() {
                     setDate({
                       from: today,
                       to: today,
-                    })
-                    setMonth(today)
+                    });
+                    setMonth(today);
                   }}
                 >
                   Today
@@ -74,8 +74,8 @@ export default function Component() {
                   size="sm"
                   className="w-full justify-start"
                   onClick={() => {
-                    setDate(yesterday)
-                    setMonth(yesterday.to)
+                    setDate(yesterday);
+                    setMonth(yesterday.to);
                   }}
                 >
                   Yesterday
@@ -85,8 +85,8 @@ export default function Component() {
                   size="sm"
                   className="w-full justify-start"
                   onClick={() => {
-                    setDate(last7Days)
-                    setMonth(last7Days.to)
+                    setDate(last7Days);
+                    setMonth(last7Days.to);
                   }}
                 >
                   Last 7 days
@@ -96,8 +96,8 @@ export default function Component() {
                   size="sm"
                   className="w-full justify-start"
                   onClick={() => {
-                    setDate(last30Days)
-                    setMonth(last30Days.to)
+                    setDate(last30Days);
+                    setMonth(last30Days.to);
                   }}
                 >
                   Last 30 days
@@ -107,8 +107,8 @@ export default function Component() {
                   size="sm"
                   className="w-full justify-start"
                   onClick={() => {
-                    setDate(monthToDate)
-                    setMonth(monthToDate.to)
+                    setDate(monthToDate);
+                    setMonth(monthToDate.to);
                   }}
                 >
                   Month to date
@@ -118,8 +118,8 @@ export default function Component() {
                   size="sm"
                   className="w-full justify-start"
                   onClick={() => {
-                    setDate(lastMonth)
-                    setMonth(lastMonth.to)
+                    setDate(lastMonth);
+                    setMonth(lastMonth.to);
                   }}
                 >
                   Last month
@@ -129,8 +129,8 @@ export default function Component() {
                   size="sm"
                   className="w-full justify-start"
                   onClick={() => {
-                    setDate(yearToDate)
-                    setMonth(yearToDate.to)
+                    setDate(yearToDate);
+                    setMonth(yearToDate.to);
                   }}
                 >
                   Year to date
@@ -140,8 +140,8 @@ export default function Component() {
                   size="sm"
                   className="w-full justify-start"
                   onClick={() => {
-                    setDate(lastYear)
-                    setMonth(lastYear.to)
+                    setDate(lastYear);
+                    setMonth(lastYear.to);
                   }}
                 >
                   Last year
@@ -152,9 +152,9 @@ export default function Component() {
           <Calendar
             mode="range"
             selected={date}
-            onSelect={(newDate) => {
+            onSelect={newDate => {
               if (newDate) {
-                setDate(newDate)
+                setDate(newDate);
               }
             }}
             month={month}
@@ -182,5 +182,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  )
+  );
 }

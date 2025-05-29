@@ -6,7 +6,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/default/ui/table"
+} from "@/registry/default/ui/table";
 
 const items = [
   {
@@ -129,7 +129,7 @@ const items = [
     status: "Active",
     balance: "$1,800.00",
   },
-]
+];
 
 export default function Component() {
   return (
@@ -146,7 +146,7 @@ export default function Component() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {items.map((item) => (
+            {items.map(item => (
               <TableRow key={item.id}>
                 <TableCell className="font-medium">{item.name}</TableCell>
                 <TableCell>{item.email}</TableCell>
@@ -168,5 +168,5 @@ export default function Component() {
         Table with sticky header
       </p>
     </div>
-  )
+  );
 }

@@ -1,28 +1,28 @@
-"use client"
+"use client";
 
-import { useState } from "react"
 import {
   AlignCenterIcon,
   AlignJustifyIcon,
   AlignLeftIcon,
   AlignRightIcon,
-} from "lucide-react"
+} from "lucide-react";
+import { useState } from "react";
 
 import {
   ToggleGroup,
   ToggleGroupItem,
-} from "@/registry/default/ui/toggle-group"
+} from "@/registry/default/ui/toggle-group";
 
 export default function Component() {
-  const [value, setValue] = useState<string>("center")
+  const [value, setValue] = useState<string>("center");
 
   return (
     <ToggleGroup
       className="divide-background inline-flex divide-x"
       type="single"
       value={value}
-      onValueChange={(value) => {
-        if (value) setValue(value)
+      onValueChange={value => {
+        if (value) setValue(value);
       }}
     >
       <ToggleGroupItem
@@ -54,5 +54,5 @@ export default function Component() {
         <AlignJustifyIcon size={16} aria-hidden="true" />
       </ToggleGroupItem>
     </ToggleGroup>
-  )
+  );
 }

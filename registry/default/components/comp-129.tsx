@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { BellIcon } from "lucide-react"
+import { BellIcon } from "lucide-react";
+import { useState } from "react";
 
-import { Badge } from "@/registry/default/ui/badge"
-import { Button } from "@/registry/default/ui/button"
+import { Badge } from "@/registry/default/ui/badge";
+import { Button } from "@/registry/default/ui/button";
 
 export default function Component() {
-  const [count, setCount] = useState(3)
+  const [count, setCount] = useState(3);
 
   const handleClick = () => {
-    setCount(0)
-  }
+    setCount(0);
+  };
 
   return (
     <Button
@@ -28,5 +28,5 @@ export default function Component() {
         </Badge>
       )}
     </Button>
-  )
+  );
 }

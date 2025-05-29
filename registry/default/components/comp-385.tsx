@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { useState } from "react"
+import { useState } from "react";
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/default/ui/button";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/registry/default/ui/popover"
+} from "@/registry/default/ui/popover";
 
 const tips = [
   {
@@ -25,18 +25,18 @@ const tips = [
     description:
       "Click the support icon in the top right corner to access our help center and documentation.",
   },
-]
+];
 
 export default function Component() {
-  const [currentTip, setCurrentTip] = useState(0)
+  const [currentTip, setCurrentTip] = useState(0);
 
   const handleNavigation = () => {
     if (currentTip === tips.length - 1) {
-      setCurrentTip(0)
+      setCurrentTip(0);
     } else {
-      setCurrentTip(currentTip + 1)
+      setCurrentTip(currentTip + 1);
     }
-  }
+  };
 
   return (
     <Popover>
@@ -65,5 +65,5 @@ export default function Component() {
         </div>
       </PopoverContent>
     </Popover>
-  )
+  );
 }

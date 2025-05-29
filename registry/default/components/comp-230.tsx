@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { useId, useState } from "react"
-import { CheckIcon, ChevronDownIcon, PlusIcon } from "lucide-react"
+import { CheckIcon, ChevronDownIcon, PlusIcon } from "lucide-react";
+import { useId, useState } from "react";
 
-import { cn } from "@/registry/default/lib/utils"
-import { Button } from "@/registry/default/ui/button"
+import { cn } from "@/registry/default/lib/utils";
+import { Button } from "@/registry/default/ui/button";
 import {
   Command,
   CommandEmpty,
@@ -13,25 +13,25 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-} from "@/registry/default/ui/command"
-import { Label } from "@/registry/default/ui/label"
+} from "@/registry/default/ui/command";
+import { Label } from "@/registry/default/ui/label";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/registry/default/ui/popover"
+} from "@/registry/default/ui/popover";
 
 const organizations = [
   {
     value: "locospec",
     label: "Locospec",
   },
-]
+];
 
 export default function Component() {
-  const id = useId()
-  const [open, setOpen] = useState<boolean>(false)
-  const [value, setValue] = useState<string>("locospec")
+  const id = useId();
+  const [open, setOpen] = useState<boolean>(false);
+  const [value, setValue] = useState<string>("locospec");
 
   return (
     <div className="*:not-first:mt-2">
@@ -48,7 +48,7 @@ export default function Component() {
             <span className={cn("truncate", !value && "text-muted-foreground")}>
               {value
                 ? organizations.find(
-                    (organization) => organization.value === value
+                    organization => organization.value === value
                   )?.label
                 : "Select organization"}
             </span>
@@ -68,13 +68,13 @@ export default function Component() {
             <CommandList>
               <CommandEmpty>No organization found.</CommandEmpty>
               <CommandGroup>
-                {organizations.map((organization) => (
+                {organizations.map(organization => (
                   <CommandItem
                     key={organization.value}
                     value={organization.value}
-                    onSelect={(currentValue) => {
-                      setValue(currentValue === value ? "" : currentValue)
-                      setOpen(false)
+                    onSelect={currentValue => {
+                      setValue(currentValue === value ? "" : currentValue);
+                      setOpen(false);
                     }}
                   >
                     {organization.label}
@@ -103,5 +103,5 @@ export default function Component() {
         </PopoverContent>
       </Popover>
     </div>
-  )
+  );
 }

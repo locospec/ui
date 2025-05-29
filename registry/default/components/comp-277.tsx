@@ -1,4 +1,4 @@
-import { CircleAlertIcon } from "lucide-react"
+import { CircleAlertIcon } from "lucide-react";
 
 export default function Component() {
   return (
@@ -20,5 +20,5 @@ export default function Component() {
         </div>
       </div>
     </div>
-  )
+  );
 }

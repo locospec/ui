@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { useId, useState } from "react"
-import { ClockIcon } from "lucide-react"
+import { ClockIcon } from "lucide-react";
+import { useId, useState } from "react";
 
-import { Calendar } from "@/registry/default/ui/calendar"
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
+import { Calendar } from "@/registry/default/ui/calendar";
+import { Input } from "@/registry/default/ui/input";
+import { Label } from "@/registry/default/ui/label";
 
 export default function Component() {
-  const id = useId()
-  const [date, setDate] = useState<Date | undefined>(new Date())
+  const id = useId();
+  const [date, setDate] = useState<Date | undefined>(new Date());
 
   return (
     <div>
@@ -56,5 +56,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  )
+  );
 }

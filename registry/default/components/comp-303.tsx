@@ -1,4 +1,4 @@
-import { EclipseIcon } from "lucide-react"
+import { EclipseIcon } from "lucide-react";
 
 export default function Component() {
   return (
@@ -16,5 +16,5 @@ export default function Component() {
         </a>
       </p>
     </div>
-  )
+  );
 }

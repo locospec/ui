@@ -1,7 +1,7 @@
-import Link from "next/link"
-import { RiArrowRightUpLine } from "@remixicon/react"
+import { RiArrowRightUpLine } from "@remixicon/react";
+import Link from "next/link";
 
-import { cn } from "@/registry/default/lib/utils"
+import { cn } from "@/registry/default/lib/utils";
 
 export default function HeaderLink({
   text,
@@ -10,11 +10,11 @@ export default function HeaderLink({
   className,
   isNew = false,
 }: {
-  text: string
-  href: string
-  external?: boolean
-  className?: string
-  isNew?: boolean
+  text: string;
+  href: string;
+  external?: boolean;
+  className?: string;
+  isNew?: boolean;
 }) {
   return (
     <div className="flex items-start gap-1.5">
@@ -56,5 +56,5 @@ export default function HeaderLink({
         </>
       )}
     </div>
-  )
+  );
 }

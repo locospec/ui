@@ -1,14 +1,14 @@
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/default/ui/button";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/registry/default/ui/dialog"
-import { Label } from "@/registry/default/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
-import { Textarea } from "@/registry/default/ui/textarea"
+} from "@/registry/default/ui/dialog";
+import { Label } from "@/registry/default/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
+import { Textarea } from "@/registry/default/ui/textarea";
 
 export default function Component() {
   return (
@@ -31,7 +31,7 @@ export default function Component() {
                     How hard was it to set up your account?
                   </legend>
                   <RadioGroup className="flex gap-0 -space-x-px rounded-md shadow-xs">
-                    {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((number) => (
+                    {[0, 1, 2, 3, 4, 5, 6, 7, 8].map(number => (
                       <label
                         key={number}
                         className="border-input has-data-[state=checked]:border-primary/50 has-focus-visible:border-ring has-focus-visible:ring-ring/50 relative flex size-9 flex-1 cursor-pointer flex-col items-center justify-center gap-3 border text-center text-sm transition-[color,box-shadow] outline-none first:rounded-s-md last:rounded-e-md has-focus-visible:ring-[3px] has-data-disabled:cursor-not-allowed has-data-disabled:opacity-50 has-data-[state=checked]:z-10"
@@ -68,5 +68,5 @@ export default function Component() {
         </div>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

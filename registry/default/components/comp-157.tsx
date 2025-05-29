@@ -1,11 +1,11 @@
-import { useId } from "react"
-import { RiStarFill } from "@remixicon/react"
+import { RiStarFill } from "@remixicon/react";
+import { useId } from "react";
 
-import { Label } from "@/registry/default/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
+import { Label } from "@/registry/default/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
 
 export default function Component() {
-  const id = useId()
+  const id = useId();
   return (
     <RadioGroup defaultValue="all">
       <div className="flex items-center gap-2">
@@ -113,5 +113,5 @@ export default function Component() {
         </Label>
       </div>
     </RadioGroup>
-  )
+  );
 }
