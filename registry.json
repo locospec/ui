@@ -176,7 +176,7 @@
           "type": "registry:ui"
         }
       ]
-    },    
+    },
     {
       "name": "datefield-rac",
       "type": "registry:ui",
@@ -1233,7 +1233,15 @@
         }
       ],
       "meta": {
-        "tags": ["input", "label", "date", "calendar", "range calendar", "picker", "react aria"]
+        "tags": [
+          "input",
+          "label",
+          "date",
+          "calendar",
+          "range calendar",
+          "picker",
+          "react aria"
+        ]
       }
     },
     {
@@ -1243,7 +1251,11 @@
         "https://ui.locospec.com/r/calendar-rac.json",
         "https://ui.locospec.com/r/datefield-rac.json"
       ],
-      "dependencies": ["react-aria-components", "react-aria", "@internationalized/date"],
+      "dependencies": [
+        "react-aria-components",
+        "react-aria",
+        "@internationalized/date"
+      ],
       "files": [
         {
           "path": "registry/default/components/comp-43.tsx",
@@ -1251,7 +1263,15 @@
         }
       ],
       "meta": {
-        "tags": ["input", "label", "date", "calendar", "range calendar", "picker", "react aria"]
+        "tags": [
+          "input",
+          "label",
+          "date",
+          "calendar",
+          "range calendar",
+          "picker",
+          "react aria"
+        ]
       }
     },
     {
@@ -4815,7 +4835,15 @@
         }
       ],
       "meta": {
-        "tags": ["slider", "label", "button", "input", "tooltip", "reset", "radix"]
+        "tags": [
+          "slider",
+          "label",
+          "button",
+          "input",
+          "tooltip",
+          "reset",
+          "radix"
+        ]
       }
     },
     {
@@ -6000,7 +6028,14 @@
         }
       ],
       "meta": {
-        "tags": ["dialog", "modal", "signup", "authentication", "form", "radix"],
+        "tags": [
+          "dialog",
+          "modal",
+          "signup",
+          "authentication",
+          "form",
+          "radix"
+        ],
         "style": 1
       }
     },
@@ -6065,7 +6100,15 @@
         }
       ],
       "meta": {
-        "tags": ["dialog", "modal", "checkout", "payment", "credit card", "form", "radix"],
+        "tags": [
+          "dialog",
+          "modal",
+          "checkout",
+          "payment",
+          "credit card",
+          "form",
+          "radix"
+        ],
         "style": 1
       }
     },
@@ -6089,7 +6132,15 @@
         }
       ],
       "meta": {
-        "tags": ["dialog", "modal", "checkout", "payment", "credit card", "form", "radix"],
+        "tags": [
+          "dialog",
+          "modal",
+          "checkout",
+          "payment",
+          "credit card",
+          "form",
+          "radix"
+        ],
         "style": 1
       }
     },
@@ -6138,7 +6189,16 @@
         }
       ],
       "meta": {
-        "tags": ["dialog", "modal", "user", "profile", "image", "avatar", "form", "radix"],
+        "tags": [
+          "dialog",
+          "modal",
+          "user",
+          "profile",
+          "image",
+          "avatar",
+          "form",
+          "radix"
+        ],
         "style": 1
       }
     },
@@ -8694,7 +8754,15 @@
         }
       ],
       "meta": {
-        "tags": ["table", "tanstack", "checkbox", "collapsible", "flag", "badge", "chip"],
+        "tags": [
+          "table",
+          "tanstack",
+          "checkbox",
+          "collapsible",
+          "flag",
+          "badge",
+          "chip"
+        ],
         "colSpan": 3
       }
     },
@@ -8718,7 +8786,16 @@
         }
       ],
       "meta": {
-        "tags": ["table", "tanstack", "checkbox", "sort", "flag", "badge", "chip", "pagination"],
+        "tags": [
+          "table",
+          "tanstack",
+          "checkbox",
+          "sort",
+          "flag",
+          "badge",
+          "chip",
+          "pagination"
+        ],
         "colSpan": 3
       }
     },
@@ -8745,7 +8822,16 @@
         }
       ],
       "meta": {
-        "tags": ["table", "tanstack", "checkbox", "sort", "flag", "badge", "chip", "pagination"],
+        "tags": [
+          "table",
+          "tanstack",
+          "checkbox",
+          "sort",
+          "flag",
+          "badge",
+          "chip",
+          "pagination"
+        ],
         "colSpan": 3
       }
     },
@@ -8849,7 +8935,13 @@
         }
       ],
       "meta": {
-        "tags": ["calendar", "range calendar", "date", "disabled", "react aria"],
+        "tags": [
+          "calendar",
+          "range calendar",
+          "date",
+          "disabled",
+          "react aria"
+        ],
         "style": 1
       }
     },
@@ -8894,7 +8986,13 @@
         }
       ],
       "meta": {
-        "tags": ["calendar", "range calendar", "date", "disabled", "react daypicker"],
+        "tags": [
+          "calendar",
+          "range calendar",
+          "date",
+          "disabled",
+          "react daypicker"
+        ],
         "style": 1
       }
     },
@@ -9156,7 +9254,13 @@
         }
       ],
       "meta": {
-        "tags": ["calendar", "range calendar", "date", "button", "react daypicker"],
+        "tags": [
+          "calendar",
+          "range calendar",
+          "date",
+          "button",
+          "react daypicker"
+        ],
         "colSpan": 3,
         "style": 1
       }
@@ -9685,7 +9789,13 @@
     {
       "name": "comp-542",
       "type": "registry:component",
-      "dependencies": ["date-fns", "@dnd-kit/core", "@dnd-kit/modifiers", "@dnd-kit/utilities", "@remixicon/react"],
+      "dependencies": [
+        "date-fns",
+        "@dnd-kit/core",
+        "@dnd-kit/modifiers",
+        "@dnd-kit/utilities",
+        "@remixicon/react"
+      ],
       "registryDependencies": [
         "https://ui.locospec.com/r/button.json",
         "https://ui.locospec.com/r/calendar.json",
@@ -9782,9 +9892,7 @@
     {
       "name": "comp-543",
       "type": "registry:component",
-      "registryDependencies": [
-        "https://ui.locospec.com/r/button.json"
-      ],      
+      "registryDependencies": ["https://ui.locospec.com/r/button.json"],
       "files": [
         {
           "path": "registry/default/components/comp-543.tsx",
@@ -9793,12 +9901,12 @@
         {
           "path": "registry/default/hooks/use-file-upload.ts",
           "type": "registry:hook"
-        }        
+        }
       ],
       "meta": {
         "tags": ["upload", "file", "image", "drag and drop", "avatar"]
       }
-    },    
+    },
     {
       "name": "comp-544",
       "type": "registry:component",
@@ -9810,7 +9918,7 @@
         {
           "path": "registry/default/hooks/use-file-upload.ts",
           "type": "registry:hook"
-        }        
+        }
       ],
       "meta": {
         "tags": ["upload", "file", "image", "drag and drop"],
@@ -9820,9 +9928,7 @@
     {
       "name": "comp-545",
       "type": "registry:component",
-      "registryDependencies": [
-        "https://ui.locospec.com/r/button.json"
-      ],
+      "registryDependencies": ["https://ui.locospec.com/r/button.json"],
       "files": [
         {
           "path": "registry/default/components/comp-545.tsx",
@@ -9831,7 +9937,7 @@
         {
           "path": "registry/default/hooks/use-file-upload.ts",
           "type": "registry:hook"
-        }        
+        }
       ],
       "meta": {
         "tags": ["upload", "file", "image", "drag and drop"],
@@ -9841,9 +9947,7 @@
     {
       "name": "comp-546",
       "type": "registry:component",
-      "registryDependencies": [
-        "https://ui.locospec.com/r/button.json"
-      ],      
+      "registryDependencies": ["https://ui.locospec.com/r/button.json"],
       "files": [
         {
           "path": "registry/default/components/comp-546.tsx",
@@ -9852,7 +9956,7 @@
         {
           "path": "registry/default/hooks/use-file-upload.ts",
           "type": "registry:hook"
-        }        
+        }
       ],
       "meta": {
         "tags": ["upload", "file", "image", "drag and drop"],
@@ -9862,9 +9966,7 @@
     {
       "name": "comp-547",
       "type": "registry:component",
-      "registryDependencies": [
-        "https://ui.locospec.com/r/button.json"
-      ],      
+      "registryDependencies": ["https://ui.locospec.com/r/button.json"],
       "files": [
         {
           "path": "registry/default/components/comp-547.tsx",
@@ -9873,7 +9975,7 @@
         {
           "path": "registry/default/hooks/use-file-upload.ts",
           "type": "registry:hook"
-        }        
+        }
       ],
       "meta": {
         "tags": ["upload", "file", "image", "drag and drop"],
@@ -9883,9 +9985,7 @@
     {
       "name": "comp-548",
       "type": "registry:component",
-      "registryDependencies": [
-        "https://ui.locospec.com/r/button.json"
-      ],      
+      "registryDependencies": ["https://ui.locospec.com/r/button.json"],
       "files": [
         {
           "path": "registry/default/components/comp-548.tsx",
@@ -9894,7 +9994,7 @@
         {
           "path": "registry/default/hooks/use-file-upload.ts",
           "type": "registry:hook"
-        }        
+        }
       ],
       "meta": {
         "tags": ["upload", "file", "image", "drag and drop"],
@@ -9904,9 +10004,7 @@
     {
       "name": "comp-549",
       "type": "registry:component",
-      "registryDependencies": [
-        "https://ui.locospec.com/r/button.json"
-      ],      
+      "registryDependencies": ["https://ui.locospec.com/r/button.json"],
       "files": [
         {
           "path": "registry/default/components/comp-549.tsx",
@@ -9915,7 +10013,7 @@
         {
           "path": "registry/default/hooks/use-file-upload.ts",
           "type": "registry:hook"
-        }        
+        }
       ],
       "meta": {
         "tags": ["upload", "file", "image", "drag and drop"],
@@ -9925,9 +10023,7 @@
     {
       "name": "comp-550",
       "type": "registry:component",
-      "registryDependencies": [
-        "https://ui.locospec.com/r/button.json"
-      ],      
+      "registryDependencies": ["https://ui.locospec.com/r/button.json"],
       "files": [
         {
           "path": "registry/default/components/comp-550.tsx",
@@ -9936,7 +10032,7 @@
         {
           "path": "registry/default/hooks/use-file-upload.ts",
           "type": "registry:hook"
-        }        
+        }
       ],
       "meta": {
         "tags": ["upload", "file", "image", "drag and drop"],
@@ -9949,7 +10045,7 @@
       "registryDependencies": [
         "https://ui.locospec.com/r/button.json",
         "https://ui.locospec.com/r/table.json"
-      ],      
+      ],
       "files": [
         {
           "path": "registry/default/components/comp-551.tsx",
@@ -9958,19 +10054,17 @@
         {
           "path": "registry/default/hooks/use-file-upload.ts",
           "type": "registry:hook"
-        }        
+        }
       ],
       "meta": {
         "tags": ["upload", "file", "image", "drag and drop"],
         "colSpan": 2
       }
-    },   
+    },
     {
       "name": "comp-552",
       "type": "registry:component",
-      "registryDependencies": [
-        "https://ui.locospec.com/r/button.json"
-      ],      
+      "registryDependencies": ["https://ui.locospec.com/r/button.json"],
       "files": [
         {
           "path": "registry/default/components/comp-552.tsx",
@@ -9979,7 +10073,7 @@
         {
           "path": "registry/default/hooks/use-file-upload.ts",
           "type": "registry:hook"
-        }        
+        }
       ],
       "meta": {
         "tags": ["upload", "file", "image", "drag and drop"],
@@ -9989,9 +10083,7 @@
     {
       "name": "comp-553",
       "type": "registry:component",
-      "registryDependencies": [
-        "https://ui.locospec.com/r/button.json"
-      ],      
+      "registryDependencies": ["https://ui.locospec.com/r/button.json"],
       "files": [
         {
           "path": "registry/default/components/comp-553.tsx",
@@ -10000,7 +10092,7 @@
         {
           "path": "registry/default/hooks/use-file-upload.ts",
           "type": "registry:hook"
-        }        
+        }
       ],
       "meta": {
         "tags": ["upload", "file", "image", "drag and drop"],
@@ -10016,7 +10108,7 @@
         "https://ui.locospec.com/r/dialog.json",
         "https://ui.locospec.com/r/select.json",
         "https://ui.locospec.com/r/slider.json"
-      ],      
+      ],
       "files": [
         {
           "path": "registry/default/components/comp-554.tsx",
@@ -10028,16 +10120,23 @@
         }
       ],
       "meta": {
-        "tags": ["upload", "file", "image", "drag and drop", "crop", "dialog", "slider", "zoom"],
+        "tags": [
+          "upload",
+          "file",
+          "image",
+          "drag and drop",
+          "crop",
+          "dialog",
+          "slider",
+          "zoom"
+        ],
         "colSpan": 3
       }
     },
     {
       "name": "comp-555",
       "type": "registry:component",
-      "registryDependencies": [
-        "https://ui.locospec.com/r/cropper.json"
-      ],      
+      "registryDependencies": ["https://ui.locospec.com/r/cropper.json"],
       "files": [
         {
           "path": "registry/default/components/comp-555.tsx",
@@ -10046,15 +10145,13 @@
       ],
       "meta": {
         "tags": ["image", "crop", "zoom"],
-        "colSpan": 2  
+        "colSpan": 2
       }
     },
     {
       "name": "comp-556",
       "type": "registry:component",
-      "registryDependencies": [
-        "https://ui.locospec.com/r/cropper.json"
-      ],      
+      "registryDependencies": ["https://ui.locospec.com/r/cropper.json"],
       "files": [
         {
           "path": "registry/default/components/comp-556.tsx",
@@ -10063,15 +10160,13 @@
       ],
       "meta": {
         "tags": ["image", "crop", "zoom"],
-        "colSpan": 2 
+        "colSpan": 2
       }
     },
     {
       "name": "comp-557",
       "type": "registry:component",
-      "registryDependencies": [
-        "https://ui.locospec.com/r/cropper.json"
-      ],      
+      "registryDependencies": ["https://ui.locospec.com/r/cropper.json"],
       "files": [
         {
           "path": "registry/default/components/comp-557.tsx",
@@ -10086,9 +10181,7 @@
     {
       "name": "comp-558",
       "type": "registry:component",
-      "registryDependencies": [
-        "https://ui.locospec.com/r/cropper.json"
-      ],      
+      "registryDependencies": ["https://ui.locospec.com/r/cropper.json"],
       "files": [
         {
           "path": "registry/default/components/comp-558.tsx",
@@ -10103,9 +10196,7 @@
     {
       "name": "comp-559",
       "type": "registry:component",
-      "registryDependencies": [
-        "https://ui.locospec.com/r/cropper.json"
-      ],      
+      "registryDependencies": ["https://ui.locospec.com/r/cropper.json"],
       "files": [
         {
           "path": "registry/default/components/comp-559.tsx",
@@ -10120,9 +10211,7 @@
     {
       "name": "comp-560",
       "type": "registry:component",
-      "registryDependencies": [
-        "https://ui.locospec.com/r/cropper.json"
-      ],      
+      "registryDependencies": ["https://ui.locospec.com/r/cropper.json"],
       "files": [
         {
           "path": "registry/default/components/comp-560.tsx",
@@ -10140,7 +10229,7 @@
       "registryDependencies": [
         "https://ui.locospec.com/r/cropper.json",
         "https://ui.locospec.com/r/select.json"
-      ],      
+      ],
       "files": [
         {
           "path": "registry/default/components/comp-561.tsx",
@@ -10155,9 +10244,7 @@
     {
       "name": "comp-562",
       "type": "registry:component",
-      "registryDependencies": [
-        "https://ui.locospec.com/r/cropper.json"
-      ],      
+      "registryDependencies": ["https://ui.locospec.com/r/cropper.json"],
       "files": [
         {
           "path": "registry/default/components/comp-562.tsx",
@@ -10172,9 +10259,7 @@
     {
       "name": "comp-563",
       "type": "registry:component",
-      "registryDependencies": [
-        "https://ui.locospec.com/r/cropper.json"
-      ],      
+      "registryDependencies": ["https://ui.locospec.com/r/cropper.json"],
       "files": [
         {
           "path": "registry/default/components/comp-563.tsx",
@@ -10189,9 +10274,7 @@
     {
       "name": "comp-564",
       "type": "registry:component",
-      "registryDependencies": [
-        "https://ui.locospec.com/r/cropper.json"
-      ],      
+      "registryDependencies": ["https://ui.locospec.com/r/cropper.json"],
       "files": [
         {
           "path": "registry/default/components/comp-564.tsx",
@@ -10211,7 +10294,7 @@
         {
           "path": "registry/default/components/comp-565.tsx",
           "type": "registry:component"
-        } 
+        }
       ],
       "meta": {
         "tags": ["tree"]
@@ -10274,7 +10357,7 @@
       }
     },
     {
-      "name": "comp-570", 
+      "name": "comp-570",
       "type": "registry:component",
       "registryDependencies": ["https://ui.locospec.com/r/tree.json"],
       "files": [
@@ -10288,9 +10371,12 @@
       }
     },
     {
-      "name": "comp-571", 
+      "name": "comp-571",
       "type": "registry:component",
-      "registryDependencies": ["https://ui.locospec.com/r/tree.json", "https://ui.locospec.com/r/input.json"],
+      "registryDependencies": [
+        "https://ui.locospec.com/r/tree.json",
+        "https://ui.locospec.com/r/input.json"
+      ],
       "files": [
         {
           "path": "registry/default/components/comp-571.tsx",
@@ -10302,9 +10388,12 @@
       }
     },
     {
-      "name": "comp-572", 
+      "name": "comp-572",
       "type": "registry:component",
-      "registryDependencies": ["https://ui.locospec.com/r/tree.json", "https://ui.locospec.com/r/input.json"],
+      "registryDependencies": [
+        "https://ui.locospec.com/r/tree.json",
+        "https://ui.locospec.com/r/input.json"
+      ],
       "files": [
         {
           "path": "registry/default/components/comp-572.tsx",
@@ -10316,7 +10405,7 @@
       }
     },
     {
-      "name": "comp-573", 
+      "name": "comp-573",
       "type": "registry:component",
       "registryDependencies": ["https://ui.locospec.com/r/tree.json"],
       "files": [
@@ -10330,9 +10419,12 @@
       }
     },
     {
-      "name": "comp-574", 
+      "name": "comp-574",
       "type": "registry:component",
-      "registryDependencies": ["https://ui.locospec.com/r/tree.json", "https://ui.locospec.com/r/button.json"],
+      "registryDependencies": [
+        "https://ui.locospec.com/r/tree.json",
+        "https://ui.locospec.com/r/button.json"
+      ],
       "files": [
         {
           "path": "registry/default/components/comp-574.tsx",
@@ -10344,7 +10436,7 @@
       }
     },
     {
-      "name": "comp-575", 
+      "name": "comp-575",
       "type": "registry:component",
       "registryDependencies": ["https://ui.locospec.com/r/tree.json"],
       "files": [
@@ -10358,12 +10450,26 @@
       }
     },
     {
-      "name": "comp-576", 
+      "name": "comp-576",
       "type": "registry:component",
       "registryDependencies": ["https://ui.locospec.com/r/tree.json"],
       "files": [
         {
           "path": "registry/default/components/comp-576.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": ["tree", "menu"]
+      }
+    },
+    {
+      "name": "my-badge",
+      "type": "registry:component",
+      "registryDependencies": ["badge"],
+      "files": [
+        {
+          "path": "registry/default/components/locospecui/my-badge.tsx",
           "type": "registry:component"
         }
       ],
