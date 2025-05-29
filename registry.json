@@ -10469,7 +10469,7 @@
       "registryDependencies": ["badge"],
       "files": [
         {
-          "path": "registry/default/components/locospecui/my-badge.tsx",
+          "path": "components/locospecui/my-badge.tsx",
           "type": "registry:component"
         }
       ],
