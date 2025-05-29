@@ -113,6 +113,6 @@ We welcome contributions to Origin UI! Please read our [contributing guidelines]
 
 ## License
 
-Licensed under the [MIT License](https://github.com/origin-space/originui/blob/main/LICENSE.md).
+Licensed under the [MIT License](https://github.com/locospec/ui/blob/main/LICENSE.md).
 
 If you have any questions or just want to say hi, feel free to reach out to us on X 👉 [@pacovitiello](https://x.com/pacovitiello) & [@DavidePacilio](https://x.com/DavidePacilio).

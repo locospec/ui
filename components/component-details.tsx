@@ -113,7 +113,7 @@ export default function ComponentDetails({
                   <p className="text-muted-foreground text-sm">
                     No code available. If you think this is an error, please{" "}
                     <a
-                      href="https://github.com/origin-space/originui/issues"
+                      href="https://github.com/locospec/ui/issues"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-foreground font-medium underline hover:no-underline"

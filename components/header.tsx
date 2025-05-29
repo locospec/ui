@@ -82,7 +82,7 @@ export default function Header() {
             </a>
             <a
               className="text-muted-foreground hover:text-foreground/80 focus-visible:border-ring focus-visible:ring-ring/50 inline-flex size-9 items-center justify-center rounded outline-none focus-visible:ring-[3px]"
-              href="https://github.com/origin-space/originui"
+              href="https://github.com/locospec/ui"
               target="_blank"
               rel="noopener noreferrer"
             >

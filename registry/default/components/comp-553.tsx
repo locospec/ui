@@ -434,7 +434,7 @@ export default function Component() {
       >
         With simulated progress track ∙{" "}
         <a
-          href="https://github.com/origin-space/originui/tree/main/docs/use-file-upload.md"
+          href="https://github.com/locospec/ui/tree/main/docs/use-file-upload.md"
           className="hover:text-foreground underline"
           target="_blank"
         >

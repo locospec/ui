@@ -23,19 +23,15 @@ import {
 
 const organizations = [
   {
-    value: "originui",
-    label: "Origin UI",
-  },
-  {
-    value: "cruip",
-    label: "Cruip",
+    value: "locospec",
+    label: "Locospec",
   },
 ]
 
 export default function Component() {
   const id = useId()
   const [open, setOpen] = useState<boolean>(false)
-  const [value, setValue] = useState<string>("originui")
+  const [value, setValue] = useState<string>("locospec")
 
   return (
     <div className="*:not-first:mt-2">

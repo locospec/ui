@@ -65,7 +65,7 @@ export default function RootLayout({
         </ThemeProvider>
         <Script
           src="https://plausible.cruip.com/js/script.js"
-          data-domain="originui.com"
+          data-domain="locospec.com"
           strategy="beforeInteractive"
           defer
         />
