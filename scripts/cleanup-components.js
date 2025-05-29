@@ -17,19 +17,45 @@ registryData.items = filteredItems;
 
 // Write the updated registry back to file
 fs.writeFileSync(registryPath, JSON.stringify(registryData, null, 2));
+console.log('✅ Successfully removed comp-* entries from registry.json');
 
-console.log('Successfully removed comp-* entries from registry.json');
-
-// Delete component files
-const componentsDir = path.join(__dirname, '../registry/default/components');
-const files = fs.readdirSync(componentsDir);
-
-files.forEach(file => {
-  if (file.startsWith('comp-') && file.endsWith('.tsx')) {
-    const filePath = path.join(componentsDir, file);
-    fs.unlinkSync(filePath);
-    console.log(`Deleted: ${filePath}`);
+// Function to delete files matching pattern in a directory
+function deleteFilesInDir(dirPath, pattern) {
+  if (!fs.existsSync(dirPath)) {
+    console.log(`ℹ️  Directory does not exist: ${dirPath}`);
+    return;
   }
-});
 
-console.log('Successfully deleted comp-* files from registry/default/components');
+  const files = fs.readdirSync(dirPath);
+  let deletedCount = 0;
+
+  files.forEach(file => {
+    if (file.match(pattern)) {
+      const filePath = path.join(dirPath, file);
+      try {
+        fs.unlinkSync(filePath);
+        console.log(`🗑️  Deleted: ${filePath}`);
+        deletedCount++;
+      } catch (err) {
+        console.error(`❌ Error deleting ${filePath}:`, err.message);
+      }
+    }
+  });
+
+  return deletedCount;
+}
+
+// Delete component files from registry
+const componentsDir = path.join(__dirname, '../registry/default/components');
+const registryDeleted = deleteFilesInDir(componentsDir, /^comp-.*\.tsx$/);
+console.log(`✅ Deleted ${registryDeleted || 0} files from registry/default/components`);
+
+// Delete files from public/r
+const publicRDir = path.join(__dirname, '../public/r');
+const publicRDeleted = deleteFilesInDir(publicRDir, /^comp-.*\.json$/);
+console.log(`✅ Deleted ${publicRDeleted || 0} files from public/r`);
+
+// Delete files from public/r/legacy
+const publicRLegacyDir = path.join(__dirname, '../public/r/legacy');
+const publicRLegacyDeleted = deleteFilesInDir(publicRLegacyDir, /^comp-.*\.json$/);
+console.log(`✅ Deleted ${publicRLegacyDeleted || 0} files from public/r/legacy`);
