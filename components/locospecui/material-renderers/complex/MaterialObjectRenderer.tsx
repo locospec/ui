@@ -23,7 +23,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
-import isEmpty from "lodash/isEmpty";
 import {
   findUISchema,
   Generate,
@@ -33,7 +32,8 @@ import {
   StatePropsOfControlWithDetail,
 } from "@jsonforms/core";
 import { JsonFormsDispatch, withJsonFormsDetailProps } from "@jsonforms/react";
-import React, { useMemo } from "react";
+import isEmpty from "lodash/isEmpty";
+import { useMemo } from "react";
 
 export const MaterialObjectRenderer = ({
   renderers,

@@ -24,11 +24,11 @@
 */
 import MaterialLabelRenderer, {
   materialLabelRendererTester,
-} from './MaterialLabelRenderer';
+} from "./MaterialLabelRenderer";
 
 import MaterialListWithDetailRenderer, {
   materialListWithDetailTester,
-} from './MaterialListWithDetailRenderer';
+} from "./MaterialListWithDetailRenderer";
 
 export {
   MaterialLabelRenderer,
@@ -37,4 +37,4 @@ export {
   materialListWithDetailTester,
 };
 
-export * from './ListWithDetailMasterItem';
+export * from "./ListWithDetailMasterItem";

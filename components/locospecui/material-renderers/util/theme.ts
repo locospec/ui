@@ -24,13 +24,13 @@
   THE SOFTWARE.
 */
 import {
-  Theme,
   FilledInput,
   Input,
+  InputBaseProps,
   OutlinedInput,
   TextFieldProps,
+  Theme,
   useThemeProps,
-  InputBaseProps,
 } from "@mui/material";
 
 export interface JsonFormsTheme extends Theme {

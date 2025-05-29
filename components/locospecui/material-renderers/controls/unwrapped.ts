@@ -22,21 +22,21 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
-import { MaterialAnyOfStringOrEnumControl } from './MaterialAnyOfStringOrEnumControl';
-import { MaterialBooleanControl } from './MaterialBooleanControl';
-import { MaterialBooleanToggleControl } from './MaterialBooleanToggleControl';
-import { MaterialDateControl } from './MaterialDateControl';
-import { MaterialDateTimeControl } from './MaterialDateTimeControl';
-import { MaterialEnumControl } from './MaterialEnumControl';
-import { MaterialIntegerControl } from './MaterialIntegerControl';
-import { MaterialNativeControl } from './MaterialNativeControl';
-import { MaterialNumberControl } from './MaterialNumberControl';
-import { MaterialOneOfEnumControl } from './MaterialOneOfEnumControl';
-import { MaterialOneOfRadioGroupControl } from './MaterialOneOfRadioGroupControl';
-import { MaterialRadioGroupControl } from './MaterialRadioGroupControl';
-import { MaterialSliderControl } from './MaterialSliderControl';
-import { MaterialTextControl } from './MaterialTextControl';
-import { MaterialTimeControl } from './MaterialTimeControl';
+import { MaterialAnyOfStringOrEnumControl } from "./MaterialAnyOfStringOrEnumControl";
+import { MaterialBooleanControl } from "./MaterialBooleanControl";
+import { MaterialBooleanToggleControl } from "./MaterialBooleanToggleControl";
+import { MaterialDateControl } from "./MaterialDateControl";
+import { MaterialDateTimeControl } from "./MaterialDateTimeControl";
+import { MaterialEnumControl } from "./MaterialEnumControl";
+import { MaterialIntegerControl } from "./MaterialIntegerControl";
+import { MaterialNativeControl } from "./MaterialNativeControl";
+import { MaterialNumberControl } from "./MaterialNumberControl";
+import { MaterialOneOfEnumControl } from "./MaterialOneOfEnumControl";
+import { MaterialOneOfRadioGroupControl } from "./MaterialOneOfRadioGroupControl";
+import { MaterialRadioGroupControl } from "./MaterialRadioGroupControl";
+import { MaterialSliderControl } from "./MaterialSliderControl";
+import { MaterialTextControl } from "./MaterialTextControl";
+import { MaterialTimeControl } from "./MaterialTimeControl";
 
 export const UnwrappedControls = {
   MaterialAnyOfStringOrEnumControl,

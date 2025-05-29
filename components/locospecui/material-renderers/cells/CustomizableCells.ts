@@ -22,12 +22,12 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
-export { MaterialBooleanCell } from './MaterialBooleanCell';
-export { MaterialDateCell } from './MaterialDateCell';
-export { MaterialEnumCell } from './MaterialEnumCell';
-export { MaterialIntegerCell } from './MaterialIntegerCell';
-export { MaterialNumberCell } from './MaterialNumberCell';
-export { MaterialNumberFormatCell } from './MaterialNumberFormatCell';
-export { MaterialOneOfEnumCell } from './MaterialOneOfEnumCell';
-export { MaterialTextCell } from './MaterialTextCell';
-export { MaterialTimeCell } from './MaterialTimeCell';
+export { MaterialBooleanCell } from "./MaterialBooleanCell";
+export { MaterialDateCell } from "./MaterialDateCell";
+export { MaterialEnumCell } from "./MaterialEnumCell";
+export { MaterialIntegerCell } from "./MaterialIntegerCell";
+export { MaterialNumberCell } from "./MaterialNumberCell";
+export { MaterialNumberFormatCell } from "./MaterialNumberFormatCell";
+export { MaterialOneOfEnumCell } from "./MaterialOneOfEnumCell";
+export { MaterialTextCell } from "./MaterialTextCell";
+export { MaterialTimeCell } from "./MaterialTimeCell";

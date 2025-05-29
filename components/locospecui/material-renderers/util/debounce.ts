@@ -24,7 +24,7 @@
   THE SOFTWARE.
 */
 import debounce from "lodash/debounce";
-import { useState, useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const eventToValue = (ev: any) => ev.target.value;
 export const useDebouncedChange = (

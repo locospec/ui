@@ -23,10 +23,10 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
-import React from "react";
 import { CellProps, WithClassname } from "@jsonforms/core";
-import { Switch, InputProps } from "@mui/material";
+import { InputProps, Switch } from "@mui/material";
 import merge from "lodash/merge";
+import React from "react";
 
 interface MuiToggleInputProps {
   inputProps?: InputProps["inputProps"];

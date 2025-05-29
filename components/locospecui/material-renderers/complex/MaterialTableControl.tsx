@@ -23,16 +23,27 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
-import isEmpty from "lodash/isEmpty";
-import union from "lodash/union";
+import {
+  ArrayLayoutProps,
+  ArrayTranslations,
+  ControlElement,
+  encode,
+  errorAt,
+  formatErrorMessage,
+  JsonFormsCellRendererRegistryEntry,
+  JsonFormsRendererRegistryEntry,
+  JsonSchema,
+  Paths,
+  Resolve,
+} from "@jsonforms/core";
 import {
   DispatchCell,
   JsonFormsStateContext,
   useJsonForms,
 } from "@jsonforms/react";
-import startCase from "lodash/startCase";
-import range from "lodash/range";
-import React, { Fragment, useMemo } from "react";
+import ArrowDownward from "@mui/icons-material/ArrowDownward";
+import ArrowUpward from "@mui/icons-material/ArrowUpward";
+import DeleteIcon from "@mui/icons-material/Delete";
 import {
   FormHelperText,
   Grid,
@@ -45,28 +56,17 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
-import {
-  ArrayLayoutProps,
-  ControlElement,
-  errorAt,
-  formatErrorMessage,
-  JsonSchema,
-  Paths,
-  Resolve,
-  JsonFormsRendererRegistryEntry,
-  JsonFormsCellRendererRegistryEntry,
-  encode,
-  ArrayTranslations,
-} from "@jsonforms/core";
-import DeleteIcon from "@mui/icons-material/Delete";
-import ArrowDownward from "@mui/icons-material/ArrowDownward";
-import ArrowUpward from "@mui/icons-material/ArrowUpward";
+import isEmpty from "lodash/isEmpty";
+import range from "lodash/range";
+import startCase from "lodash/startCase";
+import union from "lodash/union";
+import React, { Fragment, useMemo } from "react";
 
+import { ErrorObject } from "ajv";
+import merge from "lodash/merge";
 import { WithDeleteDialogSupport } from "./DeleteDialog";
 import NoBorderTableCell from "./NoBorderTableCell";
 import TableToolbar from "./TableToolbar";
-import { ErrorObject } from "ajv";
-import merge from "lodash/merge";
 
 // we want a cell that doesn't automatically span
 const styles = {
@@ -94,7 +94,7 @@ const generateCells = (
   cells?: JsonFormsCellRendererRegistryEntry[]
 ) => {
   if (schema.type === "object") {
-    return getValidColumnProps(schema).map((prop) => {
+    return getValidColumnProps(schema).map(prop => {
       const cellPath = Paths.compose(rowPath, prop);
       const props = {
         propName: prop,
@@ -125,7 +125,7 @@ const getValidColumnProps = (scopedSchema: JsonSchema) => {
     typeof scopedSchema.properties === "object"
   ) {
     return Object.keys(scopedSchema.properties).filter(
-      (prop) => scopedSchema.properties[prop].type !== "array"
+      prop => scopedSchema.properties[prop].type !== "array"
     );
   }
   // primitives

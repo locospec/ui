@@ -24,49 +24,49 @@
 */
 import MaterialAnyOfStringOrEnumControl, {
   materialAnyOfStringOrEnumControlTester,
-} from './MaterialAnyOfStringOrEnumControl';
+} from "./MaterialAnyOfStringOrEnumControl";
 import MaterialBooleanControl, {
   materialBooleanControlTester,
-} from './MaterialBooleanControl';
+} from "./MaterialBooleanControl";
 import MaterialBooleanToggleControl, {
   materialBooleanToggleControlTester,
-} from './MaterialBooleanToggleControl';
+} from "./MaterialBooleanToggleControl";
 import MaterialDateControl, {
   materialDateControlTester,
-} from './MaterialDateControl';
+} from "./MaterialDateControl";
 import MaterialDateTimeControl, {
   materialDateTimeControlTester,
-} from './MaterialDateTimeControl';
+} from "./MaterialDateTimeControl";
 import MaterialEnumControl, {
   materialEnumControlTester,
-} from './MaterialEnumControl';
+} from "./MaterialEnumControl";
 import MaterialIntegerControl, {
   materialIntegerControlTester,
-} from './MaterialIntegerControl';
+} from "./MaterialIntegerControl";
 import MaterialNativeControl, {
   materialNativeControlTester,
-} from './MaterialNativeControl';
+} from "./MaterialNativeControl";
 import MaterialNumberControl, {
   materialNumberControlTester,
-} from './MaterialNumberControl';
+} from "./MaterialNumberControl";
 import MaterialOneOfEnumControl, {
   materialOneOfEnumControlTester,
-} from './MaterialOneOfEnumControl';
+} from "./MaterialOneOfEnumControl";
 import MaterialOneOfRadioGroupControl, {
   materialOneOfRadioGroupControlTester,
-} from './MaterialOneOfRadioGroupControl';
+} from "./MaterialOneOfRadioGroupControl";
 import MaterialRadioGroupControl, {
   materialRadioGroupControlTester,
-} from './MaterialRadioGroupControl';
+} from "./MaterialRadioGroupControl";
 import MaterialSliderControl, {
   materialSliderControlTester,
-} from './MaterialSliderControl';
+} from "./MaterialSliderControl";
 import MaterialTextControl, {
   materialTextControlTester,
-} from './MaterialTextControl';
+} from "./MaterialTextControl";
 import MaterialTimeControl, {
   materialTimeControlTester,
-} from './MaterialTimeControl';
+} from "./MaterialTimeControl";
 
 export {
   MaterialAnyOfStringOrEnumControl,
@@ -101,4 +101,4 @@ export {
   materialTimeControlTester,
 };
 
-export * from './MaterialInputControl';
+export * from "./MaterialInputControl";

@@ -23,9 +23,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
-import React, { useState, useMemo } from "react";
-import merge from "lodash/merge";
-import { Button, Step, StepButton, Stepper } from "@mui/material";
 import {
   and,
   Categorization,
@@ -44,6 +41,9 @@ import {
   withJsonFormsLayoutProps,
   withTranslateProps,
 } from "@jsonforms/react";
+import { Button, Step, StepButton, Stepper } from "@mui/material";
+import merge from "lodash/merge";
+import { useMemo, useState } from "react";
 import {
   AjvProps,
   MaterialLayoutRenderer,

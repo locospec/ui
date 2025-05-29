@@ -25,6 +25,7 @@
 */
 import type { StatePropsOfMasterItem } from "@jsonforms/core";
 import { withJsonFormsMasterListItemProps } from "@jsonforms/react";
+import DeleteIcon from "@mui/icons-material/Delete";
 import {
   Avatar,
   IconButton,
@@ -34,8 +35,6 @@ import {
   ListItemText,
   Tooltip,
 } from "@mui/material";
-import DeleteIcon from "@mui/icons-material/Delete";
-import React from "react";
 
 export const ListWithDetailMasterItem = ({
   index,

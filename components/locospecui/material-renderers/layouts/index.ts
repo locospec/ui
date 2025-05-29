@@ -26,28 +26,26 @@ import ExpandPanelRenderer, {
   ctxDispatchToExpandPanelProps,
   withContextToExpandPanelProps,
   withJsonFormsExpandPanelProps,
-} from './ExpandPanelRenderer';
-import MaterialGroupLayout, {
-  materialGroupTester,
-} from './MaterialGroupLayout';
-import MaterialHorizontalLayout, {
-  materialHorizontalLayoutTester,
-} from './MaterialHorizontalLayout';
-import MaterialVerticalLayout, {
-  materialVerticalLayoutTester,
-} from './MaterialVerticalLayout';
-import MaterialCategorizationLayout, {
-  materialCategorizationTester,
-} from './MaterialCategorizationLayout';
+} from "./ExpandPanelRenderer";
 import MaterialArrayLayout, {
   materialArrayLayoutTester,
-} from './MaterialArrayLayoutRenderer';
+} from "./MaterialArrayLayoutRenderer";
+import MaterialCategorizationLayout, {
+  materialCategorizationTester,
+} from "./MaterialCategorizationLayout";
+import MaterialGroupLayout, {
+  materialGroupTester,
+} from "./MaterialGroupLayout";
+import MaterialHorizontalLayout, {
+  materialHorizontalLayoutTester,
+} from "./MaterialHorizontalLayout";
+import MaterialVerticalLayout, {
+  materialVerticalLayoutTester,
+} from "./MaterialVerticalLayout";
 
 export {
-  ExpandPanelRenderer,
   ctxDispatchToExpandPanelProps,
-  withContextToExpandPanelProps,
-  withJsonFormsExpandPanelProps,
+  ExpandPanelRenderer,
   MaterialArrayLayout,
   materialArrayLayoutTester,
   MaterialCategorizationLayout,
@@ -58,6 +56,8 @@ export {
   materialHorizontalLayoutTester,
   MaterialVerticalLayout,
   materialVerticalLayoutTester,
+  withContextToExpandPanelProps,
+  withJsonFormsExpandPanelProps,
 };
 
-export * from './ArrayToolbar';
+export * from "./ArrayToolbar";

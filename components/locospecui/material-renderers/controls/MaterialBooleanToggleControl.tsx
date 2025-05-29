@@ -23,20 +23,19 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
-import isEmpty from "lodash/isEmpty";
-import merge from "lodash/merge";
-import React from "react";
 import {
+  and,
+  ControlProps,
   isBooleanControl,
+  isDescriptionHidden,
+  optionIs,
   RankedTester,
   rankWith,
-  ControlProps,
-  optionIs,
-  and,
-  isDescriptionHidden,
 } from "@jsonforms/core";
 import { withJsonFormsControlProps } from "@jsonforms/react";
 import { FormControlLabel, FormHelperText, Tooltip } from "@mui/material";
+import isEmpty from "lodash/isEmpty";
+import merge from "lodash/merge";
 import { MuiToggle } from "../mui-controls/MuiToggle";
 
 export const MaterialBooleanToggleControl = ({
@@ -83,8 +82,8 @@ export const MaterialBooleanToggleControl = ({
   const firstFormHelperText = showDescription
     ? description
     : !isValid
-    ? errors
-    : null;
+      ? errors
+      : null;
   const secondFormHelperText = showDescription && !isValid ? errors : null;
 
   const descriptionIds = [];

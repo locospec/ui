@@ -23,7 +23,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
-import React, { useCallback, useState } from "react";
 import {
   ArrayLayoutProps,
   ArrayTranslations,
@@ -38,8 +37,9 @@ import {
   withJsonFormsArrayLayoutProps,
   withTranslateProps,
 } from "@jsonforms/react";
-import { MaterialTableControl } from "./MaterialTableControl";
+import { useCallback, useState } from "react";
 import { DeleteDialog } from "./DeleteDialog";
+import { MaterialTableControl } from "./MaterialTableControl";
 
 export const MaterialArrayControlRenderer = (
   props: ArrayLayoutProps & { translations: ArrayTranslations }

@@ -1,6 +1,6 @@
 import React from "react";
-import { generateTitleName } from "./utils";
 import { FormsSwitchInput } from "./FormsSwitchInput";
+import { generateTitleName } from "./utils";
 
 export interface FormsSwitchInputWrapperInterface {
   placeholder?: string;
@@ -21,9 +21,9 @@ export interface FormsSwitchInputWrapperInterface {
   data?: any;
 }
 
-const FormsSwitchInputWrapper: React.FC<FormsSwitchInputWrapperInterface> = (
-  props
-) => {
+const FormsSwitchInputWrapper: React.FC<
+  FormsSwitchInputWrapperInterface
+> = props => {
   const { schema, path, handleChange, errors = null, required, data } = props;
   const { title = "" } = schema;
   const [values, setValues] = React.useState<string>();

@@ -23,7 +23,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
-import React from "react";
 import {
   LayoutProps,
   RankedTester,
@@ -31,11 +30,11 @@ import {
   uiTypeIs,
   VerticalLayout,
 } from "@jsonforms/core";
+import { withJsonFormsLayoutProps } from "@jsonforms/react";
 import {
   MaterialLayoutRenderer,
   MaterialLayoutRendererProps,
 } from "../util/layout";
-import { withJsonFormsLayoutProps } from "@jsonforms/react";
 
 /**
  * Default tester for a vertical layout.

@@ -23,8 +23,8 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
-import React, { useState } from "react";
 import { CellProps, WithClassname } from "@jsonforms/core";
+import Close from "@mui/icons-material/Close";
 import {
   IconButton,
   InputAdornment,
@@ -33,7 +33,7 @@ import {
   useTheme,
 } from "@mui/material";
 import merge from "lodash/merge";
-import Close from "@mui/icons-material/Close";
+import React, { useState } from "react";
 import {
   JsonFormsTheme,
   WithInputProps,

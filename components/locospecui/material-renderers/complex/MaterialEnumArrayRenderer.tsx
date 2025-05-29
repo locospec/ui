@@ -18,7 +18,6 @@ import {
 } from "@jsonforms/core";
 
 import { withJsonFormsMultiEnumProps } from "@jsonforms/react";
-import { MuiCheckbox } from "../mui-controls";
 import {
   FormControl,
   FormControlLabel,
@@ -27,8 +26,8 @@ import {
   FormLabel,
 } from "@mui/material";
 import isEmpty from "lodash/isEmpty";
-import React from "react";
 import merge from "lodash/merge";
+import { MuiCheckbox } from "../mui-controls";
 import { useFocus } from "../util";
 
 export const MaterialEnumArrayRenderer = ({
@@ -135,7 +134,7 @@ export const materialEnumArrayRendererTester: RankedTester = rankWith(
     uiTypeIs("Control"),
     and(
       schemaMatches(
-        (schema) =>
+        schema =>
           hasType(schema, "array") &&
           !Array.isArray(schema.items) &&
           schema.uniqueItems === true

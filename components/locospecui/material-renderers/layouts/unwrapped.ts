@@ -22,12 +22,12 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
-import { ExpandPanelRenderer as ExpandPanelRendererUnwrapped } from './ExpandPanelRenderer';
-import { MaterializedGroupLayoutRenderer } from './MaterialGroupLayout';
-import { MaterialHorizontalLayoutRenderer } from './MaterialHorizontalLayout';
-import { MaterialVerticalLayoutRenderer } from './MaterialVerticalLayout';
-import { MaterialCategorizationLayoutRenderer } from './MaterialCategorizationLayout';
-import { MaterialArrayLayoutRenderer } from './MaterialArrayLayoutRenderer';
+import { ExpandPanelRenderer as ExpandPanelRendererUnwrapped } from "./ExpandPanelRenderer";
+import { MaterialArrayLayoutRenderer } from "./MaterialArrayLayoutRenderer";
+import { MaterialCategorizationLayoutRenderer } from "./MaterialCategorizationLayout";
+import { MaterializedGroupLayoutRenderer } from "./MaterialGroupLayout";
+import { MaterialHorizontalLayoutRenderer } from "./MaterialHorizontalLayout";
+import { MaterialVerticalLayoutRenderer } from "./MaterialVerticalLayout";
 
 export const UnwrappedLayouts = {
   ExpandPanelRenderer: ExpandPanelRendererUnwrapped,
@@ -38,4 +38,4 @@ export const UnwrappedLayouts = {
   MaterialVerticalLayout: MaterialVerticalLayoutRenderer,
 };
 
-export * from './ArrayToolbar';
+export * from "./ArrayToolbar";

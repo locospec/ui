@@ -23,16 +23,16 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
-import React, { useCallback } from "react";
 import {
   ControlProps,
-  showAsRequired,
   isDescriptionHidden,
   isRangeControl,
   RankedTester,
   rankWith,
+  showAsRequired,
 } from "@jsonforms/core";
 import { withJsonFormsControlProps } from "@jsonforms/react";
+import { useCallback } from "react";
 
 import {
   FormControl,

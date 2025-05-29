@@ -22,28 +22,29 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
+import * as Customizable from "./CustomizableCells";
 import MaterialBooleanCell, {
   materialBooleanCellTester,
-} from './MaterialBooleanCell';
+} from "./MaterialBooleanCell";
 import MaterialBooleanToggleCell, {
   materialBooleanToggleCellTester,
-} from './MaterialBooleanToggleCell';
-import MaterialDateCell, { materialDateCellTester } from './MaterialDateCell';
-import MaterialEnumCell, { materialEnumCellTester } from './MaterialEnumCell';
+} from "./MaterialBooleanToggleCell";
+import MaterialDateCell, { materialDateCellTester } from "./MaterialDateCell";
+import MaterialEnumCell, { materialEnumCellTester } from "./MaterialEnumCell";
 import MaterialIntegerCell, {
   materialIntegerCellTester,
-} from './MaterialIntegerCell';
+} from "./MaterialIntegerCell";
 import MaterialNumberCell, {
   materialNumberCellTester,
-} from './MaterialNumberCell';
+} from "./MaterialNumberCell";
 import MaterialNumberFormatCell, {
   materialNumberFormatCellTester,
-} from './MaterialNumberFormatCell';
+} from "./MaterialNumberFormatCell";
 import MaterialOneOfEnumCell, {
   materialOneOfEnumCellTester,
-} from './MaterialOneOfEnumCell';
-import MaterialTextCell, { materialTextCellTester } from './MaterialTextCell';
-import MaterialTimeCell, { materialTimeCellTester } from './MaterialTimeCell';
+} from "./MaterialOneOfEnumCell";
+import MaterialTextCell, { materialTextCellTester } from "./MaterialTextCell";
+import MaterialTimeCell, { materialTimeCellTester } from "./MaterialTimeCell";
 
 export {
   MaterialBooleanCell,
@@ -67,5 +68,4 @@ export {
   MaterialTimeCell,
   materialTimeCellTester,
 };
-import * as Customizable from './CustomizableCells';
 export { Customizable };

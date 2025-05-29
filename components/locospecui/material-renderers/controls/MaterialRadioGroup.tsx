@@ -23,13 +23,11 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
-import merge from "lodash/merge";
-import React from "react";
 import {
   ControlProps,
-  showAsRequired,
   isDescriptionHidden,
   OwnPropsOfEnum,
+  showAsRequired,
 } from "@jsonforms/core";
 import {
   FormControl,
@@ -39,6 +37,7 @@ import {
   Radio,
   RadioGroup,
 } from "@mui/material";
+import merge from "lodash/merge";
 import { useFocus } from "../util";
 
 export const MaterialRadioGroup = (props: ControlProps & OwnPropsOfEnum) => {
@@ -88,7 +87,7 @@ export const MaterialRadioGroup = (props: ControlProps & OwnPropsOfEnum) => {
       </FormLabel>
 
       <RadioGroup value={props.data ?? ""} row={true}>
-        {options.map((option) => (
+        {options.map(option => (
           <FormControlLabel
             value={option.value}
             key={option.label}

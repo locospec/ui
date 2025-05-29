@@ -23,9 +23,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
-import isEmpty from "lodash/isEmpty";
-import React, { ComponentType } from "react";
-import Ajv from "ajv";
 import type { UISchemaElement } from "@jsonforms/core";
 import {
   getAjv,
@@ -36,6 +33,9 @@ import {
 } from "@jsonforms/core";
 import { JsonFormsDispatch, useJsonForms } from "@jsonforms/react";
 import { Grid } from "@mui/material";
+import Ajv from "ajv";
+import isEmpty from "lodash/isEmpty";
+import React, { ComponentType } from "react";
 
 export const renderLayoutElements = (
   elements: UISchemaElement[],

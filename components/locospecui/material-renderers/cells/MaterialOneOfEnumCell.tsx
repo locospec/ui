@@ -23,7 +23,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
-import React from "react";
 import {
   EnumCellProps,
   isOneOfEnumControl,
@@ -36,6 +35,7 @@ import {
   withJsonFormsOneOfEnumCellProps,
   withTranslateProps,
 } from "@jsonforms/react";
+import React from "react";
 import { MuiSelect } from "../mui-controls/MuiSelect";
 
 export const MaterialOneOfEnumCell = (

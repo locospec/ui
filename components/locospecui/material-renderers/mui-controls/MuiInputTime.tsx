@@ -23,9 +23,9 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
-import React from "react";
 import { CellProps, WithClassname } from "@jsonforms/core";
 import merge from "lodash/merge";
+import React from "react";
 import { WithInputProps, useDebouncedChange, useInputComponent } from "../util";
 
 export const MuiInputTime = React.memo(function MuiInputTime(

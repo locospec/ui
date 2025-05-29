@@ -1,3 +1,5 @@
+import { ArrayTranslations } from "@jsonforms/core";
+import AddIcon from "@mui/icons-material/Add";
 import {
   FormHelperText,
   Grid,
@@ -6,11 +8,9 @@ import {
   Toolbar,
   Tooltip,
   Typography,
-} from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
-import React from 'react';
-import ValidationIcon from '../complex/ValidationIcon';
-import { ArrayTranslations } from '@jsonforms/core';
+} from "@mui/material";
+import React from "react";
+import ValidationIcon from "../complex/ValidationIcon";
 export interface ArrayLayoutToolbarProps {
   label: string;
   description: string;
@@ -36,22 +36,22 @@ export const ArrayLayoutToolbar = React.memo(function ArrayLayoutToolbar({
   return (
     <Toolbar disableGutters={true}>
       <Stack>
-        <Grid container alignItems='center' justifyContent='space-between'>
+        <Grid container alignItems="center" justifyContent="space-between">
           <Grid item>
             <Grid
               container
-              justifyContent={'flex-start'}
-              alignItems={'center'}
+              justifyContent={"flex-start"}
+              alignItems={"center"}
               spacing={2}
             >
               <Grid item>
-                <Typography variant={'h6'}>{label}</Typography>
+                <Typography variant={"h6"}>{label}</Typography>
               </Grid>
               <Grid item>
                 {errors.length !== 0 && (
                   <Grid item>
                     <ValidationIcon
-                      id='tooltip-validation'
+                      id="tooltip-validation"
                       errorMessages={errors}
                     />
                   </Grid>
@@ -64,14 +64,14 @@ export const ArrayLayoutToolbar = React.memo(function ArrayLayoutToolbar({
               <Grid container>
                 <Grid item>
                   <Tooltip
-                    id='tooltip-add'
+                    id="tooltip-add"
                     title={translations.addTooltip}
-                    placement='bottom'
+                    placement="bottom"
                   >
                     <IconButton
                       aria-label={translations.addTooltip}
                       onClick={addItem(path, createDefault())}
-                      size='large'
+                      size="large"
                     >
                       <AddIcon />
                     </IconButton>
