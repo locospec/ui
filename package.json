@@ -93,44 +93,5 @@
     "tailwindcss": "^4.1.1",
     "tw-animate-css": "^1.2.5",
     "typescript": "^5.8.2"
-  },
-  "prettier": {
-    "endOfLine": "lf",
-    "semi": false,
-    "singleQuote": false,
-    "tabWidth": 2,
-    "trailingComma": "es5",
-    "importOrder": [
-      "^(react/(.*)$)|^(react$)",
-      "^(next/(.*)$)|^(next$)",
-      "<THIRD_PARTY_MODULES>",
-      "",
-      "^types$",
-      "^@/types/(.*)$",
-      "^@/config/(.*)$",
-      "^@/lib/(.*)$",
-      "^@/hooks/(.*)$",
-      "^@/components/ui/(.*)$",
-      "^@/components/(.*)$",
-      "^@/registry/(.*)$",
-      "^@/styles/(.*)$",
-      "^@/app/(.*)$",
-      "",
-      "^[./]"
-    ],
-    "importOrderSeparation": false,
-    "importOrderSortSpecifiers": true,
-    "importOrderBuiltinModulesToTop": true,
-    "importOrderParserPlugins": [
-      "typescript",
-      "jsx",
-      "decorators-legacy"
-    ],
-    "importOrderMergeDuplicateImports": true,
-    "importOrderCombineTypeAndValueImports": true,
-    "plugins": [
-      "@ianvs/prettier-plugin-sort-imports",
-      "prettier-plugin-tailwindcss"
-    ]
   }
 }
