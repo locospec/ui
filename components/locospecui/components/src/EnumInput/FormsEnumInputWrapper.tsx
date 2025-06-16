@@ -34,21 +34,22 @@ const FormsEnumInputWrapper: React.FC<
     useFormsContext();
   const { schema, path, handleChange, errors = null, required, data } = props;
   const {
-    modelName,
+    relatedModelName,
     title = "",
     dependsOn = [],
     options = [],
     allowedScopes = [],
   } = schema;
+
   const [values, setValues] = React.useState<string>(data ?? "");
   const [searchQuery, setSearchQuery] = React.useState("");
   const [open, setOpen] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
-  const shouldFetch = modelName && options.length === 0;
+  const shouldFetch = relatedModelName && options.length === 0;
 
   const placeholder = capitaliseFirstLetter(path as unknown as string);
 
-  const query_key = `${modelName}&options`;
+  const query_key = `${relatedModelName}&options`;
 
   const filterContainerRef = React.useRef<HTMLDivElement>(null);
   const relationQueryEndpoint = `${baseEndpoint}/_read_relation_options`;
@@ -73,7 +74,7 @@ const FormsEnumInputWrapper: React.FC<
         endpoint: relationQueryEndpoint,
         keepPreviousData: true,
         body: {
-          relation: modelName,
+          relation: relatedModelName,
           filters: generateFilter(formData, dependsOn),
           ...(context &&
             (Object.keys(context).length > 0 || searchQuery !== "") && {
@@ -136,7 +137,6 @@ const FormsEnumInputWrapper: React.FC<
   React.useEffect(() => {
     setValues(data);
   }, [data]);
-
   return (
     <div className="ENUM-WRAPPER" ref={filterContainerRef}>
       <FormsEnumInput
@@ -147,7 +147,7 @@ const FormsEnumInputWrapper: React.FC<
         setIsLoading={setIsLoading}
         options={enum_options}
         filterContainerRef={filterContainerRef}
-        model_name={modelName}
+        model_name={relatedModelName}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
         onChangeCallback={handleValueChange}

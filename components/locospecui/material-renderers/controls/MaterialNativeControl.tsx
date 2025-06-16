@@ -23,18 +23,19 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
+import React from "react";
 import {
   ControlProps,
+  showAsRequired,
   isDateControl,
   isDescriptionHidden,
   isTimeControl,
   or,
   RankedTester,
   rankWith,
-  showAsRequired,
 } from "@jsonforms/core";
-import { withJsonFormsControlProps } from "@jsonforms/react";
 import { TextField } from "@mui/material";
+import { withJsonFormsControlProps } from "@jsonforms/react";
 import merge from "lodash/merge";
 import { useDebouncedChange, useFocus } from "../util";
 

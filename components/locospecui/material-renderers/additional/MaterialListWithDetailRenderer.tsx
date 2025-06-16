@@ -44,11 +44,11 @@ import {
 } from "@jsonforms/react";
 import { Grid, List, Typography } from "@mui/material";
 import map from "lodash/map";
-import merge from "lodash/merge";
 import range from "lodash/range";
 import React, { useCallback, useMemo, useState } from "react";
 import { ArrayLayoutToolbar } from "../layouts/ArrayToolbar";
 import ListWithDetailMasterItem from "./ListWithDetailMasterItem";
+import merge from "lodash/merge";
 
 export const MaterialListWithDetailRenderer = ({
   uischemas,
@@ -139,7 +139,7 @@ export const MaterialListWithDetailRenderer = ({
         <Grid item xs={3}>
           <List>
             {data > 0 ? (
-              map(range(data), index => (
+              map(range(data), (index) => (
                 <ListWithDetailMasterItem
                   index={index}
                   path={path}

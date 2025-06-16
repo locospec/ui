@@ -23,15 +23,16 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
+import React from "react";
 import {
   ControlProps,
   isNumberControl,
   RankedTester,
   rankWith,
 } from "@jsonforms/core";
-import { withJsonFormsControlProps } from "@jsonforms/react";
 import { MuiInputNumber } from "../mui-controls/MuiInputNumber";
 import { MaterialInputControl } from "./MaterialInputControl";
+import { withJsonFormsControlProps } from "@jsonforms/react";
 
 export const MaterialNumberControl = (props: ControlProps) => (
   <MaterialInputControl {...props} input={MuiInputNumber} />

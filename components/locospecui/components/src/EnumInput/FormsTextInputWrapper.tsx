@@ -1,6 +1,6 @@
 import React from "react";
-import { FormsTextInput } from "./FormsTextInput";
 import { generateTitleName } from "./utils";
+import { FormsTextInput } from "./FormsTextInput";
 
 export interface FormsTextInputWrapperInterface {
   placeholder?: string;
@@ -21,9 +21,9 @@ export interface FormsTextInputWrapperInterface {
   data?: string | number;
 }
 
-const FormsTextInputWrapper: React.FC<
-  FormsTextInputWrapperInterface
-> = props => {
+const FormsTextInputWrapper: React.FC<FormsTextInputWrapperInterface> = (
+  props
+) => {
   const { schema, path, handleChange, errors = null, required, data } = props;
   const { type = "string", minvalue = 0, stepsize = 1, title = "" } = schema;
   const [values, setValues] = React.useState<any>(

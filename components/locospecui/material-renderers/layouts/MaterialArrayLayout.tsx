@@ -23,6 +23,8 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
+import range from "lodash/range";
+import React, { useState, useCallback } from "react";
 import {
   ArrayLayoutProps,
   ArrayTranslations,
@@ -31,11 +33,9 @@ import {
   createDefaultValue,
 } from "@jsonforms/core";
 import map from "lodash/map";
-import merge from "lodash/merge";
-import range from "lodash/range";
-import React, { useCallback, useState } from "react";
 import { ArrayLayoutToolbar } from "./ArrayToolbar";
 import ExpandPanelRenderer from "./ExpandPanelRenderer";
+import merge from "lodash/merge";
 
 const MaterialArrayLayoutComponent = (
   props: ArrayLayoutProps & { translations: ArrayTranslations }
@@ -97,7 +97,7 @@ const MaterialArrayLayoutComponent = (
       />
       <div>
         {data > 0 ? (
-          map(range(data), index => {
+          map(range(data), (index) => {
             return (
               <ExpandPanelRenderer
                 enabled={enabled}

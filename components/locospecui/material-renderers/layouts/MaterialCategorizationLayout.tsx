@@ -23,6 +23,8 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
+import React, { useState, useMemo } from "react";
+import { AppBar, Tab, Tabs } from "@mui/material";
 import {
   and,
   Categorization,
@@ -41,8 +43,6 @@ import {
   withJsonFormsLayoutProps,
   withTranslateProps,
 } from "@jsonforms/react";
-import { AppBar, Tab, Tabs } from "@mui/material";
-import { useMemo, useState } from "react";
 import {
   AjvProps,
   MaterialLayoutRenderer,

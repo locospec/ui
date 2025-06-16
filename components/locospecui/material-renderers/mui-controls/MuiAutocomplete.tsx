@@ -23,6 +23,7 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
+import React, { ReactNode } from "react";
 import {
   ControlProps,
   EnumCellProps,
@@ -30,7 +31,6 @@ import {
   isDescriptionHidden,
   WithClassname,
 } from "@jsonforms/core";
-import React, { ReactNode } from "react";
 
 import {
   Autocomplete,
@@ -82,7 +82,7 @@ export const MuiAutocomplete = (
   const [inputValue, setInputValue] = React.useState(data ?? "");
   const [focused, onFocus, onBlur] = useFocus();
 
-  const findOption = options.find(o => o.value === data) ?? null;
+  const findOption = options.find((o) => o.value === data) ?? null;
 
   const showDescription = !isDescriptionHidden(
     visible,
@@ -94,8 +94,8 @@ export const MuiAutocomplete = (
   const firstFormHelperText = showDescription
     ? description
     : !isValid
-      ? errors
-      : null;
+    ? errors
+    : null;
   const secondFormHelperText = showDescription && !isValid ? errors : null;
 
   if (!visible) {
@@ -120,9 +120,9 @@ export const MuiAutocomplete = (
         autoComplete
         fullWidth
         options={options}
-        getOptionLabel={getOptionLabel || (option => option?.label)}
+        getOptionLabel={getOptionLabel || ((option) => option?.label)}
         freeSolo={false}
-        renderInput={params => {
+        renderInput={(params) => {
           return (
             <TextField
               label={label}

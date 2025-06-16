@@ -1,6 +1,6 @@
 import React from "react";
-import { FormsCalendarInput } from "./FormsCalendarInput";
 import { generateTitleName } from "./utils";
+import { FormsCalendarInput } from "./FormsCalendarInput";
 
 export interface FormsCalendarInputWrapperInterface {
   placeholder?: string;
@@ -23,7 +23,7 @@ export interface FormsCalendarInputWrapperInterface {
 
 const FormsCalendarInputWrapper: React.FC<
   FormsCalendarInputWrapperInterface
-> = props => {
+> = (props) => {
   const { schema, path, handleChange, errors = null, required, data } = props;
   const { title = "" } = schema;
   const [values, setValues] = React.useState<string>();
