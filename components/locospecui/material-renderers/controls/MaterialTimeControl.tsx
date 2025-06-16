@@ -23,20 +23,20 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
+import React, { useCallback, useMemo, useState } from "react";
+import merge from "lodash/merge";
 import {
   ControlProps,
-  defaultTimeFormat,
-  isDescriptionHidden,
   isTimeControl,
+  isDescriptionHidden,
   RankedTester,
   rankWith,
+  defaultTimeFormat,
 } from "@jsonforms/core";
 import { withJsonFormsControlProps } from "@jsonforms/react";
 import { FormHelperText } from "@mui/material";
-import { LocalizationProvider, TimePicker } from "@mui/x-date-pickers";
+import { TimePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import merge from "lodash/merge";
-import { useCallback, useMemo, useState } from "react";
 import {
   createOnBlurHandler,
   createOnChangeHandler,
@@ -81,11 +81,11 @@ export const MaterialTimeControl = (props: ControlProps) => {
   const firstFormHelperText = showDescription
     ? description
     : !isValid
-      ? errors
-      : null;
+    ? errors
+    : null;
   const secondFormHelperText = showDescription && !isValid ? errors : null;
 
-  const updateChild = useCallback(() => setKey(key => key + 1), []);
+  const updateChild = useCallback(() => setKey((key) => key + 1), []);
 
   const onChange = useMemo(
     () => createOnChangeHandler(path, handleChange, saveFormat),

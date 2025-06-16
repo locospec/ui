@@ -23,6 +23,9 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
+import isEmpty from "lodash/isEmpty";
+import React from "react";
+import { Card, CardContent, CardHeader } from "@mui/material";
 import {
   GroupLayout,
   LayoutProps,
@@ -31,14 +34,11 @@ import {
   uiTypeIs,
   withIncreasedRank,
 } from "@jsonforms/core";
-import { withJsonFormsLayoutProps } from "@jsonforms/react";
-import { Card, CardContent, CardHeader } from "@mui/material";
-import isEmpty from "lodash/isEmpty";
-import React from "react";
 import {
   MaterialLabelableLayoutRendererProps,
   MaterialLayoutRenderer,
 } from "../util/layout";
+import { withJsonFormsLayoutProps } from "@jsonforms/react";
 
 export const groupTester: RankedTester = rankWith(1, uiTypeIs("Group"));
 const style: { [x: string]: any } = { marginBottom: "10px" };

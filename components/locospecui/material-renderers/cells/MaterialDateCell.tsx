@@ -23,6 +23,7 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
+import React from "react";
 import {
   CellProps,
   isDateControl,
@@ -32,7 +33,6 @@ import {
 } from "@jsonforms/core";
 import { withJsonFormsCellProps } from "@jsonforms/react";
 import merge from "lodash/merge";
-import React from "react";
 import { useInputComponent, WithInputProps } from "../util";
 
 export const MaterialDateCell = (

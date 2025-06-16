@@ -23,7 +23,7 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
-import { useCallback, useState } from "react";
+import React, { useCallback, useState } from "react";
 
 import {
   CombinatorRendererProps,
@@ -36,8 +36,8 @@ import {
 } from "@jsonforms/core";
 import { JsonFormsDispatch, withJsonFormsAnyOfProps } from "@jsonforms/react";
 import { Tab, Tabs } from "@mui/material";
-import isEmpty from "lodash/isEmpty";
 import CombinatorProperties from "./CombinatorProperties";
+import isEmpty from "lodash/isEmpty";
 import { TabSwitchConfirmDialog } from "./TabSwitchConfirmDialog";
 
 export const MaterialAnyOfRenderer = ({
@@ -118,7 +118,7 @@ export const MaterialAnyOfRenderer = ({
         rootSchema={rootSchema}
       />
       <Tabs value={selectedAnyOf} onChange={handleTabChange}>
-        {anyOfRenderInfos.map(anyOfRenderInfo => (
+        {anyOfRenderInfos.map((anyOfRenderInfo) => (
           <Tab key={anyOfRenderInfo.label} label={anyOfRenderInfo.label} />
         ))}
       </Tabs>

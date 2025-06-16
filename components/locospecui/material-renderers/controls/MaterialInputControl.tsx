@@ -23,13 +23,14 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
+import React from "react";
 import {
+  showAsRequired,
   ControlProps,
   isDescriptionHidden,
-  showAsRequired,
 } from "@jsonforms/core";
 
-import { FormControl, FormHelperText, InputLabel } from "@mui/material";
+import { InputLabel, FormControl, FormHelperText } from "@mui/material";
 import merge from "lodash/merge";
 import { useFocus, useInputVariant } from "../util";
 
@@ -64,8 +65,8 @@ export const MaterialInputControl = (props: ControlProps & WithInput) => {
   const firstFormHelperText = showDescription
     ? description
     : !isValid
-      ? errors
-      : null;
+    ? errors
+    : null;
   const secondFormHelperText = showDescription && !isValid ? errors : null;
   const InnerComponent = input;
 

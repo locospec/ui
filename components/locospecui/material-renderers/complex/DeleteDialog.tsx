@@ -22,6 +22,7 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
+import React from 'react';
 import {
   Button,
   Dialog,
@@ -29,8 +30,7 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
-} from "@mui/material";
-import React from "react";
+} from '@mui/material';
 
 export interface DeleteDialogProps {
   open: boolean;
@@ -62,20 +62,20 @@ export const DeleteDialog = React.memo(function DeleteDialog({
       open={open}
       keepMounted
       onClose={onClose}
-      aria-labelledby="alert-dialog-confirmdelete-title"
-      aria-describedby="alert-dialog-confirmdelete-description"
+      aria-labelledby='alert-dialog-confirmdelete-title'
+      aria-describedby='alert-dialog-confirmdelete-description'
     >
-      <DialogTitle id="alert-dialog-confirmdelete-title">{title}</DialogTitle>
+      <DialogTitle id='alert-dialog-confirmdelete-title'>{title}</DialogTitle>
       <DialogContent>
-        <DialogContentText id="alert-dialog-confirmdelete-description">
+        <DialogContentText id='alert-dialog-confirmdelete-description'>
           {message}
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={onCancel} color="primary">
+        <Button onClick={onCancel} color='primary'>
           {declineText}
         </Button>
-        <Button onClick={onConfirm} color="primary">
+        <Button onClick={onConfirm} color='primary'>
           {acceptText}
         </Button>
       </DialogActions>

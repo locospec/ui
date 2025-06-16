@@ -1,6 +1,6 @@
-import type { InfiniteData } from "@tanstack/react-query";
-import { useInfiniteQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
+import { useInfiniteQuery } from "@tanstack/react-query";
+import type { InfiniteData } from "@tanstack/react-query";
 
 export interface UseInfiniteFetchParams {
   queryKey: string;
@@ -69,7 +69,7 @@ const useInfiniteFetch = ({
       queryKey: dependencies,
       queryFn: dataCallback || (fetchDataFunction as any),
       getNextPageParam: (lastPage: any) => lastPage.meta?.next_cursor,
-      getPreviousPageParam: firstPage => firstPage.meta?.prev_cursor,
+      getPreviousPageParam: (firstPage) => firstPage.meta?.prev_cursor,
       refetchOnWindowFocus: false,
       placeholderData: keepPreviousData as InfiniteData<any, unknown>,
       initialPageParam, // Add this property
@@ -77,7 +77,7 @@ const useInfiniteFetch = ({
 
   // Memoize flat data across all pages
   const flatData = useMemo(
-    () => data?.pages?.flatMap(page => page.data) ?? [],
+    () => data?.pages?.flatMap((page) => page.data) ?? [],
     [data]
   );
 

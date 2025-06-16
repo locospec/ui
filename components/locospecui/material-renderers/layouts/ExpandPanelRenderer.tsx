@@ -1,50 +1,50 @@
 // @ts-nocheck
-import {
-  ArrayTranslations,
-  composePaths,
-  computeChildLabel,
-  ControlElement,
-  createId,
-  findUISchema,
-  JsonFormsCellRendererRegistryEntry,
-  JsonFormsRendererRegistryEntry,
-  JsonFormsUISchemaRegistryEntry,
-  JsonSchema,
-  moveDown,
-  moveUp,
-  removeId,
-  update,
-  UpdateArrayContext,
-} from "@jsonforms/core";
-import {
-  JsonFormsDispatch,
-  JsonFormsStateContext,
-  withJsonFormsContext,
-} from "@jsonforms/react";
-import ArrowDownward from "@mui/icons-material/ArrowDownward";
-import ArrowUpward from "@mui/icons-material/ArrowUpward";
-import DeleteIcon from "@mui/icons-material/Delete";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Avatar,
-  Grid,
-  IconButton,
-  Tooltip,
-} from "@mui/material";
 import merge from "lodash/merge";
 import React, {
   ComponentType,
   Dispatch,
   Fragment,
   ReducerAction,
-  useCallback,
-  useEffect,
   useMemo,
   useState,
+  useEffect,
+  useCallback,
 } from "react";
+import {
+  JsonFormsDispatch,
+  JsonFormsStateContext,
+  withJsonFormsContext,
+} from "@jsonforms/react";
+import {
+  composePaths,
+  ControlElement,
+  findUISchema,
+  JsonFormsRendererRegistryEntry,
+  JsonSchema,
+  moveDown,
+  moveUp,
+  update,
+  JsonFormsCellRendererRegistryEntry,
+  JsonFormsUISchemaRegistryEntry,
+  createId,
+  removeId,
+  ArrayTranslations,
+  computeChildLabel,
+  UpdateArrayContext,
+} from "@jsonforms/core";
+import {
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  Avatar,
+  Grid,
+  IconButton,
+  Tooltip,
+} from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ArrowUpward from "@mui/icons-material/ArrowUpward";
+import ArrowDownward from "@mui/icons-material/ArrowDownward";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const iconStyle: any = { float: "right" };
 
@@ -258,7 +258,7 @@ export const ExpandPanelRenderer = React.memo(ExpandPanelRendererComponent);
  */
 export const ctxDispatchToExpandPanelProps: (
   dispatch: Dispatch<ReducerAction<any>>
-) => DispatchPropsOfExpandPanel = dispatch => ({
+) => DispatchPropsOfExpandPanel = (dispatch) => ({
   removeItems: useCallback(
     (path: string, toDelete: number[]) =>
       (event: any): void => {
@@ -266,11 +266,11 @@ export const ctxDispatchToExpandPanelProps: (
         dispatch(
           update(
             path,
-            array => {
+            (array) => {
               toDelete
                 .sort()
                 .reverse()
-                .forEach(s => array.splice(s, 1));
+                .forEach((s) => array.splice(s, 1));
               return array;
             },
             { type: "REMOVE", indices: toDelete } as UpdateArrayContext
@@ -286,7 +286,7 @@ export const ctxDispatchToExpandPanelProps: (
         dispatch(
           update(
             path,
-            array => {
+            (array) => {
               moveUp(array, toMove);
               return array;
             },
@@ -306,7 +306,7 @@ export const ctxDispatchToExpandPanelProps: (
         dispatch(
           update(
             path,
-            array => {
+            (array) => {
               moveDown(array, toMove);
               return array;
             },

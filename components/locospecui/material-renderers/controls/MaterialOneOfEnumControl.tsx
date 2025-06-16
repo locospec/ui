@@ -23,6 +23,7 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
+import React from "react";
 import {
   ControlProps,
   isOneOfEnumControl,
@@ -35,14 +36,13 @@ import {
   withJsonFormsOneOfEnumProps,
   withTranslateProps,
 } from "@jsonforms/react";
-import merge from "lodash/merge";
-import React from "react";
-import { MaterialInputControl } from "../controls/MaterialInputControl";
 import {
   MuiAutocomplete,
   WithOptionLabel,
 } from "../mui-controls/MuiAutocomplete";
 import { MuiSelect } from "../mui-controls/MuiSelect";
+import { MaterialInputControl } from "../controls/MaterialInputControl";
+import merge from "lodash/merge";
 
 export const MaterialOneOfEnumControl = (
   props: ControlProps & OwnPropsOfEnum & WithOptionLabel & TranslateProps

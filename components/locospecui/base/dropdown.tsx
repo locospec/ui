@@ -1,4 +1,3 @@
-import { Dot } from "lucide-react";
 import { useEffect, useState } from "react";
 import {
   Select,
@@ -8,6 +7,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./select";
+import { Dot } from "lucide-react";
 
 interface OptionProps {
   title?: string; // Display name
@@ -91,7 +91,7 @@ export function Dropdown({
       value={selectedValue ? selectedValue[valueKey as keyof OptionProps] : ""}
       onValueChange={handleSelect}
     >
-      <SelectTrigger className={`capitalize ${styles?.outerContainer}`}>
+      <SelectTrigger className={`capitalize  ${styles?.outerContainer}`}>
         {selectIdentifier &&
           selectedValue &&
           (styles?.hideDot ? (
@@ -107,7 +107,7 @@ export function Dropdown({
         <SelectGroup>
           {options?.map((option: any) => (
             <SelectItem
-              className={`text-brand-textLightGrey tracking-wider capitalize ${styles?.dropdownItemsClass} ${styles?.hoverTextColor} ${styles?.hoverBgColor}`}
+              className={`capitalize tracking-wider text-brand-textLightGrey ${styles?.dropdownItemsClass} ${styles?.hoverTextColor} ${styles?.hoverBgColor}`}
               key={option[valueKey]}
               value={option[valueKey]}
             >

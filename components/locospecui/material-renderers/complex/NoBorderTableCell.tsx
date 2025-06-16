@@ -23,8 +23,9 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
-import { TableCell } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { TableCell } from "@mui/material";
+import React from "react";
 
 const StyledTableCell = styled(TableCell)({
   borderBottom: "none",

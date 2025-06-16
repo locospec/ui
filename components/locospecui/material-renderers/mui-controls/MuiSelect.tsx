@@ -23,12 +23,12 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
-import { EnumCellProps, WithClassname } from "@jsonforms/core";
 import React, { useMemo } from "react";
+import { EnumCellProps, WithClassname } from "@jsonforms/core";
 
-import { TranslateProps } from "@jsonforms/react";
 import { MenuItem, Select } from "@mui/material";
 import merge from "lodash/merge";
+import { TranslateProps } from "@jsonforms/react";
 import { i18nDefaults, WithInputProps, WithSelectProps } from "../util";
 
 export const MuiSelect = React.memo(function MuiSelect(
@@ -67,7 +67,7 @@ export const MuiSelect = React.memo(function MuiSelect(
       disabled={!enabled}
       autoFocus={appliedUiSchemaOptions.focus}
       value={data !== undefined ? data : ""}
-      onChange={ev => handleChange(path, ev.target.value || undefined)}
+      onChange={(ev) => handleChange(path, ev.target.value || undefined)}
       fullWidth={true}
       multiple={multiple || false}
     >
@@ -77,7 +77,7 @@ export const MuiSelect = React.memo(function MuiSelect(
         </MenuItem>,
       ].concat(
         options ? (
-          options.map(optionValue => (
+          options.map((optionValue) => (
             <MenuItem value={optionValue.value} key={optionValue.value}>
               {optionValue.label}
             </MenuItem>

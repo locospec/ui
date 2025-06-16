@@ -23,7 +23,7 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
-import { useCallback } from "react";
+import React, { useCallback } from "react";
 
 import {
   ArrayLayoutProps,
@@ -32,12 +32,12 @@ import {
   RankedTester,
   rankWith,
 } from "@jsonforms/core";
+import { MaterialArrayLayout } from "./MaterialArrayLayout";
 import {
   withArrayTranslationProps,
   withJsonFormsArrayLayoutProps,
   withTranslateProps,
 } from "@jsonforms/react";
-import { MaterialArrayLayout } from "./MaterialArrayLayout";
 
 export const MaterialArrayLayoutRenderer = ({
   visible,

@@ -26,26 +26,28 @@ import ExpandPanelRenderer, {
   ctxDispatchToExpandPanelProps,
   withContextToExpandPanelProps,
   withJsonFormsExpandPanelProps,
-} from "./ExpandPanelRenderer";
-import MaterialArrayLayout, {
-  materialArrayLayoutTester,
-} from "./MaterialArrayLayoutRenderer";
-import MaterialCategorizationLayout, {
-  materialCategorizationTester,
-} from "./MaterialCategorizationLayout";
+} from './ExpandPanelRenderer';
 import MaterialGroupLayout, {
   materialGroupTester,
-} from "./MaterialGroupLayout";
+} from './MaterialGroupLayout';
 import MaterialHorizontalLayout, {
   materialHorizontalLayoutTester,
-} from "./MaterialHorizontalLayout";
+} from './MaterialHorizontalLayout';
 import MaterialVerticalLayout, {
   materialVerticalLayoutTester,
-} from "./MaterialVerticalLayout";
+} from './MaterialVerticalLayout';
+import MaterialCategorizationLayout, {
+  materialCategorizationTester,
+} from './MaterialCategorizationLayout';
+import MaterialArrayLayout, {
+  materialArrayLayoutTester,
+} from './MaterialArrayLayoutRenderer';
 
 export {
-  ctxDispatchToExpandPanelProps,
   ExpandPanelRenderer,
+  ctxDispatchToExpandPanelProps,
+  withContextToExpandPanelProps,
+  withJsonFormsExpandPanelProps,
   MaterialArrayLayout,
   materialArrayLayoutTester,
   MaterialCategorizationLayout,
@@ -56,8 +58,6 @@ export {
   materialHorizontalLayoutTester,
   MaterialVerticalLayout,
   materialVerticalLayoutTester,
-  withContextToExpandPanelProps,
-  withJsonFormsExpandPanelProps,
 };
 
-export * from "./ArrayToolbar";
+export * from './ArrayToolbar';
